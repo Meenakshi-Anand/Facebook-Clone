@@ -22,7 +22,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack --mode=production",
+    "start": "webpack --watch --mode=development"
   },
   "repository": {
     "type": "git",
@@ -34,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/Meenakshi-Anand/Facebook-Clone/issues"
   },
-  "homepage": "https://github.com/Meenakshi-Anand/Facebook-Clone#readme"
+  "homepage": "https://github.com/Meenakshi-Anand/Facebook-Clone#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.0.2"
+  }
 }
