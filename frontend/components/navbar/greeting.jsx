@@ -12,7 +12,7 @@ class Greeting extends React.Component {
 
     const display = currentUser ? (
     <div>
-      <h3>Welcome {currentUser.username}!</h3>
+      <h3>Welcome {currentUser.fname}!</h3>
       <button onClick={logout}>Logout</button>
     </div>
   ) : (

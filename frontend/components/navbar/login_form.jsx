@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,9 @@ class LoginForm extends React.Component {
 
 
   update(field) {
+
     return (e) => {
+      e.preventDefault();
       this.setState({[field]: e.target.value});
     };
   }
