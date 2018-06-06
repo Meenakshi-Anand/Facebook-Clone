@@ -2,8 +2,9 @@ import * as SessionAPIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-
+export const REMOVE_LOGIN_ERRORS = 'REMOVE_LOGIN_ERRORS';
+export const REMOVE_SIGNUP_ERRORS = 'REMOVE_SIGNUP_ERRORS';
+export const REMOVE_LOGOUT_ERRORS = 'REMOVE_LOGOUT_ERRORS';
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -14,8 +15,18 @@ export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 });
 
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+export const receiveLoginErrors = (errors) => ({
+  type: REMOVE_LOGIN_ERRORS,
+  errors
+});
+
+export const receiveSignupErrors = (errors) => ({
+  type: REMOVE_SIGNUP_ERRORS,
+  errors
+});
+
+export const receiveLogoutErrors = (errors) => ({
+  type: REMOVE_LOGOUT_ERRORS,
   errors
 });
 
@@ -24,7 +35,7 @@ export const login = (user) => dispatch => {
   .then(newUser => {
     dispatch(receiveCurrentUser(newUser));
   }, (err => {
-    dispatch(receiveErrors(err));
+    dispatch(receiveLoginErrors(err.responseJSON));
   }));
 };
 
@@ -33,7 +44,7 @@ export const signup = (user) => dispatch => {
   .then(newUser => {
     dispatch(receiveCurrentUser(newUser));
   }, (err => {
-    dispatch(receiveErrors(err));
+    dispatch(receiveSignupErrors(err.responseJSON));
   }));
 };
 
@@ -42,6 +53,6 @@ export const logout = () => dispatch => {
   .then(()=> {
     dispatch(logoutCurrentUser());
   }, (err) => {
-    dispatch(receiveErrors(err));
+    dispatch(receiveLogoutErrors(err.responseJSON));
   });
 };

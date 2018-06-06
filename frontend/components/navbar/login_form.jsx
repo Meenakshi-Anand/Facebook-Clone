@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
   renderErrors(){
     const {errors} = this.props;
     return (<ul>
-      {errors.map((error,i) => (
+      {errors.loginErrors.map((error,i) => (
             <li key={`error-${i}`}>
               {error}
             </li>
@@ -67,6 +67,7 @@ class LoginForm extends React.Component {
     return(
       <div>
       {this.renderLogin()}
+
       </div>
     );
   }
