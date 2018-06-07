@@ -8,6 +8,6 @@
 
 User.destroy_all
 User.create!(email:'Meenakshi',password:'password',fname:'Meenakshi',
-                        lname:'Anand',sex:'F',birthday:'06-19-1990')
+                        lname:'Anand',sex:'F',birthday:Date.new())
 User.create!(email:'Anand',password:'password',fname:'Anand',
-                        lname:'Narayan',sex:'F',birthday:'09-29-1989')
+                        lname:'Narayan',sex:'F',birthday:Date.new())
