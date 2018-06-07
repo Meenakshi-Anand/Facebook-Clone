@@ -91,32 +91,3 @@
   position: absolute;
   top: 40px; left: 490px;
 }
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: rgb(190,75,73);
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 2px;
-    border-width: thin;
-    border-style: solid;
-    border-color:rgb(167,83,80);
-
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-}
-.tooltip:active .tooltiptext {
-    visibility: visible;
-}
-
-.special {
-  border-color:rgb(167,83,80);
-}
