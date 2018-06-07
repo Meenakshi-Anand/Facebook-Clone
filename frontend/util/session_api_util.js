@@ -6,13 +6,20 @@
     data: {user}
   })
 );
-window.signup = signup;
 
 export const login = (user) => (
  $.ajax({
    method: 'POST',
    url: 'api/session',
    data: {user}
+ })
+);
+
+export const demologin = () => (
+ $.ajax({
+   method: 'POST',
+   url: 'api/session',
+   data:{user:{email:"abhi@codeanand.com",password:"password"}},
  })
 );
 

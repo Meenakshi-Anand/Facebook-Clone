@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import LoginFormContainer from './login_form_container';
 
 class Greeting extends React.Component {
   constructor(props){
@@ -17,7 +17,7 @@ class Greeting extends React.Component {
          </div>
     ) ;
     }else{
-      return "";
+      return <LoginFormContainer />;
     }
   }
 }

@@ -26,6 +26,7 @@ class SignupForm extends React.Component {
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
+
     };
   }
 
@@ -52,6 +53,7 @@ class SignupForm extends React.Component {
     if (formType === "SIGNUP"){
     return(
       <div className="signup-form">
+        {this.renderErrors()}
         <h2>Create New Account</h2>
         <h3>It's free and always will be</h3>
         <form onSubmit={this.handleSubmit}>
@@ -63,8 +65,7 @@ class SignupForm extends React.Component {
           <label>
             <input type="text" placeholder={'Last Name'}
               value={this.state.lname} onChange={this.update('lname')} />
-
-        </label>
+         </label>
         </div>
           <label>
           <input type="text" placeholder={'Email'}
@@ -103,7 +104,6 @@ class SignupForm extends React.Component {
           and can opt out any time.</p>
           <button type="submit" value={formType}>Sign Up</button>
          </form>
-         {this.renderErrors()}
       </div>
     );
   }

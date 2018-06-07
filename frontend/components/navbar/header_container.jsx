@@ -8,7 +8,6 @@ class Header extends React.Component{
     <header className="header">
       <nav>
       <h2> connect </h2>
-      <LoginFormContainer />
       <GreetingContainer />
       </nav>
     </header>

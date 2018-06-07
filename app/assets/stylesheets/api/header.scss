@@ -19,13 +19,20 @@
   display:flex;
 }
 
+.header nav div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
 .header nav form{
   width: 450px;
   display: flex;
-  padding-top: 15px;
-  padding-left: 20px;
+  padding: 15px 0 0 0;
   justify-content: flex-end;
+  position:relative;
 }
+
 .login-label-div{
   position:relative;
 }
@@ -38,7 +45,7 @@
   padding: 0 10px 5px 5px;
 }
 .login-label-div label input[type="text"]{
-  color: #fff;
+  color: black;
   background-color: #fff;
   border-color: #1d2a5b;
   margin-top: 5px;
@@ -64,4 +71,52 @@
   padding: 1px 10px;
   margin-top: 22px;
   height: 22px;
+}
+
+.header li {
+  background: rgb(190,75,73);
+  border-radius: 2px;
+  border-width: thin;
+  border-style: solid;
+  border-color:rgb(167,83,80);
+  text-align: center;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  color: white;
+  width:180px;
+  height:30px;
+  padding-top: 5px;
+  align-items: center;
+  margin-left: 45px;
+  position: absolute;
+  top: 40px; left: 490px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(190,75,73);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 2px;
+    border-width: thin;
+    border-style: solid;
+    border-color:rgb(167,83,80);
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:active .tooltiptext {
+    visibility: visible;
+}
+
+.special {
+  border-color:rgb(167,83,80);
 }

@@ -5,7 +5,6 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const REMOVE_LOGIN_ERRORS = 'REMOVE_LOGIN_ERRORS';
 export const REMOVE_SIGNUP_ERRORS = 'REMOVE_SIGNUP_ERRORS';
 export const REMOVE_LOGOUT_ERRORS = 'REMOVE_LOGOUT_ERRORS';
-
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   user: currentUser
@@ -30,6 +29,7 @@ export const receiveLogoutErrors = (errors) => ({
   errors
 });
 
+
 export const login = (user) => dispatch => {
   return SessionAPIUtil.login(user)
   .then(newUser => {
@@ -38,6 +38,14 @@ export const login = (user) => dispatch => {
     dispatch(receiveLoginErrors(err.responseJSON));
   }));
 };
+
+export const demologin = () => dispatch => {
+  return SessionAPIUtil.demologin().then(user=> {
+    return dispatch(receiveCurrentUser(user));
+  });
+};
+
+
 
 export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)

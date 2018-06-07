@@ -1,7 +1,7 @@
 .body {
   font-family: "Helvetica", sans-serif;
   height: 980px;
-  background: #d8dfea;
+  background: rgb(233,235,238);
 
 }
 
@@ -15,50 +15,73 @@
 
 
 }
-.main-section div h2{
-
+.connect h2{
   font-weight: 800;
   font-size: 25px;
   margin-top: 35px;
+  color:rgb(51,51,51);
   text-align: center;
+  font-family: 'Freight Sans Bold', Helvetica, sans-serif !important;
+  letter-spacing: normal;
+  text-rendering: optimizelegibility;
+}
+.connect div form button{
+  background: linear-gradient(#ba68c8, #ab47bc);
+  width: 400px;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px #7b1fa2;
+  border-radius: 5px;
+  border: solid 1px #6a1b9a;
+  box-shadow: 1px 1px 3px #6a1b9a;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .main-page-img{
 
-  margin-top: 35px;
+  margin-top: 55px;
   background-image: image-url('connect-pic.jpg');
   width:100%;
   height:220px;
-
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 
 .signup-form{
   width:450px;
+  margin-top: 0px;
 }
 
 .signup-form h2{
-  font-family: "Helvetica", sans-serif;
-  font-size: 35px;
-  font-weight: 800;
+  color:rgb(51,51,51);
+  font-size: 28px;
+  margin-left: 40px;
+  margin-top: 10px;
+  margin-bottom:5px;
+  font-weight: bold;
+  font-family: 'Freight Sans Bold', Helvetica, sans-serif !important;
+  letter-spacing: normal;
+  text-rendering: optimizelegibility;
   text-align: center;
-
 }
 .signup-form h3{
   font-family: "Helvetica", sans-serif;
-  font-size: 20px;
+  color:rgb(51,51,51);
+  font-size: 18px;
   font-weight: normal;
   text-align: center;
   line-height: 1px;
+  margin-bottom: 5px;
 
 }
 .signup-form form{
   display:grid;
   justify-content: space-between;
   vertical-align: middle;
-  margin: 20px;
+  margin-left: 40px;
 }
 
 
@@ -67,20 +90,20 @@
 }
 
 .signup-form form label{
-  margin:10px;
+  margin:5px;
 
 }
 .signup-form form div label{
-  margin:10px;
+  margin:5px;
 
 }
 .signup-form form div input[type="text"]{
-  color: #bdc7d8;
+  color: inherit;
   background-color: #fff;
   border-color: #afbdd4;
   margin-top: 5px;
   height: 45px;
-  width: 182px;
+  width: 190px;
   display: block;
   border-width: thin;
   border-style: solid;
@@ -91,13 +114,13 @@
 
 .signup-form form input[type="text"]{
   font-family: "Helvetica", sans-serif;
-  color: #bdc7d8;
+  color: inherit;
   padding: 0 0 0 5px;
   background-color: #fff;
   border-color: #afbdd4;
   margin-top: 5px;
   height: 45px;
-  width: 390px;
+  width: 400px;
   display: block;
   border-width: thin;
   border-style: solid;
@@ -108,7 +131,7 @@
 
 .signup-form form input[type="date"]{
   font-family: "Helvetica", sans-serif;
-  color: #bdc7d8;
+  color:rgb(51,51,51);
   margin-top: 3px;
   background-color: #ffffff;
   border-radius: 5px;
@@ -121,12 +144,14 @@
 
 .birthday-signup label{
   font-family: "Helvetica", sans-serif;
+  color:rgb(51,51,51);
   display:grid;
 }
 
 
 .sex-signup label{
   font-family: "Helvetica", sans-serif;
+  color:rgb(51,51,51);
   display:grid;
 }
 
@@ -155,17 +180,51 @@
   border-radius: 5px;
   border-width: thin;
   border-style: solid;
-  border-color: #3b6e22;
+  border-color: rgb(59,110,35);
   padding: 1px 10px;
   height: 45px;
-  width:200px
+  width:200px;
 }
  .signup-form p {
    text-align: left;
-   color: #777;
+   color:rgb(51,51,51);
    margin-left: 10px;
    margin-bottom: 10px;
    width: 350px;
    font-family: "Helvetica", sans-serif;
    font-size: 12px;
  }
+
+.text-color{
+  color:inherit;
+}
+
+.footer{
+  margin-top:25px;
+  background-color: white;
+  color: #bdc7d8;
+  font-size: 12px;
+  font-family: "Helvetica", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  border-color: #bdc7d8;
+}
+.footer a{
+  padding: 15px;
+}
+
+.signup-form ul {
+  background: rgb(190,75,73);
+  border-radius: 2px;
+  border-color:rgb(167,83,80);
+  text-align: center;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  color: white;
+  width: 180px;
+  // padding-top: 10px;
+  align-items: center;
+  margin-left: 45px;
+  position: absolute;
+  top: 180px; left: 490px;
+}

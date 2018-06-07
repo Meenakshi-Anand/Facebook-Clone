@@ -1,6 +1,5 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-
 class LoginForm extends React.Component {
 
   constructor(props) {
@@ -11,7 +10,6 @@ class LoginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -20,7 +18,6 @@ class LoginForm extends React.Component {
 
 
   update(field) {
-
     return (e) => {
       e.preventDefault();
       this.setState({[field]: e.target.value});
@@ -32,22 +29,22 @@ class LoginForm extends React.Component {
     if(formType === "LOGIN"){
     return(
         <div>
+          {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <div className="login-label-div">
           <label> Email
           <input type="text" value={this.state.email}
-            onChange={this.update('email')} />
+             onChange={this.update('email')} />
           </label>
           </div>
           <div className="login-label-div">
           <label> Password
             <input type="text" value={this.state.password}
-              onChange={this.update('password')} />
+               onChange={this.update('password')} />
           </label>
           </div>
           <button type="submit" value={formType}>Log In</button>
          </form>
-         {this.renderErrors()}
        </div>
     );
   }
