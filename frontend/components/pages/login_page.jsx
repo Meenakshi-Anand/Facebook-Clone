@@ -8,6 +8,7 @@ class LoginPage extends React.Component{
   render(){
    return(
      <main>
+       <Header />
        <MainPage />
        <Footer />
      </main>

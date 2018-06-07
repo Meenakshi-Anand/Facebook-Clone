@@ -8,9 +8,7 @@ import LoginPage from './pages/login_page';
 import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div>
-    <Route path="/" component={Header} />
-    <AuthRoute path="/signup" component={LoginPage} />
-
+    <Route path="/" component={LoginPage} />
   </div>
 );
 export default App;
