@@ -10,20 +10,15 @@ class Greeting extends React.Component {
   render(){
     const {currentUser, logout} = this.props;
 
-    const display = currentUser ? (
-    <div>
-      <h3>Welcome {currentUser.fname}!</h3>
-      <button onClick={logout}>Logout</button>
-    </div>
-  ) : (
-    <div>
-    </div>
-  );
-    return (
-      <div>
-        {display}
-      </div>
-    );
+    if (currentUser){
+    return  (<div>
+         <h3>Welcome {currentUser.fname}!</h3>
+         <button onClick={logout}>Logout</button>
+         </div>
+    ) ;
+    }else{
+      return "";
+    }
   }
 }
 

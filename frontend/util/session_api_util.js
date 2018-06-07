@@ -6,6 +6,7 @@
     data: {user}
   })
 );
+window.signup = signup;
 
 export const login = (user) => (
  $.ajax({

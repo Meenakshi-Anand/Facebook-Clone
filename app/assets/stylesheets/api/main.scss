@@ -1,0 +1,171 @@
+.body {
+  font-family: "Helvetica", sans-serif;
+  height: 980px;
+  background: #d8dfea;
+
+}
+
+.main-section{
+  display: flex;
+  margin: 0 150px;
+  justify-content:space-between;
+}
+.main-section div{
+  width:450px;
+
+
+}
+.main-section div h2{
+
+  font-weight: 800;
+  font-size: 25px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.main-page-img{
+
+  margin-top: 35px;
+  background-image: image-url('connect-pic.jpg');
+  width:100%;
+  height:220px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.signup-form{
+  width:450px;
+}
+
+.signup-form h2{
+  font-family: "Helvetica", sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+
+}
+.signup-form h3{
+  font-family: "Helvetica", sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 1px;
+
+}
+.signup-form form{
+  display:grid;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin: 20px;
+}
+
+
+.signup-form form div{
+  display:inline-flex;
+}
+
+.signup-form form label{
+  margin:10px;
+
+}
+.signup-form form div label{
+  margin:10px;
+
+}
+.signup-form form div input[type="text"]{
+  color: #bdc7d8;
+  background-color: #fff;
+  border-color: #afbdd4;
+  margin-top: 5px;
+  height: 45px;
+  width: 182px;
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #bdc7d8;
+
+}
+
+.signup-form form input[type="text"]{
+  font-family: "Helvetica", sans-serif;
+  color: #bdc7d8;
+  padding: 0 0 0 5px;
+  background-color: #fff;
+  border-color: #afbdd4;
+  margin-top: 5px;
+  height: 45px;
+  width: 390px;
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #bdc7d8;
+
+}
+
+.signup-form form input[type="date"]{
+  font-family: "Helvetica", sans-serif;
+  color: #bdc7d8;
+  margin-top: 3px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #bdc7d8;
+  height: 45px;
+  width: 170px;
+}
+
+.birthday-signup label{
+  font-family: "Helvetica", sans-serif;
+  display:grid;
+}
+
+
+.sex-signup label{
+  font-family: "Helvetica", sans-serif;
+  display:grid;
+}
+
+.sex-signup label div label{
+  display:flex;
+  margin:0;
+}
+
+.sex-signup label div label input{
+  margin:0px 5px 5px 5px;
+  align-items: center;
+}
+.sex-signup label div{
+  margin-top: 5px;
+}
+.signup-form form button{
+  margin-left: 10px;
+  font-family: "Helvetica", sans-serif;
+  background-color: #69a74e;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color:#fff;
+  font-weight: 500;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #3b6e22;
+  padding: 1px 10px;
+  height: 45px;
+  width:200px
+}
+ .signup-form p {
+   text-align: left;
+   color: #777;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   width: 350px;
+   font-family: "Helvetica", sans-serif;
+   font-size: 12px;
+ }

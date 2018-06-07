@@ -1,0 +1,67 @@
+/* PHASE 1: Header */
+
+.header {
+  background: #3b5998;
+  height: 82px;
+  color: #fff;
+}
+
+.header nav{
+  display: flex;
+  margin: 0 150px;
+  justify-content: space-between;
+}
+.header nav h2{
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: "Lucida Grande", sans-serif;
+  padding: 25px 10px 0px 0px;
+  display:flex;
+}
+
+.header nav form{
+  width: 450px;
+  display: flex;
+  padding-top: 15px;
+  padding-left: 20px;
+  justify-content: flex-end;
+}
+.login-label-div{
+  position:relative;
+}
+
+.login-label-div label{
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  font-weight:500;
+  display: block;
+  padding: 0 10px 5px 5px;
+}
+.login-label-div label input[type="text"]{
+  color: #fff;
+  background-color: #fff;
+  border-color: #1d2a5b;
+  margin-top: 5px;
+  height: 20px;
+  width: 155px;
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-color: #29487d;
+}
+
+.header div button{
+  font-family: "Lucida Grande", sans-serif;
+  background-color: #4267b2;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #29487d;
+  padding: 1px 10px;
+  margin-top: 22px;
+  height: 22px;
+}

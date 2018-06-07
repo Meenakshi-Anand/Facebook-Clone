@@ -31,21 +31,24 @@ class LoginForm extends React.Component {
     const {formType} = this.props;
     if(formType === "LOGIN"){
     return(
-      <div>
-        <h1>{formType}</h1>
+        <div>
         <form onSubmit={this.handleSubmit}>
+          <div className="login-label-div">
           <label> Email
           <input type="text" value={this.state.email}
             onChange={this.update('email')} />
           </label>
+          </div>
+          <div className="login-label-div">
           <label> Password
             <input type="text" value={this.state.password}
               onChange={this.update('password')} />
           </label>
-          <button type="submit" value={formType}>{formType}</button>
+          </div>
+          <button type="submit" value={formType}>Log In</button>
          </form>
          {this.renderErrors()}
-      </div>
+       </div>
     );
   }
   }
@@ -65,10 +68,7 @@ class LoginForm extends React.Component {
     const {formType} = this.props;
 
     return(
-      <div>
-      {this.renderLogin()}
-
-      </div>
+      this.renderLogin()
     );
   }
 }
