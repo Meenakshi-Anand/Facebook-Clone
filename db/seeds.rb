@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-user.create!(email:'Meenakshi',password:'password',fname:'Meenakshi',
+User.create!(email:'Meenakshi',password:'password',fname:'Meenakshi',
                         lname:'Anand',sex:'F',birthday:'06-19-1990')
-user.create!(email:'Anand',password:'password',fname:'Anand',
+User.create!(email:'Anand',password:'password',fname:'Anand',
                         lname:'Narayan',sex:'F',birthday:'09-29-1989')
