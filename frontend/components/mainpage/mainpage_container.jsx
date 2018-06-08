@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import SignupFormContainer from './signup_form_container';
 import DemoLoginContainer from './demo_container';
 import { connect } from 'react-redux';
+import ProfilePictureContainer from './profile_pic_container';
 class MainPage extends React.Component{
   constructor(props){
     super(props);
@@ -23,7 +24,10 @@ class MainPage extends React.Component{
     </main>
    );
   }else{
-     return(<div className="body"></div>);
+     return(<div className="body">
+     Hello
+     <ProfilePictureContainer />
+     </div>);
   }
   }
 }

@@ -5,6 +5,7 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const REMOVE_LOGIN_ERRORS = 'REMOVE_LOGIN_ERRORS';
 export const REMOVE_SIGNUP_ERRORS = 'REMOVE_SIGNUP_ERRORS';
 export const REMOVE_LOGOUT_ERRORS = 'REMOVE_LOGOUT_ERRORS';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   user: currentUser
@@ -21,6 +22,11 @@ export const receiveLoginErrors = (errors) => ({
 
 export const receiveSignupErrors = (errors) => ({
   type: REMOVE_SIGNUP_ERRORS,
+  errors
+});
+
+export const receiveErrors = (errors) => ({
+  type: REMOVE_ERRORS,
   errors
 });
 
@@ -63,4 +69,22 @@ export const logout = () => dispatch => {
   }, (err) => {
     dispatch(receiveLogoutErrors(err.responseJSON));
   });
+};
+
+export const fetchUser = (id) => {
+  return (dispatch) => {
+    return SessionAPIUtil.fetchUser(id).then(
+      (success) => dispatch(receiveCurrentUser(success)),
+      (err) => dispatch(receiveErrors(err))
+    );
+  };
+};
+
+export const updateUser = (data) => {
+  return (dispatch) => {
+    return SessionAPIUtil.updateUser(data).then(
+      (success) => dispatch(receiveCurrentUser(success)),
+      (err) => dispatch(receiveErrors(err))
+    );
+  };
 };

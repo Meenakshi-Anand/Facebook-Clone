@@ -12,7 +12,7 @@ class Greeting extends React.Component {
 
     if (currentUser){
     return  (<div>
-         <h3>Welcome {currentUser.fname}!</h3>
+         <h3>{currentUser.fname}</h3>
          <button onClick={logout}>Logout</button>
          </div>
     ) ;
