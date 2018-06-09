@@ -74,20 +74,12 @@
 }
 
 .header li {
-  background: rgb(190,75,73);
-  border-radius: 2px;
-  border-width: thin;
-  border-style: solid;
-  border-color:rgb(167,83,80);
+  color:red;
   text-align: center;
   font-family: "Lucida Grande", sans-serif;
   font-size: 15px;
-  color: white;
-  width:180px;
-  height:30px;
-  padding-top: 5px;
   align-items: center;
-  margin-left: 45px;
   position: absolute;
-  top: 40px; left: 490px;
+  top: 60px;
+  left:750px;
 }

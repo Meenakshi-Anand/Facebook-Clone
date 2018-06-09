@@ -6,16 +6,15 @@
   font-family: "Lucida Grande", sans-serif;
 }
 .greeting {
-
   display:flex;
   justify-content: space-between;
   margin: 0 150px;
 }
-.greeting div div{
+.greeting > div > div{
   margin:5px;
 }
 
-.greeting button{
+.searchButton{
   background: white;
   height: 24px;
   width:5px;
@@ -40,9 +39,8 @@
   border-radius: 3px 0px 0px 3px;
   color: #333;
   box-sizing: border-box;
-  padding: 0px 5px;
+  padding: 2px 5px;
   background-color: white;
-  padding:px;
 }
 
 .profile_img{
@@ -62,29 +60,117 @@
 }
 .greeting ul li{
   display: flex;
-  // padding:0 5px;
+  padding:0 5px;
 }
 .greeting ul a {
   display: flex;
 }
 
-[class*="icon-"] {
-  display: inline-block;
-  background-image: url(".././images/icon-sprite.png");
-  background-size: 25px 250px;
+
+.messenger{
+height: 24px;
+width: 24px;
+background-size: cover;
+background-repeat: no-repeat;
+margin-top:0px;
+margin-top:-3px;
+background-image: image-url('icon-message.png');
+}
+.messenger:hover{
+background-image: image-url('icon-message-hover-400.png');
+}
+.friends{
+  height: 24px;
+  width: 24px;
+  background-size: cover;
   background-repeat: no-repeat;
-  vertical-align: bottom;
-  overflow: hidden;
-  height: 0;
-  width: 25px;
-  padding-top: 25px;
+  margin-top:-3px;
+  background-image: image-url('icon-users-400.png');
+}
+.friends:active{
+  background-image: image-url('icon-users-active-400.png');
+}
+.friends:hover{
+  background-image: image-url('icon-users-hover-400.png');
 }
 
-[class*="icon-small-"] {
-  width: 20px;
-  padding-top: 20px;
+.notification{
+height: 24px;
+width: 24px;
+background-size: cover;
+background-repeat: no-repeat;
+margin-top:-3px;
+background-image: image-url('icon-earth-400.png');
+}
+.notification:hover{
+background-image: image-url('icon-earth-hover-400.png');
 }
 
-.icon-friend {
-  background-position: 0 -48px;
+.dropdown{
+height: 24px;
+width: 24px;
+background-size: cover;
+background-repeat: no-repeat;
+margin-top:-3px;
+background-image: image-url('icon-dropdown-400.png');
+}
+
+.quickhelp{
+height: 24px;
+width: 24px;
+background-size: cover;
+background-repeat: no-repeat;
+margin-top:-3px;
+background-image: image-url('icon-question-400.png');
+}
+
+.grey-line{
+  color: #355088;
+  font-weight: bold;
+}
+
+.logout-dropdown{
+  position: absolute;
+}
+.logout > li:last-child ul {
+  visibility: hidden;
+}
+.logout > li:hover:last-child ul {
+  visibility: visible;
+}
+ul .logout-dropdown li {
+  position: relative;
+  top:15px;
+  right:180px;
+  width: 200px;
+  height: 300px;
+  background: #fff;
+  color: black;
+  font-weight: normal;
+  box-shadow: 0px 1px 3px 1px #333;
+}
+.logout-dropdown > li > button{
+  margin-top:10px;
+  margin-right: 20px;
+  border-top:1px;
+  border-bottom: 1px;
+  border-color: #355088;
+  height: 15px;
+  text-align: center;
+}
+
+ul .logout-dropdown > li:hover {
+  background-color: #rgb(233,235,238);
+}
+
+.triangle{
+  height: 10px;
+  width: 10px;
+  background: #fff;
+  position: absolute;
+  top: 20px;
+  left: 6px;
+  transform: rotate(45deg);
+  border-left: 1px solid #b3b3b3;
+  border-top: 1px solid #b3b3b3;
 }

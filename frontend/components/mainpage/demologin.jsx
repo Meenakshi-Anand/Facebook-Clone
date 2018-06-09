@@ -14,7 +14,8 @@ class DemoLogin extends React.Component{
    return(
      <div>
        <form onSubmit={this.handleSubmit}>
-           <button type="submit">Demo Login</button>
+           <button type="submit">Want to try the site before registering? 
+            Click here to sign in as demo user.</button>
        </form>
      </div>
   );

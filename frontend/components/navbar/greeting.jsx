@@ -20,31 +20,37 @@ class Greeting extends React.Component {
       </div>
       <div>
       <input className="text" type="text" placeholder="Search Users"/>
-      <button type="submit">
-      <i className="fas fa-search"></i></button>
+      <button className="searchButton" type="submit"></button>
       </div>
       </div>
-      <ul>
+      <ul className="logout">
       <li>
       <a href="#">
       <img className="profile_img" src={currentUser.profile_image_url}></img>
         {currentUser.fname}</a></li>
+      <li className="grey-line">|</li>
       <li><a href="#">Home</a></li>
       <li>
-      <div className="icon-friend"></div>
+      <section className="friends"></section>
       </li>
       <li>
-      <i className="fab fa-facebook-messenger"></i>
-      <div className="messages">i</div>
+      <section className="messenger"></section>
       </li>
       <li>
-      <div className="notifications">i</div>
+      <section className="notification"></section>
+      </li>
+      <li className="grey-line">|</li>
+      <li>
+      <section className="quickhelp"></section>
       </li>
       <li>
-      <div className="quickhelp"></div>
-      </li>
-      <li>
-        <button onClick={logout}>Logout</button>
+        <a href="#">
+        <section className="dropdown">
+        </section></a>
+        <ul className="logout-dropdown">
+          <section className="triangle"></section>
+          <li><button onClick={logout}>Log out</button></li>
+        </ul>
       </li>
     </ul>
     </section>
@@ -55,7 +61,7 @@ class Greeting extends React.Component {
          <header className="header">
             <nav>
             <h2> connect </h2>
-            <LoginFormContainer />;
+            <LoginFormContainer />
             </nav>
           </header>);
     }

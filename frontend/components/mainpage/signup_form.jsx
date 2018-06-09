@@ -53,9 +53,9 @@ class SignupForm extends React.Component {
     if (formType === "SIGNUP"){
     return(
       <div className="signup-form">
-        {this.renderErrors()}
         <h2>Create New Account</h2>
         <h3>It's free and always will be</h3>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <div>
           <label>
@@ -104,6 +104,7 @@ class SignupForm extends React.Component {
           and can opt out any time.</p>
           <button type="submit" value={formType}>Sign Up</button>
          </form>
+
       </div>
     );
   }

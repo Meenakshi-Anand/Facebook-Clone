@@ -170,7 +170,6 @@
 .signup-form form button{
   margin-left: 10px;
   font-family: "Helvetica", sans-serif;
-  background-color: #69a74e;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -180,7 +179,9 @@
   border-radius: 5px;
   border-width: thin;
   border-style: solid;
-  border-color: rgb(59,110,35);
+  text-shadow: 1px 1px 5px #2c5115;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #3b6e22;
   padding: 1px 10px;
   height: 45px;
   width:200px;
@@ -214,17 +215,10 @@
 }
 
 .signup-form ul {
-  background: rgb(190,75,73);
-  border-radius: 2px;
-  border-color:rgb(167,83,80);
-  text-align: center;
-  font-family: "Lucida Grande", sans-serif;
-  font-size: 15px;
-  color: white;
-  width: 180px;
-  // padding-top: 10px;
-  align-items: center;
-  margin-left: 45px;
-  position: absolute;
-  top: 180px; left: 490px;
+    color:red;
+    text-align: center;
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 15px;
+    align-items: center;
+
 }
