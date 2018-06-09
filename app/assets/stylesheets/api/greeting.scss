@@ -1,0 +1,90 @@
+.greeting_main{
+  background: #3b5998;
+  height: 41px;
+  color: #fff;
+
+  font-family: "Lucida Grande", sans-serif;
+}
+.greeting {
+
+  display:flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+.greeting div div{
+  margin:5px;
+}
+
+.greeting button{
+  background: white;
+  height: 24px;
+  width:5px;
+}
+.logo{
+  background: white;
+  color: #3b5998;
+  height: 28px;
+  width: 28px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+}
+.text{
+  display: inline;
+  height: 24px;
+  width: 400px;
+  border-radius: 3px 0px 0px 3px;
+  color: #333;
+  box-sizing: border-box;
+  padding: 0px 5px;
+  background-color: white;
+  padding:px;
+}
+
+.profile_img{
+  height: 28px;
+  width: 28px;
+  border-radius: 100%;
+  margin-right: 10px;
+  margin-top: -5px;
+}
+.greeting div{
+  display:flex;
+}
+
+.greeting ul{
+  display: flex;
+  padding-top: 15px;
+}
+.greeting ul li{
+  display: flex;
+  // padding:0 5px;
+}
+.greeting ul a {
+  display: flex;
+}
+
+[class*="icon-"] {
+  display: inline-block;
+  background-image: url(".././images/icon-sprite.png");
+  background-size: 25px 250px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 0;
+  width: 25px;
+  padding-top: 25px;
+}
+
+[class*="icon-small-"] {
+  width: 20px;
+  padding-top: 20px;
+}
+
+.icon-friend {
+  background-position: 0 -48px;
+}

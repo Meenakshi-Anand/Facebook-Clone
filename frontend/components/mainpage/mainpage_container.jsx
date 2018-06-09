@@ -25,8 +25,6 @@ class MainPage extends React.Component{
    );
   }else{
      return(<div className="body">
-     Hello
-     <ProfilePictureContainer />
      </div>);
   }
   }
