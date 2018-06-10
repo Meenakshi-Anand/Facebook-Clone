@@ -50,7 +50,7 @@ class Greeting extends React.Component {
         </section></a>
         <ul className="logout-dropdown">
           <section className="triangle"></section>
-          <li><button onClick={logout}>Log out</button></li>
+          <li><Link to="/" onClick={logout}>Log out</Link></li>
         </ul>
       </li>
     </ul>
