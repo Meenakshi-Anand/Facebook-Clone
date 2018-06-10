@@ -25,6 +25,25 @@ class ProfilePicture extends React.Component{
    formData.append("user[profile_image_url]", this.state.imageFile);
    this.props.updateUser(formData);
  }
+ updateProfilePicture(){
+   if (this.props.currentUser.id === this.props.user.id){
+     return(
+     <div className="profile-upload">
+     <div className="profile-text">
+     <button onClick={this.handleSubmit}>
+       <label htmlFor="profile-file">
+       <i className="fas fa-camera"></i>
+       <input type="file" onChange={this.updateFile } id="profile-file"/>
+       Update Profile Picture
+       </label>
+     </button>
+   </div>
+   </div>
+   );
+   }else{
+     return (<div></div>);
+   }
+ }
 
 render() {
     return(
@@ -35,17 +54,7 @@ render() {
         </div>
         <div>
         <img className="profile_image" src={this.props.user.profile_image_url}/>
-          <div className="profile-upload">
-          <div className="profile-text">
-          <button onClick={this.handleSubmit}>
-            <label htmlFor="profile-file">
-            <i className="fas fa-camera"></i>
-            <input type="file" onChange={this.updateFile } id="profile-file"/>
-            Update Profile Picture
-            </label>
-          </button>
-        </div>
-        </div>
+        {this.updateProfilePicture()}
         </div>
         <div className="intro">
         <h2> <section className='notification'/> Intro </h2>

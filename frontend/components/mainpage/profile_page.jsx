@@ -16,8 +16,10 @@ class ProfilePage extends React.Component{
         <Header user={this.props.user}/>
         <section className="profile-sec">
         <CoverPicture user={this.props.user}
+          currentUser={this.props.currentUser}
           updateUser={this.props.updateUser}/>
         <ProfilePicture user={this.props.user}
+          currentUser={this.props.currentUser}
           updateUser={this.props.updateUser}/>
         </section>
       </div>

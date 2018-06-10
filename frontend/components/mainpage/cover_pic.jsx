@@ -29,22 +29,41 @@ class CoverPicture extends React.Component{
    formData.append("user[cover_image_url]", this.state.imageFile);
    this.props.updateUser(formData);
  }
+ updateCoverPhoto(){
+   if (this.props.currentUser.id === this.props.user.id){
+     return(<div className="coverupload">
+     <div className="camera-text">
+     <button onClick={this.handleSubmit}>
+       <label htmlFor="cover-file">
+       <i className="fas fa-camera"></i>
+       <input type="file" onChange={this.updateFile } id="cover-file"/>
+       Update Cover Picture
+       </label>
+     </button>
+     </div>
+   </div>);
+   }else{
+     return(<div></div>);
+   }
+ }
+
+ addFriend(){
+   if (this.props.currentUser.id !== this.props.user.id){
+     return(
+       <div className="addfriend">
+         <button>Add Friend</button>
+       </div>
+    );
+   }else{
+     return (<div></div>);
+   }
+ }
 
 render() {
     return(
       <div className="cover-image">
         <img className="coverphoto" src={this.props.user.cover_image_url}/>
-        <div className="coverupload">
-        <div className="camera-text">
-        <button onClick={this.handleSubmit}>
-          <label htmlFor="cover-file">
-          <i className="fas fa-camera"></i>
-          <input type="file" onChange={this.updateFile } id="cover-file"/>
-          Update Cover Picture
-          </label>
-        </button>
-        </div>
-        </div>
+        {this.updateCoverPhoto()}
         <div className="div-ul">
         <ul className="timeline-ul">
           <li>Timeline</li>
@@ -54,9 +73,7 @@ render() {
           <li>More</li>
         </ul>
         </div>
-      <div className="addfriend">
-          <button>Add Friend</button>
-      </div>
+         {this.addFriend()}
   </div>);
 }
 
