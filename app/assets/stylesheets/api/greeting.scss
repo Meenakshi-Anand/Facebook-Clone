@@ -2,6 +2,8 @@
   background: #3b5998;
   height: 41px;
   color: #fff;
+  width: 100%;
+  position:fixed;
   z-index: 3;
   font-family: "Lucida Grande", sans-serif;
 }
@@ -140,7 +142,7 @@ background-image: image-url('icon-question-400.png');
 }
 ul .logout-dropdown li {
   position: relative;
-  top:15px;
+  top:11px;
   right:180px;
   width: 200px;
   height: 300px;
@@ -161,7 +163,7 @@ ul .logout-dropdown li {
 }
 
 ul .logout-dropdown > li:hover {
-  background-color: #rgb(233,235,238);
+  color: #3c66af;
 }
 
 .triangle{

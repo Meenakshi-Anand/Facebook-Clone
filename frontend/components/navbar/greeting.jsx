@@ -21,7 +21,7 @@ class Greeting extends React.Component {
       <div>
       <input className="text" type="text" placeholder="Search Users"/>
       <button className="searchButton" type="submit">
-        <i class="fas fa-search"></i></button>
+        <i className="fas fa-search"></i></button>
       </div>
       </div>
       <ul className="logout">

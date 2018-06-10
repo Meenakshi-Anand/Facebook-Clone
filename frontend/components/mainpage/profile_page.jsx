@@ -13,7 +13,7 @@ class ProfilePage extends React.Component{
   render(){
     return (
       <div className="profile">
-        <Header user={this.props.user}/>
+        <Header class="main-header" user={this.props.user}/>
         <section className="profile-sec">
         <CoverPicture user={this.props.user}
           currentUser={this.props.currentUser}
