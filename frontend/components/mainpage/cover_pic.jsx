@@ -16,10 +16,6 @@ class CoverPicture extends React.Component{
    if (file) {
      fileReader.readAsDataURL(file);
    }
-   const formData = new FormData();
-   if (this.state.imageFile)
-   formData.append("user[cover_image_url]", this.state.imageFile);
-   this.props.updateUser(formData);
 
  }
 
@@ -33,13 +29,15 @@ class CoverPicture extends React.Component{
    if (this.props.currentUser.id === this.props.user.id){
      return(<div className="coverupload">
      <div className="camera-text">
-     <button onClick={this.handleSubmit}>
+       <div className="cover-text">   
        <label htmlFor="cover-file">
        <i className="fas fa-camera"></i>
-       <input type="file" onChange={this.updateFile } id="cover-file"/>
-       Update Cover Picture
+       <input type="file" onChange={this.updateFile} id="cover-file"/>
        </label>
-     </button>
+       <button onClick={this.handleSubmit}>
+         Update Cover Picture
+      </button>
+    </div>
      </div>
    </div>);
    }else{

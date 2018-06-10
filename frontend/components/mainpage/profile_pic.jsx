@@ -5,6 +5,7 @@ class ProfilePicture extends React.Component{
     this.state = {imageFile:null,imageUrl:null};
     this.handleSubmit=this.handleSubmit.bind(this);
     this.updateFile =this.updateFile.bind(this);
+
   }
 
  updateFile(e) {
@@ -30,13 +31,15 @@ class ProfilePicture extends React.Component{
      return(
      <div className="profile-upload">
      <div className="profile-text">
-     <button onClick={this.handleSubmit}>
+       <div className="button-text">
        <label htmlFor="profile-file">
        <i className="fas fa-camera"></i>
-       <input type="file" onChange={this.updateFile } id="profile-file"/>
-       Update Profile Picture
+       <input type="file" onChange={this.updateFile} id="profile-file"/>
        </label>
-     </button>
+       <button onClick={this.handleSubmit}>
+          Update Profile Picture
+       </button>
+       </div>
    </div>
    </div>
    );
