@@ -5,10 +5,10 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token
 
-  has_attached_file :profile_image_url, default_url: "app/assets/images/female-default.jpg"
+  has_attached_file :profile_image_url, default_url: "./images/female-default.jpg"
   validates_attachment_content_type :profile_image_url, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_image_url, default_url: "app/assets/images/male-default.jpg"
+  has_attached_file :cover_image_url, default_url: "./images/connect-pic.jpg"
   validates_attachment_content_type :cover_image_url, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password

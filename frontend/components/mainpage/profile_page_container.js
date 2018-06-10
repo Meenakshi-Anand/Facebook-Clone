@@ -1,11 +1,9 @@
 import {updateUser,fetchUser} from '../../actions/session_actions';
 import { connect } from 'react-redux';
-import ProfilePicture from './profile_pic';
-const mapStateToProps = (state) => {
-
-  const currentUserId = state.session.id ;
+import ProfilePage from './profile_page';
+const mapStateToProps = (state,ownProps) => {
   return (
-    {currentUser: state.entities.users[currentUserId]}
+    {user: state.entities.users[ownProps.match.params.userId]}
   );
 };
 
@@ -15,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect(mapStateToProps , mapDispatchToProps)(ProfilePicture);
+export default connect(mapStateToProps , mapDispatchToProps)(ProfilePage);

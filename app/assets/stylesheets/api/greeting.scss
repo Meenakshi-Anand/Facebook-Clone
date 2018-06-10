@@ -2,7 +2,7 @@
   background: #3b5998;
   height: 41px;
   color: #fff;
-
+  z-index: 3;
   font-family: "Lucida Grande", sans-serif;
 }
 .greeting {
@@ -148,6 +148,7 @@ ul .logout-dropdown li {
   color: black;
   font-weight: normal;
   box-shadow: 0px 1px 3px 1px #333;
+  z-index: 1;
 }
 .logout-dropdown > li > button{
   margin-top:10px;
@@ -173,4 +174,8 @@ ul .logout-dropdown > li:hover {
   transform: rotate(45deg);
   border-left: 1px solid #b3b3b3;
   border-top: 1px solid #b3b3b3;
+}
+
+.logout a:hover{
+    color: black;
 }

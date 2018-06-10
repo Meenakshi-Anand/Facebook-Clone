@@ -29,10 +29,30 @@ class ProfilePicture extends React.Component{
 render() {
     return(
       <div>
-        Profile Picture
-        <img src={this.props.currentUser.profile_image_url}/>
-        <input type="file" onChange={this.updateFile}/>
-        <button onClick={this.handleSubmit}>Update Profile Picture</button>
+        <div className="profile-name">
+        <h1>{this.props.user.fname}</h1>
+        <h1>{this.props.user.lname}</h1>
+        </div>
+        <div>
+        <img className="profile_image" src={this.props.user.profile_image_url}/>
+          <div className="profile-upload">
+          <div className="profile-text">
+          <button onClick={this.handleSubmit}>
+            <label htmlFor="profile-file">
+            <i className="fas fa-camera"></i>
+            <input type="file" onChange={this.updateFile } id="profile-file"/>
+            Update Profile Picture
+            </label>
+          </button>
+        </div>
+        </div>
+        </div>
+        <div className="intro">
+        <h2> <section className='notification'/> Intro </h2>
+        <h3>Birthday : {this.props.user.birthday}</h3>
+        </div>
+        <div className="friends-page"> Friends </div>
+        <div className="posts"> Posts </div>
       </div>);
 }
 

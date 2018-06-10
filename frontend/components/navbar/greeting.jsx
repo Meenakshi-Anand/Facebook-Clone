@@ -25,9 +25,9 @@ class Greeting extends React.Component {
       </div>
       <ul className="logout">
       <li>
-      <a href="#">
+      <Link to={`/users/${currentUser.id}`}>
       <img className="profile_img" src={currentUser.profile_image_url}></img>
-        {currentUser.fname}</a></li>
+        {currentUser.fname}</Link></li>
       <li className="grey-line">|</li>
       <li><a href="#">Home</a></li>
       <li>
