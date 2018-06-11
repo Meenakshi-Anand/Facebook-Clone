@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "users/search", to: "users#search"
     resources :users, only: [:index,:create,:show,:update,:edit]
     resource :session, only: [:create,:destroy]
+    resources :friend_requests, only: [:create,:update,:destroy]
   end
 
   root "static_pages#root"

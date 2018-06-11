@@ -14,6 +14,25 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+
+  has_many :requests_to_friends,
+  primary_key: :id,
+  foreign_key: :requestor_id,
+  className: :FriendRequest
+
+  has_many :requests_from_friends,
+  primary_key: :id,
+  foreign_key: :approver_id,
+  className: :FriendRequest
+
+  has_many :requests_by_me,
+  through: :requests_to_friends,
+  source: :requestor
+
+  has_many :requests_by_friends,
+  through: :request_from_friends,
+  source: :approver
+
   def self.searchNames(query)
   sql_query = "%" + query.downcase + "%"
   User
