@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LoginFormContainer from './login_form_container';
 import SearchContainer from './search_container';
+import ApproveFriendContainer from '../friend_request/approve_friend_container';
 class Greeting extends React.Component {
   constructor(props){
     super(props);
@@ -20,9 +21,7 @@ class Greeting extends React.Component {
       <div>
       <h2 className="logo">C</h2>
       </div>
-      <input className="text" type="text" placeholder="Search Users"/>
-      <button className="searchButton" type="submit">
-      <i className="fas fa-search"></i></button>
+      <SearchContainer />
       </div>
       <ul className="logout">
       <li>
@@ -32,7 +31,9 @@ class Greeting extends React.Component {
       <li className="grey-line">|</li>
       <li><a href="#">Home</a></li>
       <li>
-      <section className="friends"></section>
+      <section className="friends">
+
+      </section>
       </li>
       <li>
       <section className="messenger"></section>

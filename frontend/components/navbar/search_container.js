@@ -5,6 +5,7 @@ import Search from './search';
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   return {
     searchResults: state.entities.users.search_results,
     currentUserId: state.session.id,

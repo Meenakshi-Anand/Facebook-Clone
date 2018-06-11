@@ -1,4 +1,5 @@
 import React from 'react';
+import FriendsContainer from '../friend_request/friends_container';
 class ProfilePicture extends React.Component{
   constructor(props){
     super(props);
@@ -63,7 +64,9 @@ render() {
         <h2> <section className='notification'/> Intro </h2>
         <h3>Birthday : {this.props.user.birthday}</h3>
         </div>
-        <div className="friends-page"> Friends </div>
+        <div className="friends-page">
+          <FriendsContainer />
+        </div>
         <div className="posts"> Posts </div>
       </div>);
 }

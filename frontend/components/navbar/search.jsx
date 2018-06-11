@@ -11,6 +11,11 @@ import SearchIndexItem from './search_item';
       this.update = this.update.bind(this);
    }
 
+   componentDidMount(){
+     debugger
+     this.props.search(this.state.query);
+   }
+
    update(e) {
      this.setState({ query: e.currentTarget.value }, () => {
      this.sendQuery();});
@@ -22,15 +27,22 @@ import SearchIndexItem from './search_item';
 
 
   render(){
+    debugger
     let searchResults = [];
+    console.log("search results");
     console.log(this.props.searchResults);
-    if (this.props.searchResults.length > 0) {
-      searchResults = this.props.searchResults.map((userId, idx) => {
+
+    if (this.props.searchResults === undefined) {
+      return 'loading';
+    }
+
+    else {
+      searchResults = this.props.searchResults.map((user, idx) => {
         return (<SearchIndexItem clearSearchResults={this.clearAll}
-          user={this.props.users[userId]}
+          user={this.props.users[user.id]}
           key={idx} />);
       });
-    }
+
     return (
       <div>
       <input className="text" type="text" value={this.state.search}
@@ -42,5 +54,6 @@ import SearchIndexItem from './search_item';
       </div>
     );
   }
+}
 }
 export default Search;

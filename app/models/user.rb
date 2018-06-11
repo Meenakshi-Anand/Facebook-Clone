@@ -15,23 +15,66 @@ class User < ApplicationRecord
   attr_reader :password
 
 
-  has_many :requests_to_friends,
-  primary_key: :id,
-  foreign_key: :requestor_id,
-  className: :FriendRequest
+  has_many :requested_friendships,
+    primary_key: :id,
+    foreign_key: :requestor_id,
+    class_name: :FriendRequest
 
-  has_many :requests_from_friends,
-  primary_key: :id,
-  foreign_key: :approver_id,
-  className: :FriendRequest
+  has_many :received_friendships,
+    primary_key: :id,
+    foreign_key: :approver_id,
+    class_name: :FriendRequest
 
-  has_many :requests_by_me,
-  through: :requests_to_friends,
-  source: :requestor
+  has_many :requested_friends,
+    through: :requested_friendships,
+    source: :approver
 
-  has_many :requests_by_friends,
-  through: :request_from_friends,
-  source: :approver
+  has_many :received_friends,
+    through: :received_friendships,
+    source: :requestor
+
+  def all_friends
+    self.requested_friends.concat( self.received_friends)
+  end
+
+  def outgoing_pending_friends
+    self.requested_friends.where("approval_status = false")
+  end
+
+  def outgoing_pending_friends_ids
+    outgoing_pending_friends
+      .map { |friend| friend.id }
+  end
+
+  def incoming_pending_friends
+    self.received_friends.where("approval_status = false")
+  end
+
+  def incoming_pending_friends_ids
+    incoming_pending_friends
+      .sort_by{ |friend| friend.created_at }
+      .reverse
+      .map { |friend| friend.id }
+  end
+
+  def accepted_friends
+    self.requested_friends.where("approval_status = true") +
+      self.received_friends.where("approval_status = true")
+  end
+
+  def accepted_friends_ids
+    accepted_friends.map { |friend| friend.id }
+  end
+
+  def denied_friends
+    self.requested_friends.where("approval_status = 'denied'") +
+      self.received_friends.where("approval_status = 'denied'")
+  end
+
+  def friendship_status(other_user_id)
+    FriendRequest.find_by(requestor_id: self.id, approver_id: other_user_id)&.status ||
+    FriendRequest.find_by(requestor_id: other_user_id, approver_id: self.id)&.status
+  end
 
   def self.searchNames(query)
   sql_query = "%" + query.downcase + "%"

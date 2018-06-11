@@ -1,4 +1,5 @@
 import React from 'react';
+import AddFriendContainer from '../friend_request/add_friend_container';
 class CoverPicture extends React.Component{
   constructor(props){
     super(props);
@@ -29,7 +30,7 @@ class CoverPicture extends React.Component{
    if (this.props.currentUser.id === this.props.user.id){
      return(<div className="coverupload">
      <div className="camera-text">
-       <div className="cover-text">   
+       <div className="cover-text">
        <label htmlFor="cover-file">
        <i className="fas fa-camera"></i>
        <input type="file" onChange={this.updateFile} id="cover-file"/>
@@ -48,9 +49,7 @@ class CoverPicture extends React.Component{
  addFriend(){
    if (this.props.currentUser.id !== this.props.user.id){
      return(
-       <div className="addfriend">
-         <button>Add Friend</button>
-       </div>
+       <AddFriendContainer />
     );
    }else{
      return (<div></div>);

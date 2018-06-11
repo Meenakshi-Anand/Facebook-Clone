@@ -1,6 +1,6 @@
 import * as SessionAPIUtil from '../util/session_api_util';
 
-export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const RECEIVE_USER = 'RECEIVE_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const REMOVE_LOGIN_ERRORS = 'REMOVE_LOGIN_ERRORS';
 export const REMOVE_SIGNUP_ERRORS = 'REMOVE_SIGNUP_ERRORS';
@@ -9,9 +9,9 @@ export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
-export const receiveCurrentUser = (currentUser) => ({
-  type: RECEIVE_CURRENT_USER,
-  user: currentUser
+export const receiveUser = (user) => ({
+  type: RECEIVE_USER,
+  user
 });
 
 export const receiveAllUsers = (users) => ({
@@ -48,7 +48,7 @@ export const receiveLogoutErrors = (errors) => ({
 export const login = (user) => dispatch => {
   return SessionAPIUtil.login(user)
   .then(newUser => {
-    dispatch(receiveCurrentUser(newUser));
+    dispatch(receiveUser(newUser));
   }, (err => {
     dispatch(receiveLoginErrors(err.responseJSON));
   }));
@@ -56,7 +56,7 @@ export const login = (user) => dispatch => {
 
 export const demologin = () => dispatch => {
   return SessionAPIUtil.demologin().then(user=> {
-    return dispatch(receiveCurrentUser(user));
+    return dispatch(receiveUser(user));
   });
 };
 
@@ -65,7 +65,7 @@ export const demologin = () => dispatch => {
 export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)
   .then(newUser => {
-    dispatch(receiveCurrentUser(newUser));
+    dispatch(receiveUser(newUser));
   }, (err => {
     dispatch(receiveSignupErrors(err.responseJSON));
   }));
@@ -83,7 +83,7 @@ export const logout = () => dispatch => {
 export const fetchUser = (id) => {
   return (dispatch) => {
     return SessionAPIUtil.fetchUser(id).then(
-      (success) => dispatch(receiveCurrentUser(success)),
+      (success) => dispatch(receiveUser(success)),
       (err) => dispatch(receiveErrors(err))
     );
   };
@@ -101,7 +101,7 @@ export const fetchAllUsers = () => {
 export const updateUser = (data) => {
   return (dispatch) => {
     return SessionAPIUtil.updateUser(data).then(
-      (success) => dispatch(receiveCurrentUser(success)),
+      (success) => dispatch(receiveUser(success)),
       (err) => dispatch(receiveErrors(err))
     );
   };
