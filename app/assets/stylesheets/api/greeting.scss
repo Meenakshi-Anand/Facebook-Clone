@@ -17,11 +17,12 @@
 }
 
 .searchButton{
-  background: white;
   height: 24px;
   width:5px;
   position: absolute;
-  top:8px;
+  top:12px;
+  color: #333;
+  left:570px;
 }
 .logo{
   background: white;
@@ -185,10 +186,4 @@ ul .logout-dropdown > li:hover {
 
 .logout a:hover{
     color: black;
-}
-.searchButton{
-  position: absolute;
-  color:#355088;
-  border-color:1px solid black;
-  left:565px;
 }

@@ -15,23 +15,23 @@ class User < ApplicationRecord
   attr_reader :password
 
 
-  has_many :requested_friendships,
-    primary_key: :id,
-    foreign_key: :requestor_id,
-    class_name: :FriendRequest
+  has_many :requested_friend_requests,
+  primary_key: :id,
+  foreign_key: :requestor_id,
+  class_name: :FriendRequest
 
-  has_many :received_friendships,
-    primary_key: :id,
-    foreign_key: :approver_id,
-    class_name: :FriendRequest
+  has_many :received_friend_requests,
+  primary_key: :id,
+  foreign_key: :approver_id,
+  class_name: :FriendRequest
 
   has_many :requested_friends,
-    through: :requested_friendships,
-    source: :approver
+  through: :requested_friend_requests,
+  source: :requestor
 
   has_many :received_friends,
-    through: :received_friendships,
-    source: :requestor
+  through: :received_friend_requests,
+  source: :approver
 
   def all_friends
     self.requested_friends.concat( self.received_friends)
@@ -58,7 +58,7 @@ class User < ApplicationRecord
   end
 
   def accepted_friends
-    self.requested_friends.where("approval_status = true") +
+    self.requested_friends.where("approval_status = true")+
       self.received_friends.where("approval_status = true")
   end
 
@@ -67,8 +67,8 @@ class User < ApplicationRecord
   end
 
   def denied_friends
-    self.requested_friends.where("approval_status = 'denied'") +
-      self.received_friends.where("approval_status = 'denied'")
+    self.requested_friends.where("approval_status = false") +
+      self.received_friends.where("approval_status = false")
   end
 
   def friendship_status(other_user_id)

@@ -1,0 +1,35 @@
+
+
+.searchResults ul {
+  position:absolute;
+  top:33px;
+  left:200px;
+  background-color: white;
+  display:list-item;
+}
+
+.searchResults ul li{
+  height:50px;
+  width:380px;
+  border: solid 1px #ddd;
+  list-style: none;
+}
+.search-div{
+  display:flex;
+  width:380px;
+  position: relative;
+}
+
+.name-search{
+ padding:0 40px 40px 40px;
+ color:black;
+}
+
+.search-div img{
+  height: 28px;
+  width: 28px;
+  position:absolute;
+  margin-top: 15px;
+  border-radius: 100%;
+
+}

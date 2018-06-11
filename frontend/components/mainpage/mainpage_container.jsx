@@ -3,9 +3,13 @@ import {withRouter} from 'react-router-dom';
 import SignupFormContainer from './signup_form_container';
 import DemoLoginContainer from './demo_container';
 import { connect } from 'react-redux';
+import {fetchAllUsers} from '../../actions/session_actions';
 class MainPage extends React.Component{
   constructor(props){
     super(props);
+  }
+  componentDidMount(){
+    this.props.fetchAllUsers();
   }
   render(){
   if (!this.props.currentUser){
@@ -32,8 +36,14 @@ class MainPage extends React.Component{
 const mapStateToProps = (state) => {
 const currentUserId = state.session.id ;
   return (
-    {currentUser: state.entities.users[currentUserId] }
+    { currentUser:state.entities.users[currentUserId],
+          users:state.entities.users }
   );
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAllUsers: ()=>dispatch(fetchAllUsers())
+  };
+};
 
-export default withRouter(connect(mapStateToProps,null)(MainPage));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(MainPage));

@@ -6,8 +6,6 @@ import ApproveFriendContainer from '../friend_request/approve_friend_container';
 class Greeting extends React.Component {
   constructor(props){
     super(props);
-    this.users = Object.values(this.props.fetchAllUsers());
-    console.log(this.users);
   }
 
   render(){

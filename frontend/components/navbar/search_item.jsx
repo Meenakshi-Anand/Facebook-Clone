@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default ({user, clearSearchResults}) => {
   return (
-    <Link onClick={() => clearSearchResults()} to={`/users/${user.id}`} >
+    <li>
+
+    <Link onClick={()=>clearSearchResults()} to={`/users/${user.id}`} >
+      <div className="search-div">
       <img src={user.profile_image_url} />
-      <h4>{user.fname.concat(" ").concat(user.lname)}</h4>
+      <h4 class="name-search">{user.fname.concat(" ").concat(user.lname)}</h4>
+      </div>
     </Link>
+
+
+    </li>
   );
 };

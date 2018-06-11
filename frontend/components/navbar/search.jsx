@@ -5,14 +5,13 @@ import SearchIndexItem from './search_item';
    constructor(props){
      super(props);
      this.state = {
-       query: ""
+       query: " "
      };
       this.sendQuery = this.sendQuery.bind(this);
       this.update = this.update.bind(this);
    }
 
    componentDidMount(){
-     debugger
      this.props.search(this.state.query);
    }
 
@@ -27,33 +26,32 @@ import SearchIndexItem from './search_item';
 
 
   render(){
-    debugger
     let searchResults = [];
-    console.log("search results");
-    console.log(this.props.searchResults);
-
     if (this.props.searchResults === undefined) {
-      return 'loading';
-    }
-
-    else {
+      return '';
+    }else {
       searchResults = this.props.searchResults.map((user, idx) => {
-        return (<SearchIndexItem clearSearchResults={this.clearAll}
-          user={this.props.users[user.id]}
-          key={idx} />);
-      });
-
+        return  <SearchIndexItem
+          clearSearchResults={this.props.clearSearchResults}
+          user={user}
+          key={idx} />;
+    });
+}
     return (
       <div>
       <input className="text" type="text" value={this.state.search}
       onChange={this.update} placeholder="Search Users"/>
-      <i className="fas fa-search"></i>
-      <div className='searchResults'>
+      <div  className="searchButton">
+      <i  className="fas fa-search"></i>
+      </div>
+      <div className="searchResults">
+        <ul>
           {searchResults}
+        </ul>
       </div>
       </div>
     );
   }
 }
-}
+
 export default Search;

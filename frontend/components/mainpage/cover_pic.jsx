@@ -3,10 +3,12 @@ import AddFriendContainer from '../friend_request/add_friend_container';
 class CoverPicture extends React.Component{
   constructor(props){
     super(props);
+    console.log(this.props);
     this.state = {imageFile:null,imageUrl:null};
     this.handleSubmit=this.handleSubmit.bind(this);
     this.updateFile =this.updateFile.bind(this);
   }
+  
  updateFile(e) {
    const file = e.currentTarget.files[0];
    const fileReader = new FileReader();
@@ -49,7 +51,7 @@ class CoverPicture extends React.Component{
  addFriend(){
    if (this.props.currentUser.id !== this.props.user.id){
      return(
-       <AddFriendContainer />
+     <div></div>
     );
    }else{
      return (<div></div>);
