@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import LoginFormContainer from './login_form_container';
-
+import SearchContainer from './search_container';
 class Greeting extends React.Component {
   constructor(props){
     super(props);
+    this.users = Object.values(this.props.fetchAllUsers());
+    console.log(this.users);
   }
 
   render(){
@@ -18,11 +20,9 @@ class Greeting extends React.Component {
       <div>
       <h2 className="logo">C</h2>
       </div>
-      <div>
       <input className="text" type="text" placeholder="Search Users"/>
       <button className="searchButton" type="submit">
-        <i className="fas fa-search"></i></button>
-      </div>
+      <i className="fas fa-search"></i></button>
       </div>
       <ul className="logout">
       <li>

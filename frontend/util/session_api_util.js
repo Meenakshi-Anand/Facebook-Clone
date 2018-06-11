@@ -33,16 +33,30 @@ export const logout = () => (
 export const fetchUser = (id) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/users/${id}`,
+    url: `api/users/${id}`,
+  });
+};
+
+export const fetchAllUsers = () => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/users`,
   });
 };
 
 export const updateUser = (formdata) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/users/_`,
+    url: `api/users/_`,
     data: formdata,
     processData: false,
     contentType: false,
+  });
+};
+
+export const searchUsers = (query) => {
+  return $.ajax({
+    url: `/api/users/search`,
+    data: { query }
   });
 };

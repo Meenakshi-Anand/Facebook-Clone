@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
+    render :index
   end
 
   def create
@@ -29,6 +30,11 @@ class Api::UsersController < ApplicationController
     else
       render json: ["No user found"], status: 404
     end
+  end
+
+  def search
+  @users = User.searchNames(params[:query])
+  render :search
   end
 
   private

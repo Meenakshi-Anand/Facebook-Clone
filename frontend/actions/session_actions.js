@@ -6,10 +6,19 @@ export const REMOVE_LOGIN_ERRORS = 'REMOVE_LOGIN_ERRORS';
 export const REMOVE_SIGNUP_ERRORS = 'REMOVE_SIGNUP_ERRORS';
 export const REMOVE_LOGOUT_ERRORS = 'REMOVE_LOGOUT_ERRORS';
 export const REMOVE_ERRORS = 'REMOVE_ERRORS';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
+export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   user: currentUser
 });
+
+export const receiveAllUsers = (users) => ({
+  type: RECEIVE_ALL_USERS,
+  users
+});
+
 
 export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
@@ -80,11 +89,37 @@ export const fetchUser = (id) => {
   };
 };
 
+export const fetchAllUsers = () => {
+  return (dispatch) => {
+    return SessionAPIUtil.fetchAllUsers().then(
+      (users) => dispatch(receiveAllUsers(users)),
+      (err) => dispatch(receiveErrors(err))
+    );
+  };
+};
+
 export const updateUser = (data) => {
   return (dispatch) => {
     return SessionAPIUtil.updateUser(data).then(
       (success) => dispatch(receiveCurrentUser(success)),
       (err) => dispatch(receiveErrors(err))
     );
+  };
+};
+
+const receiveSearch = (results) => {
+  return {
+    type: RECEIVE_SEARCH,
+    results
+  };
+};
+
+export const searchUsers = (query) => (dispatch) => {
+  return SessionAPIUtil.searchUsers(query).then((users) =>
+  dispatch(receiveSearch(users)), (err) => dispatch(receiveErrors(err)));
+};
+export const clearSearchResults = () => {
+  return {
+    type: CLEAR_SEARCH_RESULTS
   };
 };

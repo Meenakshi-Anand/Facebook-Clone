@@ -20,6 +20,8 @@
   background: white;
   height: 24px;
   width:5px;
+  position: absolute;
+  top:8px;
 }
 .logo{
   background: white;
@@ -35,13 +37,16 @@
   text-align: center;
 }
 .text{
+  position: absolute;
   display: inline;
   height: 24px;
   width: 400px;
   border-radius: 3px 0px 0px 3px;
   color: #333;
   box-sizing: border-box;
-  padding: 2px 5px;
+  top:8px;
+  left:195px;
+  padding: 5px 5px;
   background-color: white;
 }
 

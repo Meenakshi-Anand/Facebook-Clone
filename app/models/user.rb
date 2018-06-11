@@ -11,7 +11,15 @@ class User < ApplicationRecord
   has_attached_file :cover_image_url,default_url: 'welcome.png'
   validates_attachment_content_type :cover_image_url, content_type: /\Aimage\/.*\Z/
 
+
   attr_reader :password
+
+  def self.searchNames(query)
+  sql_query = "%" + query.downcase + "%"
+  User
+    .where('lower(fname) LIKE ? OR lower(lname) LIKE ?', sql_query, sql_query)
+    .limit(8)
+  end
 
   def self.find_by_credentials(email,password)
     user = User.find_by(email: email)
