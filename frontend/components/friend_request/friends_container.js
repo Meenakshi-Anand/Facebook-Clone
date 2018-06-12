@@ -5,15 +5,14 @@ import Friend from './friends';
 const mapStateToProps = (state,ownParams) => {
   const currentUserId = state.session.id ;
   return (
-    {currentUser: state.entities.users[currentUserId],
-    users:state.entities.users}
+    {users:state.entities.users}
 
   );
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchFriends: (id) => dispatch(fetchFriends(id)),
-  fetchAllUsers: ()=> dispatch(fetchAllUsers)
+  fetchAllUsers: ()=> dispatch(fetchAllUsers())
 });
 
 

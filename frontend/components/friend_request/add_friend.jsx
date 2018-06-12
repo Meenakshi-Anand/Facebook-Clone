@@ -3,8 +3,8 @@ import React from 'react';
 class AddFriend extends React.Component{
 
  handleFriendRequest(){
-   this.props.postFriendRequest({approver_id:this.props.user.id,
-     requestor_id:this.props.currentUser.id,approval_status:'pending'});
+   this.props.postFriendRequest(this.props.user.id,
+     this.props.currentUser.id,'pending');
  }
  renderErrors(){
    const {errors} = this.props;
@@ -18,12 +18,29 @@ class AddFriend extends React.Component{
       </ul>);
  }
  render(){
+   if(this.props.currentUser.friends.includes(this.props.user.id)){
+     return (
+       <div className="addfriend">
+         <button>
+           Friends</button>
+       </div>
+     );
+   }else if(this.props.currentUser.friend_requested.
+     includes(this.props.user.id)){
+     return (
+       <div className="addfriend">
+         <button>
+           Pending Request</button>
+       </div>
+     );
+   }else{
    return (
      <div className="addfriend">
        <button onClick={()=>this.handleFriendRequest()}>
          Add Friend</button>
      </div>
    );
+  }
  }
 }
 

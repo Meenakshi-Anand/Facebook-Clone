@@ -65,7 +65,7 @@ render() {
         <h3>Birthday : {this.props.user.birthday}</h3>
         </div>
         <div className="friends-page">
-        <FriendsContainer/>
+        <FriendsContainer user={this.props.user}/>
         </div>
         <div className="posts"> Posts </div>
       </div>);

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import SearchIndexItem from './search_item';
 
@@ -28,7 +29,7 @@ import SearchIndexItem from './search_item';
   render(){
     let searchResults = [];
     if (this.props.searchResults === undefined) {
-      return '';
+      searchResults = [];
     }else {
       searchResults = this.props.searchResults.map((user, idx) => {
         return  <SearchIndexItem

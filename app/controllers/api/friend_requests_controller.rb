@@ -10,7 +10,7 @@ class Api::FriendRequestsController < ApplicationController
   end
 
   def index
-    @friends = User.find(params[:user_id]).accepted_friends_ids
+    @friends = User.find(params[:user_id]).accepted_friends.limit(9)
   end
 
   def show
