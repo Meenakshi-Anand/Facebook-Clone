@@ -12,36 +12,30 @@ class ApproveFriendIndexItem extends React.Component {
     let { patchFriendRequest, destroyFriendRequest,
        currentUser, receiveUser, user } = this.props;
     return (type === "confirm") ? (
-      () => patchFriendRequest(currentUser.id, user.id, "accepted")
+      () => patchFriendRequest({approver_id:currentUser.id,
+        requestor_id:user.id,approval_status: "accepted"})
         .then(() => receiveUser(currentUser.id))
      ) : (
-      () => destroyFriendRequest(currentUser.id, user.id)
+      () => destroyFriendRequest({approver_id:currentUser.id, requestor_id:user.id})
         .then(() => receiveUser(currentUser.id))
      );
   }
 
   render() {
     let { user } = this.props;
-    let profile_img_url;
-    let first_name;
-    let last_name;
-    let id;
 
-    if (user) {
-      profile_img_url = user.profile_image_url;
-      first_name = user.fname;
-      last_name = user.lname;
-      id = user.id;
+    if (user === 'undefined') {
+      return "";
     }
-
+ else {
     return (
       <div>
         <div>
           <Link
-            to={`/users/${id}`}>
+            to={`/users/${user.id}`}>
             <img
-              src={profile_img_url}/>
-            <span>{first_name} {last_name}</span>
+              src={user.profile_image_url}/>
+            <span>{user.fname} {user.lname}</span>
           </Link>
         </div>
 
@@ -55,6 +49,7 @@ class ApproveFriendIndexItem extends React.Component {
         </div>
       </div>
     );
+  }
   }
 }
 

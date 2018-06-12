@@ -1,7 +1,6 @@
-import {patchFriendRequest,destroyFriendRequest}
- from '../../util/friend_request_api_util';
+
  import {fetchUser,deleteFriend,approveFriend}
- from './../../actions/session_actions';
+ from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import ApproveFriendIndexItem from './add_friend';
 const mapStateToProps = (state,ownProps) => {

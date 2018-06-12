@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {fetchFriendRequests,deleteFriend,approveFriend}
+from '../../actions/friend_request_actions';
+import {fetchUser} from '../../actions/session_actions';
 import ApproveFriendIndex from './approve_friend_index';
-import {
-  fetchFriendRequests,
-  patchFriendRequest,
-  destroyFriendRequest
-} from '../../util/friend_request_api_util';
+
 
 
 const mapStateToProps = state => {
