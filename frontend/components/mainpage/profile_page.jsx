@@ -7,13 +7,16 @@ class ProfilePage extends React.Component{
   constructor(props){
     super(props);
   }
-  componentWillMount(){
+
+  componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
-    this.setState(this.user);
   }
+
+
+
   render(){
     let {user}=this.props;
-    if (user === 'undefined'){
+    if (user === undefined){
       return "";
     }else{
     return (

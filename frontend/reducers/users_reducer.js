@@ -9,10 +9,13 @@ const usersReducer = (state = { search_results: []}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_USERS:
     return action.users;
+
     case RECEIVE_USER:
-      const newState = merge({},state);
-      newState[action.user.id] = action.user;
-      return newState;
+      // const newUser = { [action.user.id]: action.user};
+      return merge({}, state, action.user);
+      // const newState = merge({},state);
+      // newState[action.user.id] = action.user;
+      // return newState;
     case CLEAR_SEARCH_RESULTS:
      let  clearState = merge({}, state);
        clearState.search_results = [];

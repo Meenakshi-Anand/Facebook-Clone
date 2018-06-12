@@ -1,4 +1,4 @@
-class FriendRequestRequestsController < ApplicationController
+class Api::FriendRequestsController < ApplicationController
 
   def create
     @friend_request = FriendRequest.new(friend_params)
@@ -10,7 +10,7 @@ class FriendRequestRequestsController < ApplicationController
   end
 
   def index
-    @friend_requests = User.find(params[:user_id]).accepted_friends_ids
+    @friends = User.find(params[:user_id]).accepted_friends_ids
   end
 
   def show
@@ -53,7 +53,6 @@ class FriendRequestRequestsController < ApplicationController
   private
 
   def friend_params
-    params.require(:friend_request).permit(:requestor_id, :approver_id,
-       :approval_status)
+    params.require(:friend_request).permit(:requestor_id, :approver_id,:approval_status)
   end
 end

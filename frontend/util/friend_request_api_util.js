@@ -5,13 +5,15 @@ export const fetchFriendRequests = userId => (
   })
 );
 
-export const postFriendRequest = (request) => (
+export const postFriendRequest = (approverId,requestorId,approval_status) => (
   $.ajax({
-    url: `/api/users/${request.approverId}/friend_requests`,
+    url: `/api/users/${approverId}/friend_requests`,
     method: "POST",
     data: {
       friend_request: {
-        request
+        approver_id:approverId,
+        requestor_id:requestorId,
+        approval_status:approval_status
       }
     },
   })

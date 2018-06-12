@@ -1,7 +1,7 @@
 class FriendRequest < ApplicationRecord
- validates :requestor_id, :approver_id, :status, presence: true
+ validates :requestor_id, :approver_id, :approval_status, presence: true
  validates :requestor_id, uniqueness: { scope: :approver_id }
- validates :status, inclusion: { in: %w(pending accepted denied) }
+ validates :approval_status, inclusion: { in: %w(pending accepted denied) }
 
  belongs_to :requestor,
    primary_key: :id,
@@ -10,6 +10,8 @@ class FriendRequest < ApplicationRecord
 
  belongs_to :approver,
    primary_key: :id,
-   foreign_key: :receiver_id,
+   foreign_key: :approver_id,
    class_name: :User
+
+
 end

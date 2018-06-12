@@ -24,7 +24,7 @@ class ApproveFriendIndexItem extends React.Component {
   render() {
     let { user } = this.props;
 
-    if (user === 'undefined') {
+    if (user === undefined) {
       return "";
     }
  else {

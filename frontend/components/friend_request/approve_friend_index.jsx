@@ -9,7 +9,6 @@ class ApproveFriendIndex extends React.Component {
 
   render() {
     let { users, currentUser } = this.props;
-    debugger;
     let display = (currentUser &&
       currentUser.friend_requests &&
       currentUser.friend_requests.length > 0) ? (

@@ -1,4 +1,5 @@
 import {updateUser,fetchUser} from '../../actions/session_actions';
+import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import ProfilePage from './profile_page';
 const mapStateToProps = (state,ownProps) => {
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect(mapStateToProps , mapDispatchToProps)(ProfilePage);
+export default withRouter(connect(mapStateToProps , mapDispatchToProps)(ProfilePage));
