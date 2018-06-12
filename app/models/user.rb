@@ -15,66 +15,54 @@ class User < ApplicationRecord
   attr_reader :password
 
 
-  has_many :requested_friend_requests,
+  has_many :requested_friendships,
   primary_key: :id,
   foreign_key: :requestor_id,
   class_name: :FriendRequest
 
-  has_many :received_friend_requests,
+  has_many :received_friendships,
   primary_key: :id,
   foreign_key: :approver_id,
   class_name: :FriendRequest
 
   has_many :requested_friends,
-  through: :requested_friend_requests,
-  source: :requestor
-
-  has_many :received_friends,
-  through: :received_friend_requests,
+  through: :requested_friendships,
   source: :approver
 
-  def all_friends
-    self.requested_friends.concat( self.received_friends)
-  end
+  has_many :received_friends,
+  through: :received_friendships,
+  source: :requestor
 
-  def outgoing_pending_friends
-    self.requested_friends.where("approval_status = false")
-  end
+def all_friends
+  self.requested_friends + self.received_friends
+end
 
-  def outgoing_pending_friends_ids
-    outgoing_pending_friends
-      .map { |friend| friend.id }
-  end
+def outgoing_pending_friends
+  self.requested_friends.where("approval_status = 'pending'")
+end
 
-  def incoming_pending_friends
-    self.received_friends.where("approval_status = false")
-  end
+def outgoing_pending_friends_ids
+  outgoing_pending_friends
+    .map { |friend| friend.id }
+end
 
-  def incoming_pending_friends_ids
-    incoming_pending_friends
-      .sort_by{ |friend| friend.created_at }
-      .reverse
-      .map { |friend| friend.id }
-  end
+def incoming_pending_friends
+  self.received_friends.where("approval_status = 'pending'")
+end
 
-  def accepted_friends
-    self.requested_friends.where("approval_status = true")+
-      self.received_friends.where("approval_status = true")
-  end
+def incoming_pending_friends_ids
+  incoming_pending_friends
+    .map { |friend| friend.id }
+end
 
-  def accepted_friends_ids
-    accepted_friends.map { |friend| friend.id }
-  end
+def accepted_friends
+  self.requested_friends.where("approval_status = 'accepted'") +
+    self.received_friends.where("approval_status = 'accepted'")
+end
 
-  def denied_friends
-    self.requested_friends.where("approval_status = false") +
-      self.received_friends.where("approval_status = false")
-  end
-
-  def friendship_status(other_user_id)
-    FriendRequest.find_by(requestor_id: self.id, approver_id: other_user_id)&.status ||
-    FriendRequest.find_by(requestor_id: other_user_id, approver_id: self.id)&.status
-  end
+def accepted_friends_ids
+  accepted_friends.map { |friend| friend.id }
+end
 
   def self.searchNames(query)
   sql_query = "%" + query.downcase + "%"

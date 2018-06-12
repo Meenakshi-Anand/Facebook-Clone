@@ -7,10 +7,15 @@ class ProfilePage extends React.Component{
   constructor(props){
     super(props);
   }
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchUser(this.props.match.params.userId);
+    this.setState(this.user);
   }
   render(){
+    let {user}=this.props;
+    if (user === 'undefined'){
+      return "";
+    }else{
     return (
       <div className="profile">
         <Header class="main-header" user={this.props.user}/>
@@ -23,7 +28,7 @@ class ProfilePage extends React.Component{
           updateUser={this.props.updateUser}/>
         </section>
       </div>
-    );
+    );}
   }
 }
 export default withRouter(ProfilePage);

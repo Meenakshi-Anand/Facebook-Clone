@@ -5,13 +5,15 @@ const mapStateToProps = (state) => {
 
   const currentUserId = state.session.id ;
   return (
-    {currentUser: state.entities.users[currentUserId]}
+    {currentUser: state.entities.users[currentUserId],
+    users:state.users}
 
   );
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  fetchAllUsers: ()=>dispatch(fetchAllUsers())
 });
 
 

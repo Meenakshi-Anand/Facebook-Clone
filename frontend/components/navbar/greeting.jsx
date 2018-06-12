@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LoginFormContainer from './login_form_container';
 import SearchContainer from './search_container';
-import ApproveFriendContainer from '../friend_request/approve_friend_container';
+import ApproveFriendIndexContainer
+from '../friend_request/approve_friend_index_container';
 class Greeting extends React.Component {
   constructor(props){
     super(props);
@@ -30,7 +31,7 @@ class Greeting extends React.Component {
       <li><a href="#">Home</a></li>
       <li>
       <section className="friends">
-
+       <ApproveFriendIndexContainer currentUser={this.props.currentUser} users={this.props.users} />
       </section>
       </li>
       <li>

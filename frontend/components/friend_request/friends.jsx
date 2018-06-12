@@ -1,10 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 class Friend extends React.Component{
-
+ componentDidMount(){
+   this.props.fetchAllUsers();
+ }
  render(){
    let i=0;
-   let friends = this.props.friends.slice(9);
+   let friends = this.props.currentUser.friends;
+   if (friends === undefined){
+   return '';
+   }else{
+     friends=this.props.currentUser.friends.slice(9);
    return (
      <div className="friends">
        <ul>
@@ -21,6 +27,7 @@ class Friend extends React.Component{
       </ul>
      </div>
    );
+ }
  }
 }
 

@@ -8,7 +8,7 @@ class CoverPicture extends React.Component{
     this.handleSubmit=this.handleSubmit.bind(this);
     this.updateFile =this.updateFile.bind(this);
   }
-  
+
  updateFile(e) {
    const file = e.currentTarget.files[0];
    const fileReader = new FileReader();
@@ -51,7 +51,9 @@ class CoverPicture extends React.Component{
  addFriend(){
    if (this.props.currentUser.id !== this.props.user.id){
      return(
-     <div></div>
+     <div>
+       <AddFriendContainer currentUser={this.props.currentUser} user={this.props.user}/>
+     </div>
     );
    }else{
      return (<div></div>);

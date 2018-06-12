@@ -1,26 +1,42 @@
-export const fetchFriends = user_id => (
+export const fetchFriendRequests = userId => (
   $.ajax({
     url: "/api/friend_requests",
-    data: { user_id },
+    data: { userId },
   })
 );
 
-
-export const requestFriend = friendRequest =>
+export const postFriendRequest = (request) => (
   $.ajax({
-    method: 'POST',
-    url: 'api/friend_requests',
-    data: { friendRequest }
-  });
+    url: `/api/users/${request.approverId}/friend_requests`,
+    method: "POST",
+    data: {
+      friend_request: {
+        request
+      }
+    },
+  })
+);
 
-export const approveRequest = friendRequestId =>
+export const patchFriendRequest = (request) => (
   $.ajax({
-    method: 'PATCH',
-    url: `api/friend_requests/${friendRequestId}`
-  });
+    url: `/api/users/${request.approverId}/friends/${request.requestorId}`,
+    method: "PATCH",
+    data: {
+      friend_request: {
+        request
+      }
+    },
+  })
+);
 
-export const deleteRequest = friendRequestId =>
+export const destroyFriendRequest = (request) => (
   $.ajax({
-    method: 'DELETE',
-    url: `api/friend_requests/${friendRequestId}`
-  });
+    url: `/api/users/${request.approverId}/friends/${request.requestorId}`,
+    method: "DELETE",
+    data: {
+      friend_request: {
+        request
+      }
+    },
+  })
+);
