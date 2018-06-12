@@ -13,14 +13,14 @@ export const requestFriend = (approverId,requestorId,approval_status) => dispatc
     err => dispatch(receiveErrors(err.responseJSON))
   );
 
-export const approveFriend = friendRequestId => dispatch =>
-  FriendRequestApiUtil.approveRequest(friendRequestId).then(
+export const approveFriend = (approverId,requestorId)=> dispatch =>
+  FriendRequestApiUtil.patchFriendRequest(approverId,requestorId).then(
     user => dispatch(receiveUser(user)),
     err => dispatch(receiveErrors(err.responseJSON))
   );
 
-export const deleteFriend = friendRequestId => dispatch =>
-  FriendRequestApiUtil.deleteRequest(friendRequestId).then(
+export const deleteFriend = (approverId,requestorId)=> dispatch =>
+  FriendRequestApiUtil.destroyFriendRequest(approverId,requestorId).then(
     user => dispatch(receiveUser(user)),
     err => dispatch(receiveErrors(err.responseJSON))
   );

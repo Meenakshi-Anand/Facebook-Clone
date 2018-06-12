@@ -19,25 +19,29 @@ export const postFriendRequest = (approverId,requestorId,approval_status) => (
   })
 );
 
-export const patchFriendRequest = (request) => (
+export const patchFriendRequest = (approverId,requestorId) => (
   $.ajax({
-    url: `/api/users/${request.approverId}/friends/${request.requestorId}`,
+    url: `/api/users/${approverId}/friend_requests/${requestorId}`,
     method: "PATCH",
     data: {
       friend_request: {
-        request
+        approver_id:approverId,
+        requestor_id:requestorId,
+        approval_status:'accepted'
       }
     },
   })
 );
 
-export const destroyFriendRequest = (request) => (
+export const destroyFriendRequest = (approverId,requestorId) => (
   $.ajax({
-    url: `/api/users/${request.approverId}/friends/${request.requestorId}`,
+    url: `/api/users/${approverId}/friend_requests/${requestorId}`,
     method: "DELETE",
     data: {
       friend_request: {
-        request
+        approver_id:approverId,
+        requestor_id:requestorId,
+        approval_status:'denied'
       }
     },
   })

@@ -8,7 +8,9 @@ class Greeting extends React.Component {
   constructor(props){
     super(props);
   }
-
+  componentDidMount(){
+    this.props.fetchAllUsers();
+  }
   render(){
     const {currentUser, logout} = this.props;
 
@@ -31,7 +33,8 @@ class Greeting extends React.Component {
       <li><a href="#">Home</a></li>
       <li>
       <section className="friends">
-       <ApproveFriendIndexContainer currentUser={this.props.currentUser} users={this.props.users} />
+       <ApproveFriendIndexContainer currentUser={this.props.currentUser}
+         users={this.props.users} />
       </section>
       </li>
       <li>

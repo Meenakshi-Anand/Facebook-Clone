@@ -11,19 +11,19 @@ class ApproveFriendIndexItem extends React.Component {
   handleRequest(type) {
     let { patchFriendRequest, destroyFriendRequest,
        currentUser, receiveUser, user } = this.props;
+       console.log(this.props);
+       console.log("above me");
     return (type === "confirm") ? (
-      () => patchFriendRequest({approver_id:currentUser.id,
-        requestor_id:user.id,approval_status: "accepted"})
-        .then(() => receiveUser(currentUser.id))
+     patchFriendRequest(currentUser.id,user.id)
      ) : (
-      () => destroyFriendRequest({approver_id:currentUser.id, requestor_id:user.id})
-        .then(() => receiveUser(currentUser.id))
+     destroyFriendRequest(currentUser.id,user.id)
      );
   }
 
   render() {
     let { user } = this.props;
-
+    console.log("user");
+    console.log(user);
     if (user === undefined) {
       return "";
     }
@@ -41,10 +41,10 @@ class ApproveFriendIndexItem extends React.Component {
 
         <div>
           <button
-            onClick={this.handleRequest("confirm")}
+            onClick={()=>this.handleRequest("confirm")}
             >Confirm</button>
           <button
-            onClick={this.handleRequest("delete")}
+            onClick={()=>this.handleRequest("delete")}
             >Delete Request</button>
         </div>
       </div>

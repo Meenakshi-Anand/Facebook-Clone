@@ -13,10 +13,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchFriendRequests: userId => fetchFriendRequests(userId),
-  patchFriendRequest: (request) =>
-   dispatch(approveFriend(request)),
-  destroyFriendRequest: (request) =>
-  dispatch(deleteFriend(request)),
+  patchFriendRequest: (appoverId,requestorId) =>
+   dispatch(approveFriend(appoverId,requestorId)),
+  destroyFriendRequest: (appoverId,requestorId) =>
+  dispatch(deleteFriend(appoverId,requestorId)),
   fetchUser: userId => dispatch(fetchUser(userId)),
 });
 

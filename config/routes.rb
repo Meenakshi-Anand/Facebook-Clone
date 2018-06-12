@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get "users/search", to: "users#search"
     resources :users, only: [:index, :create, :show, :update] do
       resources :posts, only: [:create, :index]
-      resources :friend_requests, only: [:index, :create]
+      resources :friend_requests, only: [:index, :create,:update,:destroy]
     end
 
     resources :posts, except: [:new, :edit] do
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
     resources :comments, only: [:destroy]
-    resources :friend_requests, only: [ :update, :destroy]
+
 
   end
 

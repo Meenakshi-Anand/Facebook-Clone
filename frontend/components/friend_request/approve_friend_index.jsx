@@ -1,5 +1,6 @@
 import React from 'react';
-import ApproveFriendIndexContainer from './approve_friend_index_item_container';
+import ApproveFriendIndexItemContainer
+from './approve_friend_index_item_container';
 
 
 class ApproveFriendIndex extends React.Component {
@@ -9,13 +10,13 @@ class ApproveFriendIndex extends React.Component {
 
   render() {
     let { users, currentUser } = this.props;
-    let display = (currentUser &&
-      currentUser.friend_requests &&
+    console.log(this.props);
+    let display = (
       currentUser.friend_requests.length > 0) ? (
-      currentUser.friend_requests.map(friendId => (
-        <ApproveFriendIndexContainer
-          user={users[friendId]}
-          key={friendId} />
+      currentUser.friend_requests.map((id) => (
+        <ApproveFriendIndexItemContainer
+          user={users[id]}
+          key={id} />
       ))
     ) : (
       <div>No New Requests</div>
