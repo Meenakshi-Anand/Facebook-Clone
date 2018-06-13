@@ -11,22 +11,24 @@ class Friend extends React.Component{
    this.props.fetchAllUsers().then(()=>this.setState({loading:false}));
  }
  render(){
-
+   let count = " ";
    let friendIds = this.props.user.friends;
    if (friendIds.length === 0 || this.state.loading){
    return null;
    }else{
-
+     count = this.props.user.friends.length;
      friendIds=this.props.user.friends.slice(0,9);
    return (
-     <div className="friends">
+     <div>
+       <h2> <section className='friends'/>
+       Friends <span className="span-text">[{count}]</span></h2>
        <ul>
       {friendIds.map((el)=>{
-       return(<li key={el}>
+       return(<li className="friends-user" key={el}>
         <Link to={`/users/${this.props.users[el].id}`}>
         <div>
         <div><img src={this.props.users[el].profile_image_url}/></div>
-        <div>{this.props.users[el].name}</div>
+        <div>{this.props.users[el].fname} {this.props.users[el].lname}</div>
         </div>
         </Link>
       </li>);

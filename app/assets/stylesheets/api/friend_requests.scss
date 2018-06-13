@@ -1,5 +1,28 @@
-.addfriend {
- position:absolute;
- top:-25px;
- left:10px;
+
+
+.friends{
+ margin-right: 10px;
+}
+.span-text{
+  margin-left: 10px;
+}
+.friends-page h2{
+  display:inline-flex;
+  justify-content: space-between;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 20px;
+  padding:15px;
+}
+
+.friends-page ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.friends-page  ul  li{
+  display: block;
+  width:150px;
+  height:150px;
+  padding:10px;
 }

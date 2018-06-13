@@ -52,7 +52,8 @@ class CoverPicture extends React.Component{
    if (this.props.currentUser.id !== this.props.user.id){
      return(
      <div>
-       <AddFriendContainer currentUser={this.props.currentUser} user={this.props.user}/>
+       <AddFriendContainer currentUser={this.props.currentUser}
+          user={this.props.user}/>
      </div>
     );
    }else{

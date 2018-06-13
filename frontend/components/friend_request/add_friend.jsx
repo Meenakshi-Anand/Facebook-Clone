@@ -30,7 +30,7 @@ class AddFriend extends React.Component{
      return (
        <div className="addfriend">
          <button>
-           Pending Request</button>
+           Pending..</button>
        </div>
      );
    }else{
