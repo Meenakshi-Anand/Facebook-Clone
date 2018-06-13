@@ -20,7 +20,7 @@
   height: 24px;
   width:5px;
   position: absolute;
-  top:5px;
+  top:10px;
   color: #333;
   left:570px;
 }
@@ -151,12 +151,13 @@ ul .logout-dropdown li {
   top:11px;
   right:180px;
   width: 200px;
-  height: 300px;
+  height: 250px;
   background: #fff;
   color: black;
   font-weight: normal;
   box-shadow: 0px 1px 3px 1px #333;
   z-index: 1;
+padding-top: 45px;
 }
 .logout-dropdown > li > button{
   margin-top:10px;
@@ -186,4 +187,8 @@ ul .logout-dropdown > li:hover {
 
 .logout a:hover{
     color: black;
+}
+
+.main-req ul{
+  display: block;
 }

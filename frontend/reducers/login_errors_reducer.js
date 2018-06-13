@@ -12,7 +12,7 @@ const loginErrorsReducer = (state = [], action) => {
     case REMOVE_LOGIN_ERRORS:
       return action.errors;
 
-    case RECEIVE_USER:
+    case RECEIVE_USER :
       return [];
     default:
       return state;

@@ -32,13 +32,16 @@ class Greeting extends React.Component {
       <li className="grey-line">|</li>
       <li><a href="#">Home</a></li>
       <li>
-      <section className="friends">
+      <a href="#">
+      <section className="friends"></section></a>
        <ApproveFriendIndexContainer currentUser={this.props.currentUser}
          users={this.props.users} />
-      </section>
+
       </li>
       <li>
+
       <section className="messenger"></section>
+
       </li>
       <li>
       <section className="notification"></section>

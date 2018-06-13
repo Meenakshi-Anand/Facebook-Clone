@@ -9,9 +9,12 @@ export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+
+
+
 export const receiveUser = user => ({
   type: RECEIVE_USER,
-  user:user
+  user
 });
 
 export const receiveAllUsers = (users) => ({
@@ -65,7 +68,7 @@ export const demologin = () => dispatch => {
 export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)
   .then(newUser => {
-    dispatch(receiveUser(newUser));
+    return dispatch(receiveUser(newUser));
   }, (err => {
     dispatch(receiveSignupErrors(err.responseJSON));
   }));

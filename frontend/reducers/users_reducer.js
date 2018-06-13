@@ -1,4 +1,5 @@
-import { RECEIVE_SEARCH,CLEAR_SEARCH_RESULTS,RECEIVE_ALL_USERS,RECEIVE_USER }
+import {RECEIVE_CURRENT_USER,
+   RECEIVE_SEARCH,CLEAR_SEARCH_RESULTS,RECEIVE_ALL_USERS,RECEIVE_USER }
 from '../actions/session_actions';
 import {merge} from 'lodash';
 
@@ -9,7 +10,6 @@ const usersReducer = (state = { search_results: []}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_USERS:
     return action.users;
-
     case RECEIVE_USER:
       // const newUser = { [action.user.id]: action.user};
       return merge({}, state, action.user);

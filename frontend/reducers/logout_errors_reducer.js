@@ -1,4 +1,4 @@
-import { RECEIVE_USER , REMOVE_LOGOUT_ERRORS}
+import { RECEIVE_USER, REMOVE_LOGOUT_ERRORS}
        from '../actions/session_actions';
 import {merge} from 'lodash';
 
@@ -12,7 +12,7 @@ const logoutErrorsReducer = (state = [], action) => {
     case REMOVE_LOGOUT_ERRORS:
       return  action.errors;
 
-    case RECEIVE_USER:
+    case RECEIVE_USER :
       return [];
     default:
       return state;

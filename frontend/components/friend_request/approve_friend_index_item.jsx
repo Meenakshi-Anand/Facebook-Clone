@@ -30,7 +30,7 @@ class ApproveFriendIndexItem extends React.Component {
  else {
     return (
       <div>
-        <div>
+        <div className="name-blk">
           <Link
             to={`/users/${user.id}`}>
             <img
