@@ -11,13 +11,13 @@ class ApproveFriendIndexItem extends React.Component {
   handleRequest(type) {
     let { patchFriendRequest, destroyFriendRequest,
        currentUser, receiveUser, user } = this.props;
-       console.log(this.props);
-       console.log("above me");
-    return (type === "confirm") ? (
-     patchFriendRequest(currentUser.id,user.id)
-     ) : (
-     destroyFriendRequest(currentUser.id,user.id)
-     );
+    if (type === "confirm"){
+     return (patchFriendRequest(currentUser.id,user.id)
+     .then(()=>this.props.fetchUser(currentUser.id)));
+    }else{
+     return (destroyFriendRequest(currentUser.id,user.id).then(
+      ()=>this.props.fetchUser(currentUser.id)));
+    }
   }
 
   render() {

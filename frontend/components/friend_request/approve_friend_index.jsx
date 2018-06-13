@@ -10,7 +10,9 @@ class ApproveFriendIndex extends React.Component {
   render() {
     let { users, currentUser } = this.props;
     let count = currentUser.friend_requests.length;
-    console.log(this.props);
+    if (count===0){
+      count='';
+    }
     let display = (
       currentUser.friend_requests.length > 0) ? (
         <ul className="request-dropdown">

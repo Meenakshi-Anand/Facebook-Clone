@@ -35,7 +35,7 @@ class Greeting extends React.Component {
       <a href="#">
       <section className="friends"></section></a>
        <ApproveFriendIndexContainer currentUser={this.props.currentUser}
-         users={this.props.users} />
+         users={this.props.users} fetchAllUsers={this.props.fetchAllUsers}/>
 
       </li>
       <li>

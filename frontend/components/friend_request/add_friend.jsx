@@ -4,7 +4,8 @@ class AddFriend extends React.Component{
 
  handleFriendRequest(){
    this.props.postFriendRequest(this.props.user.id,
-     this.props.currentUser.id,'pending');
+     this.props.currentUser.id,'pending').then(
+      (_) => this.props.fetchUser(this.props.currentUser.id));
  }
  renderErrors(){
    const {errors} = this.props;
