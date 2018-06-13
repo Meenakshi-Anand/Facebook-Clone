@@ -151,7 +151,7 @@ ul .logout-dropdown li {
   top:11px;
   right:180px;
   width: 200px;
-  height: 250px;
+  height: 100px;
   background: #fff;
   color: black;
   font-weight: normal;
@@ -160,7 +160,8 @@ ul .logout-dropdown li {
 padding-top: 45px;
 }
 .logout-dropdown > li > button{
-  margin-top:10px;
+  position:absolute;
+  top:5px;
   margin-right: 20px;
   border-top:1px;
   border-bottom: 1px;

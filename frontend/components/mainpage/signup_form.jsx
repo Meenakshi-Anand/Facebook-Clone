@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     console.log("inhere");
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user); 
   }
 
 

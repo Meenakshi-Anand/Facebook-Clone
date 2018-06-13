@@ -14,6 +14,15 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :posts,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Post
+
+  has_many :comments,
+  class_name: :Comment,
+  primary_key: :id,
+  foreign_key: :author_id
 
   has_many :requested_friendships,
   primary_key: :id,
@@ -32,6 +41,10 @@ class User < ApplicationRecord
   has_many :received_friends,
   through: :received_friendships,
   source: :requestor
+
+  has_many :wall_posts,
+  foreign_key: :wall_id,
+  class_name: :Post
 
 def all_friends
   self.requested_friends + self.received_friends

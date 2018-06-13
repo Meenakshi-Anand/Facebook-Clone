@@ -7,7 +7,6 @@ class ApproveFriendIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     let { users, currentUser } = this.props;
     let count = currentUser.friend_requests.length;
