@@ -22,6 +22,11 @@ export const fetchNewsFeed = id => dispatch =>
   PostApiUtil.fetchNewsFeed(id).then(posts =>
     dispatch(receiveNewsFeedPosts(posts)));
 
+
+export const fetchPost = id => dispatch => (
+    PostApiUtil.fetchPost(id).then(post => dispatch(receivePost(post)))
+);
+
 export const receivePost = post => ({
   type: RECEIVE_POST,
   post

@@ -29,3 +29,11 @@ export const fetchNewsFeed = id =>
     method: 'GET',
     url: `api/users/${id}/feed`
   });
+
+
+  export const fetchPost = id => (
+    $.ajax({
+      method: 'GET',
+      url: `api/posts/${id}`
+    })
+  );
