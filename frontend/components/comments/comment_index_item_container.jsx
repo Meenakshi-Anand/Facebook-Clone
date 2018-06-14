@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CommentIndexItem from './comment_index_item';
-import { updateComment, destroyComment } from './../../actions/comment';
+import { updateComment, destroyComment } from '../../actions/comment_actions';
 
 const mapStateToProps = state => ({
   posts: state.posts,

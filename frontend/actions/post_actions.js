@@ -1,4 +1,4 @@
-import * as PostApiUtil from '../util/post_api_util';
+import * as PostApiUtil from '../util/posts_api_util';
 
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_WALL_POSTS = 'RECEIVE_WALL_POSTS';

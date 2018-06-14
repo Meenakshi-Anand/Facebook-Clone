@@ -1,4 +1,4 @@
-import { RECEIVE_FEED_POSTS } from '../actions/post';
+import { RECEIVE_FEED_POSTS } from '../actions/post_actions';
 
 export default (state = {}, action) => {
   switch (action.type) {

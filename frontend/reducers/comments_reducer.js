@@ -2,7 +2,7 @@ import {
   RECEIVE_COMMENTS,
   RECEIVE_COMMENT,
   REMOVE_COMMENT,
-} from './../actions/comment';
+} from '../actions/comment_actions';
 import merge from 'lodash/merge';
 
 export default (state = {}, action) => {

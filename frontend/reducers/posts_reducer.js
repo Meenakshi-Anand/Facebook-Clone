@@ -1,4 +1,4 @@
-import { RECEIVE_POST, RECEIVE_WALL_POSTS } from '../actions/post';
+import { RECEIVE_POST, RECEIVE_WALL_POSTS } from '../actions/post_actions';
 import merge from 'lodash';
 export default (state = {}, action) => {
   Object.freeze(state);

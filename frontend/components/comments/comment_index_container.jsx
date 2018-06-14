@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
-import { fetchComments } from './../../actions/comment';
+import { fetchComments } from '../../actions/comment_actions';
 
 const mapStateToProps = state => ({
   posts: state.posts,

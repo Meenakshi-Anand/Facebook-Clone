@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentForm from './comment_form';
 import { connect } from 'react-redux';
-import { fetchComments, createComment } from './../../actions/comment';
+import { fetchComments, createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
