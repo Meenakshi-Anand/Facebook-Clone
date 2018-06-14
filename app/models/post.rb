@@ -19,8 +19,16 @@ class Post < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :post_id
 
-  def self.find_by_wall_id(id)
-    Post.all.where(wall_id: id)
-  end
+ def self.find_posts_by_wall_id(id)
+   Post.all.where(wall_id: id)
+ end
 
+ def self.find_posts_of_friends(id)
+   friend_ids = User.find(id).accepted_friends_ids
+
+   friend_ids_string = "(#{friend_ids.join(', ')})"
+
+   self.where("author_id IN 'friend_ids_string'")+
+   self.where("wall_id IN 'friend_ids_string'")
+ end
 end

@@ -33,7 +33,7 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-  @users = User.searchNames(params[:query])
+  @users = User.search_names(params[:query])
   render :search
   end
 

@@ -77,34 +77,34 @@ def accepted_friends_ids
   accepted_friends.map { |friend| friend.id }
 end
 
-  def self.searchNames(query)
+def self.search_names(query)
   sql_query = "%" + query.downcase + "%"
   User
     .where('lower(fname) LIKE ? OR lower(lname) LIKE ?', sql_query, sql_query)
     .limit(8)
-  end
+end
 
-  def self.find_by_credentials(email,password)
-    user = User.find_by(email: email)
-    user && user.is_password?(password) ? user : nil
-  end
+def self.find_by_credentials(email,password)
+  user = User.find_by(email: email)
+  user && user.is_password?(password) ? user : nil
+end
 
-  def password=(password)
-    @password = password
-    self.password_digest = BCrypt::Password.create(password)
-  end
+def password=(password)
+  @password = password
+  self.password_digest = BCrypt::Password.create(password)
+end
 
-  def is_password?(password)
-    BCrypt::Password.new(password_digest).is_password?(password)
-  end
+def is_password?(password)
+  BCrypt::Password.new(password_digest).is_password?(password)
+end
 
-  def ensure_session_token
-    self.session_token ||= SecureRandom::urlsafe_base64
-  end
+def ensure_session_token
+  self.session_token ||= SecureRandom::urlsafe_base64
+end
 
-  def reset_session_token
-    self.session_token = SecureRandom::urlsafe_base64
-    self.save!
-    self.session_token
-  end
+def reset_session_token
+  self.session_token = SecureRandom::urlsafe_base64
+  self.save!
+  self.session_token
+end
 end

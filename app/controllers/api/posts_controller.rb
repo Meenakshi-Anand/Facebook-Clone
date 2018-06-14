@@ -10,11 +10,15 @@ class Api::PostsController < ApplicationController
     end
   end
 
-  def index
-    @posts = Post.find_by_wall_id(params[:id])
+  def wall_posts
+    @posts = Post.find_posts_by_wall_id(params[:id])
     render :index
   end
 
+  def news_feed
+    @posts = Post.find_posts_of_friends(params[:id])
+    render :index
+  end
 
   def update
     @post = Post.find(params[:id])
@@ -32,7 +36,7 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:author_id, :wall_id, :body)
+    params.require(:post).permit(:author_id, :wall_id, :body,:photo)
   end
 
 end
