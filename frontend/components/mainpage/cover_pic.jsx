@@ -3,7 +3,6 @@ import AddFriendContainer from '../friend_request/add_friend_container';
 class CoverPicture extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props);
     this.state = {imageFile:null,imageUrl:null};
     this.handleSubmit=this.handleSubmit.bind(this);
     this.updateFile =this.updateFile.bind(this);

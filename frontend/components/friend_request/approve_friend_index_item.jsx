@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class ApproveFriendIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleRequest = this.handleRequest.bind(this);
   }
 
@@ -12,15 +11,17 @@ class ApproveFriendIndexItem extends React.Component {
     let { patchFriendRequest, destroyFriendRequest,
        currentUser, receiveUser, user } = this.props;
     if (type === "confirm"){
-     return (patchFriendRequest(currentUser.id,user.id)
+      // debugger
+     (patchFriendRequest(currentUser.id,user.id)
      .then(()=>this.props.fetchUser(currentUser.id)));
     }else{
-     return (destroyFriendRequest(currentUser.id,user.id).then(
-      ()=>this.props.fetchUser(currentUser.id)));
+     (destroyFriendRequest(currentUser.id,user.id)
+     .then(()=>this.props.fetchUser(currentUser.id)));
     }
   }
 
   render() {
+     // debugger
     let { user } = this.props;
     console.log("user");
     console.log(user);

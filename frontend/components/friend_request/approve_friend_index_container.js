@@ -8,6 +8,7 @@ import ApproveFriendIndex from './approve_friend_index';
 
 
 const mapStateToProps = state => {
+
   const currentUserId = state.session.id ;
   return (
   {currentUser: state.entities.users[currentUserId]});

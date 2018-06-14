@@ -6,13 +6,29 @@ from './approve_friend_index_item_container';
 class ApproveFriendIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { count: this.props.currentUser.friend_requests.length,
+    currentUser: this.props.currentUser };
+
   }
-  render() {
-    let { users, currentUser } = this.props;
-    let count = currentUser.friend_requests.length;
-    if (count===0){
-      count='';
+
+  componentWillReceiveProps(newProps) {
+
+    if (newProps.users[newProps.currentUser.id].friends.length !== this.props.currentUser.friends.length) {
+
+      this.setState( {
+      currentUser: newProps.users[newProps.currentUser.id],
+      count: newProps.users[newProps.currentUser.id].friend_requests.length});
     }
+  }
+
+  render() {
+
+    let { users } = this.props;
+    let currentUser = this.state.currentUser;
+    // let count = currentUser.friend_requests.length;
+    // if (count===0){
+    //   count='';
+    // }
     let display = (
       currentUser.friend_requests.length > 0) ? (
         <ul className="request-dropdown">
@@ -32,7 +48,7 @@ class ApproveFriendIndex extends React.Component {
 
     return (
       <div className="main-req">
-        <span className="blast">{count}</span>
+        <span className="blast">{this.state.count}</span>
 
         {display}
 

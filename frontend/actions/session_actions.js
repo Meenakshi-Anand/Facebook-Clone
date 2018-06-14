@@ -9,8 +9,11 @@ export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
-
-
+export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const receiveCurrentUser = user => ({
+  type: RECEIVE_CURRENT_USER,
+  currentUser: user
+});
 
 export const receiveUser = user => ({
   type: RECEIVE_USER,
@@ -51,7 +54,7 @@ export const receiveLogoutErrors = (errors) => ({
 export const login = (user) => dispatch => {
   return SessionAPIUtil.login(user)
   .then(newUser => {
-    dispatch(receiveUser(newUser));
+    dispatch(receiveCurrentUser(newUser));
   }, (err => {
     dispatch(receiveLoginErrors(err.responseJSON));
   }));
@@ -59,7 +62,7 @@ export const login = (user) => dispatch => {
 
 export const demologin = () => dispatch => {
   return SessionAPIUtil.demologin().then(user=> {
-    return dispatch(receiveUser(user));
+    return dispatch(receiveCurrentUser(user));
   });
 };
 
@@ -68,7 +71,7 @@ export const demologin = () => dispatch => {
 export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)
   .then(newUser => {
-    return dispatch(receiveUser(newUser));
+    return dispatch(receiveCurrentUser(newUser));
   }, (err => {
     dispatch(receiveSignupErrors(err.responseJSON));
   }));

@@ -16,7 +16,7 @@ export const requestFriend = (approverId,requestorId,approval_status)=>
 
 export const approveFriend = (approverId,requestorId)=> dispatch =>
   FriendRequestApiUtil.patchFriendRequest(approverId,requestorId).then(
-    user => dispatch(receiveUser(user)),
+    req => dispatch(receiveUser(req.approver_id)),
     err => dispatch(receiveErrors(err.responseJSON))
   );
 
