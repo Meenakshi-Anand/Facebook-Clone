@@ -13,7 +13,8 @@ class ApproveFriendIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
 
-    if (newProps.users[newProps.currentUser.id].friends.length !== this.props.currentUser.friends.length) {
+    if (newProps.users[newProps.currentUser.id].friends.length
+       !== this.props.currentUser.friends.length) {
 
       this.setState( {
       currentUser: newProps.users[newProps.currentUser.id],
@@ -34,7 +35,7 @@ class ApproveFriendIndex extends React.Component {
         <ul className="request-dropdown">
         <section className="new-triangle"></section>
         {currentUser.friend_requests.map((id) => (
-        <li class="fr-req"><ApproveFriendIndexItemContainer
+        <li className="fr-req"><ApproveFriendIndexItemContainer
           user={users[id]}
           key={id} /></li>))}
         </ul>

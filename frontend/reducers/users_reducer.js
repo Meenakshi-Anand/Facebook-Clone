@@ -11,7 +11,9 @@ const usersReducer = (state = { search_results: []}, action) => {
     case RECEIVE_ALL_USERS:
     return action.users;
     case RECEIVE_CURRENT_USER:
-    return merge({}, state, action.currentUser);
+    const newUser =
+    merge({},state,{[action.currentUser.id]: action.currentUser});
+    return newUser;
     case RECEIVE_USER:
       // const newUser = { [action.user.id]: action.user};
       let newState = Object.assign({}, state, action.user);

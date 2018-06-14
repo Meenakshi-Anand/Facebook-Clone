@@ -1,4 +1,4 @@
-import { receiveUsers,receiveUser, receiveErrors } from './session_actions';
+import { receiveUsers,receiveUser, receiveErrors ,fetchUser} from './session_actions';
 import * as FriendRequestApiUtil from '../util/friend_request_api_util';
 
 export const fetchFriends = (id) => (dispatch) => {
@@ -16,12 +16,12 @@ export const requestFriend = (approverId,requestorId,approval_status)=>
 
 export const approveFriend = (approverId,requestorId)=> dispatch =>
   FriendRequestApiUtil.patchFriendRequest(approverId,requestorId).then(
-    req => dispatch(receiveUser(req.approver_id)),
+    null,
     err => dispatch(receiveErrors(err.responseJSON))
   );
 
 export const deleteFriend = (approverId,requestorId)=> dispatch =>
   FriendRequestApiUtil.destroyFriendRequest(approverId,requestorId).then(
-    user => dispatch(receiveUser(user)),
+  null,
     err => dispatch(receiveErrors(err.responseJSON))
   );
