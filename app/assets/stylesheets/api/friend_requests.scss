@@ -22,8 +22,8 @@
 
 .friends-page  ul  li{
   display: block;
-  width:150px;
-  height:150px;
+  width:135px;
+  height:135px;
   padding:10px;
 }
 
@@ -42,7 +42,7 @@ ul .request-dropdown li {
   top:11px;
   right:180px;
   width: 300px;
-  height: 100px;
+  height:100px;
   background: #fff;
   color: black;
   font-weight: normal;
@@ -57,6 +57,7 @@ ul .request-dropdown li {
   border-color: #355088;
   height: 15px;
   text-align: center;
+
 }
 
 ul .request-dropdown > li:hover {
@@ -85,7 +86,7 @@ ul .request-dropdown > li:hover {
   border-radius: 100%;
   color:white;
   position:absolute;
-  left:1200px;
+  left:1050px;
   top:-2px;
   padding:2px;
 }

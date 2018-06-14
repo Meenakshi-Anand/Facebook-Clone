@@ -12,7 +12,7 @@ const usersReducer = (state = { search_results: []}, action) => {
     return action.users;
     case RECEIVE_CURRENT_USER:
     const newUser =
-    merge({},state,{[action.currentUser.id]: action.currentUser});
+    merge({},state,action.currentUser);
     return newUser;
     case RECEIVE_USER:
       // const newUser = { [action.user.id]: action.user};

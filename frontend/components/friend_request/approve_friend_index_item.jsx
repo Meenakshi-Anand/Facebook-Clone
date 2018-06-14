@@ -11,7 +11,6 @@ class ApproveFriendIndexItem extends React.Component {
     let { patchFriendRequest, destroyFriendRequest,
        currentUser, receiveUser, user } = this.props;
     if (type === "confirm"){
-      // debugger
      (patchFriendRequest(currentUser.id,user.id)
      .then(()=>this.props.fetchUser(currentUser.id)));
     }else{
@@ -21,10 +20,7 @@ class ApproveFriendIndexItem extends React.Component {
   }
 
   render() {
-     // debugger
     let { user } = this.props;
-    console.log("user");
-    console.log(user);
     if (user === undefined) {
       return "";
     }

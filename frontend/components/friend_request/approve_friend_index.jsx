@@ -26,12 +26,13 @@ class ApproveFriendIndex extends React.Component {
 
     let { users } = this.props;
     let currentUser = this.state.currentUser;
-    // let count = currentUser.friend_requests.length;
-    // if (count===0){
-    //   count='';
-    // }
+    if (this.count===0){
+      this.count=null;
+    }
     let display = (
       currentUser.friend_requests.length > 0) ? (
+        <div className="main-req">
+        <span className="blast">{this.state.count}</span>
         <ul className="request-dropdown">
         <section className="new-triangle"></section>
         {currentUser.friend_requests.map((id) => (
@@ -39,21 +40,21 @@ class ApproveFriendIndex extends React.Component {
           user={users[id]}
           key={id} /></li>))}
         </ul>
-
+        </div>
     ) : (
+      <div className="main-req">
       <ul className="request-dropdown">
       <section className="new-triangle"></section>
       <li>No New Requests</li>
       </ul>
+    </div>
     );
 
     return (
-      <div className="main-req">
-        <span className="blast">{this.state.count}</span>
-
+      <div>
         {display}
-
       </div>
+
     );
   }
 

@@ -6,7 +6,7 @@ import SearchIndexItem from './search_item';
    constructor(props){
      super(props);
      this.state = {
-       query: " "
+       query: "."
      };
       this.sendQuery = this.sendQuery.bind(this);
       this.update = this.update.bind(this);
