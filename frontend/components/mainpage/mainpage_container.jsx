@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import SignupFormContainer from './signup_form_container';
 import DemoLoginContainer from './demo_container';
+import PostIndexContainer from '../posts/post_index_container';
 import { connect } from 'react-redux';
 import {fetchAllUsers} from '../../actions/session_actions';
 class MainPage extends React.Component{
@@ -28,6 +29,8 @@ class MainPage extends React.Component{
    );
   }else{
      return(<div className="body">
+      <h1>POSTS</h1>
+      <PostIndexContainer user={this.props.currentUser}/>
      </div>);
   }
   }

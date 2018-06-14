@@ -1,6 +1,7 @@
 import * as PostApiUtil from '../util/posts_api_util';
 
 export const RECEIVE_POST = 'RECEIVE_POST';
+export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_WALL_POSTS = 'RECEIVE_WALL_POSTS';
 export const RECEIVE_NEWS_FEED_POSTS = 'RECEIVE_NEWS_FEED_POSTS';
 
@@ -27,6 +28,11 @@ export const fetchPost = id => dispatch => (
     PostApiUtil.fetchPost(id).then(post => dispatch(receivePost(post)))
 );
 
+export const fetchAllPosts = ()=> dispatch => (
+    PostApiUtil.fetchAllPosts()
+    .then(posts => dispatch(receiveAllPosts(posts)))
+);
+
 export const receivePost = post => ({
   type: RECEIVE_POST,
   post
@@ -36,6 +42,12 @@ export const receiveWallPosts = posts => ({
   type: RECEIVE_WALL_POSTS,
   posts
 });
+
+export const receiveAllPosts = posts => ({
+  type: RECEIVE_ALL_POSTS,
+  posts
+});
+
 
 export const receiveNewsFeedPosts = posts => ({
   type: RECEIVE_NEWS_FEED_POSTS,

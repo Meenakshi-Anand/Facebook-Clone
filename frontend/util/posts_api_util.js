@@ -1,8 +1,10 @@
-export const createPost = post =>
+export const createPost = formdata =>
   $.ajax({
     method: 'POST',
     url: 'api/posts',
-    data: { post }
+    data: formdata,
+    processData: false,
+    contentType: false,
   });
 
 export const updatePost = post =>
@@ -35,5 +37,12 @@ export const fetchNewsFeed = id =>
     $.ajax({
       method: 'GET',
       url: `api/posts/${id}`
+    })
+  );
+
+  export const fetchAllPosts = () => (
+    $.ajax({
+      method: 'GET',
+      url: `api/posts/`
     })
   );

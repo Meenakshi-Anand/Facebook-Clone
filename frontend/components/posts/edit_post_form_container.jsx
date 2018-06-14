@@ -5,7 +5,8 @@ import { fetchPost, updatePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultPost = { body: '' };
-  const post = state.entities.posts[ownProps.match.params.postId] || defaultPost;
+  const post = state.entities.posts[ownProps.match.params.postId]
+             || defaultPost;
   const formType = 'Update Post';
 
   return { post, formType };

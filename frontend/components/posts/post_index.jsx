@@ -9,11 +9,17 @@ class PostIndex extends React.Component {
   }
 
   render() {
+    console.log("posts");
+    console.log(this.props.posts);
+    console.log("======");
+    debugger;
     const posts = this.props.posts.map(post => {
+      console.log(this.props.post);
       return (
         <PostIndexItem
           key={post.id}
-          post={post}
+          post= {post}
+          user={this.props.user}
           deletePost={this.props.deletePost} />
       );
     });

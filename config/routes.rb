@@ -10,8 +10,8 @@ Rails.application.routes.draw do
       resources :friend_requests, only: [:index, :create,:update,:destroy]
     end
 
-    resources :posts, except: [:create, :index,:new, :edit] do
-      resources :comments, only: [:index, :create,:destroy]
+    resources :posts, except: [:new, :edit] do
+      resources :comments, only: [:index, :create ,:destroy]
     end
 
     resource :session, only: [:create, :destroy]

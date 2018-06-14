@@ -2,16 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const PostIndexItem = ({ post, deletePost }) => {
+const PostIndexItem = ({ post, deletePost,user }) => {
   return (
     <li>
       <div>
-      <section>{post.author_id.profile_image_url}</section>
-      <h2>{post.author_id.fname}</h2>
+       <section><img src={user.profile_image_url} /></section>
+       <h2>{user.fname}</h2>
       </div>
-      <Link to={`/posts/${post.id}/edit`}>
-        Edit
-      </Link>
+      <div>
+        <section><img src={post.photo} /></section>
+        <h2>{post.body}</h2>
+      </div>
       <button onClick={() => deletePost(post.id)}>Delete</button>
     </li>);
 };

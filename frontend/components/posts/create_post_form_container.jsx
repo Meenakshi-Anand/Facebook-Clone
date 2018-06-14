@@ -6,8 +6,9 @@ import { createPost } from '../../actions/post_actions';
 const mapStateToProps = (state, ownProps) => {
   const post = {  body: '' };
   const formType = 'Create Post';
-
-  return { post, formType };
+  const currentUserId = state.session.id;
+  const user = state.entities.users[currentUserId];
+  return { post, formType , user};
 };
 
 const mapDispatchToProps = (dispatch) => {

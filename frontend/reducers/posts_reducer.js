@@ -1,27 +1,24 @@
-import { RECEIVE_POST, RECEIVE_WALL_POSTS } from '../actions/post_actions';
-import merge from 'lodash';
-export default (state = {}, action) => {
-  Object.freeze(state);
+import {
+  RECEIVE_ALL_POSTS,
+  RECEIVE_POST,
+  REMOVE_POST,
+} from '../actions/post_actions';
+import merge from 'lodash/merge';
 
-  let wall;
+const PostsReducer = (oldState = {}, action) => {
+  Object.freeze(oldState);
   switch (action.type) {
+    case RECEIVE_ALL_POSTS:
+      return merge({}, action.posts);
     case RECEIVE_POST:
-    const newState = merge({}, state);
-      wall = action.post.wallId;
-      if (!newState[wall]) {
-        newState[wall] = {};
-      }
-      newState[wall][action.post.id] = action.post;
-      return newState;
-    case RECEIVE_WALL_POSTS:
-      const postIds = Object.keys(action.posts);
-      if (postIds.length === 0) {
-        return action.posts;
-      }
-      wall = action.posts[postIds[0]].wallId;
-      newState[wall] = action.posts;
+      return merge({}, oldState, {[action.post.id]: action.post});
+    case REMOVE_POST:
+      let newState = merge({}, oldState);
+      delete newState[action.postId];
       return newState;
     default:
-      return state;
+      return oldState;
   }
 };
+
+export default PostsReducer;

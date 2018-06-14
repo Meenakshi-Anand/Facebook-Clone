@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
   validates :body, :author_id,:wall_id ,presence: true
 
-  has_attached_file :image, default_url: "missing-post.png"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  has_attached_file :photo, default_url: "missing-post.png"
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
   belongs_to :wall,
   foreign_key: :wall_id,
@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
   foreign_key: :post_id
 
  def self.find_posts_by_wall_id(id)
-   Post.all.where(wall_id: id)
+   Post.all.where("wall_id = id")
  end
 
  def self.find_posts_of_friends(id)
