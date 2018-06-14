@@ -1,4 +1,5 @@
-import { receiveUsers,receiveUser, receiveErrors ,fetchUser} from './session_actions';
+import { receiveUsers,receiveUser,
+   receiveErrors ,fetchUser} from './session_actions';
 import * as FriendRequestApiUtil from '../util/friend_request_api_util';
 
 export const fetchFriends = (id) => (dispatch) => {
