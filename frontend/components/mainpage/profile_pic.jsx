@@ -63,6 +63,8 @@ renderPosts(){
     return null;
   }
 }
+
+
 render() {
     return(
       <div>
@@ -76,7 +78,7 @@ render() {
         </div>
         <div className="intro">
         <h2> <section className='notification'/> Intro </h2>
-        <h3>Birthday : {this.props.user.birthday}</h3>
+        <h3>About : {this.props.user.bio}</h3>
         </div>
         <div className="friends-page">
         <FriendsContainer user={this.props.user}/>

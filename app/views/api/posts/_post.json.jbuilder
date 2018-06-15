@@ -9,7 +9,7 @@ if post.comments
       json.set! comment.id do
         json.partial! 'api/comments/comments', comment: comment
         json.authorid comment.author.id
-        json.authorpic comment.author.profile_image_url.url
+        json.authorpic asset_path(comment.author.profile_image_url.url)
         json.authorf comment.author.fname
         json.authorl comment.author.lname
       end

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NewsFeedIndex from './news_feed_index';
-import { fetchUser } from '../../actions/session_actions';
+import { fetchUser,fetchAllUsers } from '../../actions/session_actions';
 import { fetchNewsFeed, deletePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state,ownProps) => {
@@ -14,7 +14,8 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchNewsFeed: ()=>dispatch(fetchNewsFeed()),
-  deletePost: id => dispatch(deletePost(id))
+  deletePost: id => dispatch(deletePost(id)),
+  fetchAllUsers: ()=>dispatch(fetchAllUsers())
 });
 
 export default connect(

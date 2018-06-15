@@ -8,6 +8,7 @@ class NewsFeedIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchNewsFeed();
+    this.props.fetchAllUsers();
   }
 
   render() {

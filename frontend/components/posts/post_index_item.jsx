@@ -25,7 +25,7 @@ class PostIndexItem extends React.Component{
       return(<div
         onClick={()=>this.handleSubmit()}>
         <span className="delete-hover"> ...
-        <i class="fas fa-trash-alt space-del"></i>
+        <i className="fas fa-trash-alt space-del"></i>
         </span>
       </div>);
     }else{

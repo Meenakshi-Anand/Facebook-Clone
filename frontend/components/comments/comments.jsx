@@ -18,6 +18,9 @@ class Comments extends React.Component {
       post_id:this.props.post.id
     };
   }
+  componentDidMount(){
+
+  }
   componentWillReceiveProps(newProps){
     this.setState({
       body: '',
@@ -39,7 +42,8 @@ class Comments extends React.Component {
       let deleteComment = () => {
         if(this.props.currentUser.id === comments[key].authorid) {
           return(
-         <div onClick={() => this.execDeleteComment(comments[key].post_id,key)}>
+         <div key={comments[key].id}
+           onClick={() => this.execDeleteComment(comments[key].post_id,key)}>
             <span className="delete-hover"> ...
             <i className="fas fa-trash-alt space-del"></i>
             </span>
@@ -56,7 +60,9 @@ class Comments extends React.Component {
               <h2 className="comment-text">{comments[key].authorf}</h2>
               <div className="post-comment-body">{comments[key].body}</div>
               </div>
+              <div>
               {deleteComment()}
+              </div>
             </div>
           </div>
         );
@@ -89,7 +95,7 @@ class Comments extends React.Component {
 
   render() {
     return(
-      <div class="comments">
+      <div className="comments">
         {this.allComments()}
         {this.commentForm()}
       </div>
