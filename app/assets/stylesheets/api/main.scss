@@ -1,19 +1,18 @@
+
+
 .body {
   font-family: "Helvetica", sans-serif;
-  height: 980px;
+  height: 100%;
   background: rgb(233,235,238);
-
 }
 
 .main-section{
   display: flex;
   margin: 0 150px;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 .main-section div{
   width:450px;
-
-
 }
 .connect h2{
   font-weight: 800;
@@ -53,12 +52,13 @@
 .signup-form{
   width:450px;
   margin-top: 0px;
+  margin-left: 120px;
 }
 
 .signup-form h2{
   color:rgb(51,51,51);
   font-size: 28px;
-  margin-left: 40px;
+  margin-left:40px;
   margin-top: 10px;
   margin-bottom:5px;
   font-weight: bold;
@@ -201,7 +201,6 @@
 }
 
 .footer{
-  margin-top:25px;
   background-color: white;
   color: #bdc7d8;
   font-size: 12px;

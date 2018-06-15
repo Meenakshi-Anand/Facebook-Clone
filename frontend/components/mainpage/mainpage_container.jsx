@@ -28,9 +28,44 @@ class MainPage extends React.Component{
     </main>
    );
   }else{
-     return(<div className="body">
-      <h1>POSTS</h1>
-      <PostIndexContainer user={this.props.currentUser}/>
+     return(
+      <div className="body">
+      <section className="main-section">
+        <section className="profile-sidebar">
+        <ul className="sidebar-ul">
+        <li>
+        <div className="name-tag">
+        <section><img className="profile_img"
+          src={this.props.currentUser.profile_image_url} /></section>
+        <h2> {this.props.currentUser.fname} {this.props.currentUser.lname} </h2>
+        </div>
+        </li>
+        <li>
+        <div className="name-tag">
+          <i className="far fa-newspaper space"></i>
+          <h2>News Feed</h2>
+        </div>
+        </li>
+        <li>
+        <div className="name-tag">
+          <i className="fab fa-facebook-messenger space"></i>
+          <h2>Messenger</h2>
+        </div>
+        </li>
+        <li>
+        <div className="name-tag">
+          <i className="fas fa-video space"></i>
+          <h2>Videos</h2>
+        </div>
+        </li>
+        </ul>
+        </section>
+        <section className="posts-mid">
+          <PostIndexContainer user={this.props.currentUser}/>
+        </section>
+        <section className="adds-sidebar">
+        </section>
+        </section>
      </div>);
   }
   }

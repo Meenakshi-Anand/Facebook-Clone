@@ -61,7 +61,6 @@ class PostForm extends React.Component {
     <div>
     <label>
     <i className="fas fa-camera"></i>
-      Im here
     <input type="file" onChange={this.uploadNewPhoto}/>
     </label>
     </div>
@@ -71,23 +70,24 @@ class PostForm extends React.Component {
   render () {
   console.log(this.props.user);
   return (
-  <div>
-   <h3>{this.props.formType}</h3>
+  <div className="create-post">
+   <h3> Make Post</h3>
     <form onSubmit={this.handleSubmit}>
-      <div>
-      <section><img src={this.props.user.profile_image_url} /></section>
-      <h2> Whats in your mind? {this.props.user.fname} </h2>
+      <div className="post-name">
+      <section><img className="profile_img"
+        src={this.props.user.profile_image_url} /></section>
+      <h2> Whats in your mind , {this.props.user.fname} ?</h2>
       </div>
       <label>
       <textarea
         value={this.state.body}
-        onChange={this.update('body')} />
+        onChange={this.update('body')} wrap="hard"/>
       </label>
-      <label>Add Photo</label>
-      <div>
+      <div className="last-buttons">
       {this.postPicture()}
+
+      <input type="submit" value="Post" />
       </div>
-      <input type="submit" value={this.props.formType} />
       </form>
     </div>
     );

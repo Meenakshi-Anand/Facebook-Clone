@@ -10,7 +10,7 @@ class LoginPage extends React.Component{
      <main>
        <Header class="main-header"/>
        <MainPage />
-       <Footer />
+       
      </main>
   );
   }

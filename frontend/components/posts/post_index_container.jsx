@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
-import { fetchWallPosts, deletePost } from '../../actions/post_actions';
+import { fetchAllPosts, deletePost } from '../../actions/post_actions';
 
 const mapStateToProps = state => {
   let currentUserId = state.session.id;
@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchWallPosts: (id) => dispatch(fetchWallPosts(id)),
-  deletePost: id => dispatch(deletePost(id))
+  fetchAllPosts: ()=>dispatch(fetchAllPosts()),
+  deletePost: id => dispatch(deletePost(id)).then(()=>fetchAllPosts())
 });
 
 export default connect(
