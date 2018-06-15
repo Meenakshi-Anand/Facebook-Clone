@@ -1,24 +1,43 @@
-# README
+#Connect
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Live](https://connectfbclone.herokuapp.com/#/)
+![Design Documentation](https://github.com/Meenakshi-Anand/Facebook-Clone/wiki)
 
-Things you may want to cover:
 
-* Ruby version
+Connect is a Facebook-inspired full-stack web application built upon a Rails framework, using PostgreSQL database and React for the rendering of frontend components, with Redux being used for state management.
 
-* System dependencies
+#Features And Implementation
 
-* Configuration
+## New Users And Logging In
 
-* Database creation
+Users with account,can easily log in on navigation bar.You can always create a new account using the sign up form. The users account information are protected by Auth pattern. Only the valid user can log-in and see all the features.
 
-* Database initialization
+![Live](https://connectfbclone.herokuapp.com/#/)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Search
 
-* ...
+
+The header searchbar listens for change events and performs searches as the user inputs their query. Searches are case-insensitive and conducted using ActiveRecord queries and regular expressions.
+
+![Live](https://connectfbclone.herokuapp.com/#/)
+
+## Friend Request
+
+Users are notified of friend requests in the header pane and can accept or reject the requests without leaving the page the user is currently browsing.
+
+![Live](https://connectfbclone.herokuapp.com/#/)
+
+## Photo Upload
+
+Photo upload uses the paperclip gem to manage attachments. Uploaded pictures are stored in an Amazon AWS S3 server.Attachments can be associated with both users (cover photo, profile picture) and posts (post attachment).
+
+![Live](https://connectfbclone.herokuapp.com/#/)
+
+## Posts And Comments
+
+Users can post on their own wall and also their friends wall.
+Commentscan be added and removed from posts with a single click.
+
+![Live](https://connectfbclone.herokuapp.com/#/)
