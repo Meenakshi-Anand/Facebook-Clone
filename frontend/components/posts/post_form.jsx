@@ -18,7 +18,7 @@ class PostForm extends React.Component {
   resetPostForm() {
   this.setState({
     body: '',
-    photo: null
+    photo: {imageFile:null,imageUrl:null}
   });
   }
 
@@ -32,7 +32,7 @@ class PostForm extends React.Component {
    e.preventDefault();
    var formData = new FormData();
    formData.append("post[body]", this.state.body);
-   if (this.state.photo) {
+   if (this.state.photo.imageFile) {
      formData.append("post[photo]", this.state.photo.imageFile);
    }
    formData.append("post[wall_id]", this.props.user.id);
