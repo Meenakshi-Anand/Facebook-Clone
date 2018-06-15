@@ -12,7 +12,7 @@ export const updatePost = postForm => dispatch =>
   PostApiUtil.updatePost(postForm).then(post => dispatch(receivePost(post)));
 
 export const deletePost = id => dispatch =>
-  PostApiUtil.deletePost(id).then(post => dispatch(receivePost(post)));
+  PostApiUtil.deletePost(id);
 
 export const fetchWallPosts = id => dispatch =>
   PostApiUtil.fetchWallPosts(id).then(posts =>

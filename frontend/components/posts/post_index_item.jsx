@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(e){
+    this.props.deletePost(this.props.post.id)
+    .then(()=>this.props.fetchAllPosts());
+  }
   renderImage(){
     if(this.props.post.photo.match( '/assets/missing-post')){
       return null ;
@@ -12,7 +20,6 @@ class PostIndexItem extends React.Component{
     }
   }
   render(){
-  console.log(this.props.post.photo);
   const { post, deletePost,user ,fetchAllPosts} = this.props;
   return (
     <li className="index-post">
@@ -21,8 +28,7 @@ class PostIndexItem extends React.Component{
          src={user.profile_image_url} /></section>
        <h2>{user.fname}</h2>
        <button className="del-button"
-         onClick={() =>
-           deletePost(post.id).then(()=>fetchAllPosts())}>Delete</button>
+         onClick={()=>this.handleSubmit()}>Delete</button>
       </div>
 
       <div>
