@@ -10,6 +10,7 @@
 
 .coverphoto{
   height:350px;
+  object-fit: cover;
   position: relative;
 }
 
@@ -160,4 +161,16 @@ input[type="file"]{
   padding: 15px;
   font-size: 12px;
   margin-right: 15px;
+}
+.did-add{
+  margin-top:20px;
+  margin-left:10px;
+}
+.add-text{
+margin-right: 2px;
+margin-left: 2px;
+font-weight: 500;
+color: #315796;
+display: flex;
+width: 100%;
 }

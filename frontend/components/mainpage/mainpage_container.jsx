@@ -6,6 +6,7 @@ import NewsFeedContainer from '../posts/news_feed_container';
 import PostIndexContainer from '../posts/post_index_container';
 import { connect } from 'react-redux';
 import {fetchAllUsers} from '../../actions/session_actions';
+import {Link} from 'react-router-dom';
 class MainPage extends React.Component{
   constructor(props){
     super(props);
@@ -35,17 +36,23 @@ class MainPage extends React.Component{
         <section className="profile-sidebar">
         <ul className="sidebar-ul">
         <li>
-        <div className="name-tag">
+         <div className="ll">
+        <Link to={`/users/${this.props.currentUser.id}`}>
+          <div className="name-tag">
         <section><img className="profile_img"
           src={this.props.currentUser.profile_image_url} /></section>
         <h2> {this.props.currentUser.fname} {this.props.currentUser.lname} </h2>
+          </div>
+       </Link>
         </div>
         </li>
         <li>
+        <Link to="/">
         <div className="name-tag">
           <i className="far fa-newspaper space"></i>
           <h2>News Feed</h2>
         </div>
+      </Link>
         </li>
         <li>
         <div className="name-tag">
@@ -62,11 +69,24 @@ class MainPage extends React.Component{
         </ul>
         </section>
         <section className="posts-mid">
-          debugger;
           <NewsFeedContainer user={this.props.currentUser}
             currentUser={this.props.currentUser}/>
         </section>
         <section className="adds-sidebar">
+          <div className="did-add">
+
+            <section className="add-2">
+              <h2 className="add-text">Marlia</h2>
+              <section className="add-image1"></section>
+            </section>
+
+            <section className="add-1">
+              <h2 className="add-text">Adobe.</h2>
+              <section className="add-image2"></section>
+            </section>
+
+
+          </div>
         </section>
         </section>
      </div>);

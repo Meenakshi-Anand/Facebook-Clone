@@ -1,0 +1,77 @@
+.comments{
+background: #f2f3f5;
+margin: 0px -15px -25px -15px;
+padding: 0 20px 15px 15px;
+border-top: solid 1px #dddfe2;
+margin-top: 20px;
+}
+
+.comments input[type=text]{
+  min-height: 32px;
+  width: 430px;
+  border-radius: 18px;
+  padding: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  resize: none;
+  box-sizing: border-box;
+  border: solid 1px #dddfe2;
+  background:white;
+}
+
+.com-div{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.comment-text{
+  margin-right: 2px;
+  margin-left:2px;
+  font-weight: 500;
+  color: #315796;
+  display:flex;
+  width:100%;
+}
+.delete-hover{
+  position:absolute;
+  right:100px;
+}
+.space-del{
+  margin-left:10px;
+  color:#315796;
+  visibility: hidden;
+}
+.delete-hover:hover .space-del{
+  visibility: visible;
+}
+.each-comment{
+  margin:10px 0;
+  margin-left: -10px;
+
+}
+.post-comment-body{
+  margin-right: 20px;
+  width:100%;
+}
+.postname{
+  display:flex;
+  width:100%;
+  align-items: center;
+}
+
+.post-me {
+ margin-top: -5px;
+ align-items: center;
+ background:white;
+ border-radius: 10px;
+ width:350px;
+ display: flex;
+ min-width:200px;
+ height:40px;
+}
+
+.ll Link:hover{
+ background:white;
+ border-radius: 8px;
+}

@@ -22,8 +22,11 @@ class NewsFeedIndexItem extends React.Component{
 
   renderDelete(){
     if(this.props.currentUser.id === this.props.post.author_id){
-      return(<button className="del-button"
-        onClick={()=>this.handleSubmit()}>Delete</button>);
+      return(<div
+        onClick={()=>this.handleSubmit()}>
+          <span className="delete-hover"> ...
+          <i className="fas fa-trash-alt space-del"></i>
+          </span></div>);
     }else{
       return null;
     }
@@ -42,7 +45,7 @@ class NewsFeedIndexItem extends React.Component{
 
       <div>
         {this.renderImage()}
-        <h2>{post.body}</h2>
+        <h2 className="pos-text">{post.body}</h2>
       </div>
 
       <CommentsContainer post={post} comments={post.comments}/>

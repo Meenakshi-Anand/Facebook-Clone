@@ -22,8 +22,12 @@ class PostIndexItem extends React.Component{
 
   renderDelete(){
     if(this.props.currentUser.id === this.props.post.author_id){
-      return(<button className="del-button"
-        onClick={()=>this.handleSubmit()}>Delete</button>);
+      return(<div
+        onClick={()=>this.handleSubmit()}>
+        <span className="delete-hover"> ...
+        <i class="fas fa-trash-alt space-del"></i>
+        </span>
+      </div>);
     }else{
       return null;
     }
@@ -37,16 +41,15 @@ class PostIndexItem extends React.Component{
       <div className="post-name">
        <section><img className="profile_img"
          src={newUser.profile_image_url} /></section>
-       <h2>{newUser.fname}</h2>
+       <h2 >{newUser.fname}</h2>
         {this.renderDelete()}
       </div>
 
       <div>
         {this.renderImage()}
-        <h2>{post.body}</h2>
+        <h2 className="pos-text">{post.body}</h2>
       </div>
-       <CommentsContainer post={this.props.post}
-         comments={this.props.post.comments}/>
+       <CommentsContainer post={post} comments={post.comments}/>
     </li>);
   }
 }

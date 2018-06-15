@@ -1,12 +1,31 @@
 
 .profile-sidebar{
-  margin-top: 60px;
+  margin-top: 65px;
   width:250px;
   height:500px;
 }
 
+.add-image1{
+
+  background-image: image-url('add_1.png');
+  height:250px;
+  width:220px;
+  padding:10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.add-image2{
+  background-image: image-url('add_2.jpg');
+  height:325px;
+  width:220px;
+  padding:10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .adds-sidebar{
-  margin-top: 50px;
+  margin-top: 65px;
   width:250px;
   height:500px;
   box-sizing: border-box;
@@ -128,4 +147,8 @@ margin-left: 10px;
 .del-button{
   position:absolute;
   left:435px;
+}
+
+.pos-text {
+  margin-top: 15px;
 }

@@ -34,28 +34,30 @@ class Comments extends React.Component {
       let comments = this.props.comments;
       let commentKeys = Object.keys(this.props.comments);
       return commentKeys.map((key) => {
-        console.log(comments[key].post_id);
            key = parseInt(key);
           const picStyle = {backgroundImage:"url("+comments[key].authorpic+")"};
       let deleteComment = () => {
         if(this.props.currentUser.id === comments[key].authorid) {
           return(
-            <div onClick={() => this.execDeleteComment(comments[key].post_id,key)}>
-              <i className="material-icons">delete_forever</i>
-            </div>
+         <div onClick={() => this.execDeleteComment(comments[key].post_id,key)}>
+            <span className="delete-hover"> ...
+            <i className="fas fa-trash-alt space-del"></i>
+            </span>
+        </div>
           );
         }
       };
 
         return (
-          <div>
-            <div>
-              <div>
-                {comments[key].authorf} {comments[key].authorl}
-              </div>
+          <div className="each-comment">
+            <div className="post-name">
+              <img className="profile_img" src={comments[key].authorpic}/>
+              <div className="post-me">
+              <h2 className="comment-text">{comments[key].authorf}</h2>
               <div className="post-comment-body">{comments[key].body}</div>
+              </div>
+              {deleteComment()}
             </div>
-            {deleteComment()}
           </div>
         );
       });
@@ -80,7 +82,6 @@ class Comments extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Write a comment..."
             value={this.state.body} onChange={this.update('body')}></input>
-          <input type="submit" value="comment"></input>
         </form>
       </div>
     );
@@ -88,7 +89,7 @@ class Comments extends React.Component {
 
   render() {
     return(
-      <div>
+      <div class="comments">
         {this.allComments()}
         {this.commentForm()}
       </div>

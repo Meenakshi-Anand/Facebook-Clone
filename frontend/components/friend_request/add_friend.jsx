@@ -9,7 +9,6 @@ class AddFriend extends React.Component{
  }
  renderErrors(){
    const {errors} = this.props;
-   console.log(errors);
    return (<ul >
      {errors.generalErrors.map((error,i) => (
            <li key={`error-${i}`}>
