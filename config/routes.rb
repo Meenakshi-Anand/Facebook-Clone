@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     get "users/search", to: "users#search"
     get '/users/:id/wall', to: 'posts#wall_posts'
-    get '/users/:id/feed', to: 'posts#news_feed'
+    get '/users/feed', to: 'posts#feed'
     resources :users, only: [:index, :create, :show, :update] do
       resources :friend_requests, only: [:index, :create,:update,:destroy]
     end

@@ -19,9 +19,9 @@ export const fetchWallPosts = id => dispatch =>
     dispatch(receiveWallPosts(posts))
   );
 
-export const fetchNewsFeed = id => dispatch =>
-  PostApiUtil.fetchNewsFeed(id).then(posts =>
-    dispatch(receiveNewsFeedPosts(posts)));
+export const fetchNewsFeed =() => dispatch =>
+  PostApiUtil.fetchNewsFeed().then(posts =>
+    dispatch(receiveAllPosts(posts)));
 
 
 export const fetchPost = id => dispatch => (

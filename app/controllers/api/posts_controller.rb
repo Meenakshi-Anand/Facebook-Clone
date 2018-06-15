@@ -1,5 +1,20 @@
 class Api::PostsController < ApplicationController
   def index
+    @users = User.all
+    @posts = Post.all
+    if params[:userId]
+      @posts = Post.where("author_id = ? AND wall_id IS NULL", params[:userId])
+        .or(Post.where(["wall_id = ?", params[:userId]]))
+    end
+
+    if @posts.empty?
+      render :empty
+    else
+      render :index
+    end
+  end
+  
+  def feed
     @posts = Post.all
     render :index
   end
@@ -16,17 +31,6 @@ class Api::PostsController < ApplicationController
     else
       render json: @post.errors.full_messages
     end
-  end
-
-  def wall_posts
-
-    @posts = Post.find_posts_by_wall_id(params[:wall_id])
-    render :index
-  end
-
-  def news_feed
-    @posts = Post.find_posts_of_friends(params[:id])
-    render :index
   end
 
   def update

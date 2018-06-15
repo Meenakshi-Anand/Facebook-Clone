@@ -1,25 +1,26 @@
 import React from 'react';
-import PostIndexItem from './post_index_item';
+import NewsFeedIndexItem from './news_feed_index_item';
 import CreatePostFormContainer from './create_post_form_container';
 
-class PostIndex extends React.Component {
+class NewsFeedIndex extends React.Component {
   constructor(props){
     super(props);
   }
   componentDidMount() {
-    this.props.fetchAllPosts();
+    this.props.fetchNewsFeed();
   }
 
   render() {
     const posts = this.props.posts.reverse().map(post => {
-      if(post.wall_id === this.props.user.id){
+      if(post.wall_id === this.props.currentUser.id ||
+         this.props.currentUser.friends.includes(post.author_id)){
       return (
-        <PostIndexItem
+        <NewsFeedIndexItem
           key={post.id}
           post= {post}
           user={this.props.user}
           deletePost={this.props.deletePost}
-          fetchAllPosts={this.props.fetchAllPosts}
+          fetchNewsFeed={this.props.fetchNewsFeed}
           currentUser={this.props.currentUser}
           users={this.props.users}/>
       );
@@ -41,4 +42,4 @@ class PostIndex extends React.Component {
   }
 }
 
-export default PostIndex;
+export default NewsFeedIndex;

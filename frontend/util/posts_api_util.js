@@ -26,10 +26,10 @@ export const fetchWallPosts = id =>
     url: `api/users/${id}/wall`
   });
 
-export const fetchNewsFeed = id =>
+export const fetchNewsFeed = () =>
   $.ajax({
     method: 'GET',
-    url: `api/users/${id}/feed`
+    url: `api/users/feed`
   });
 
 

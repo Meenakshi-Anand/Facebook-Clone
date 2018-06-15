@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
   foreign_key: :post_id
 
  def self.find_posts_by_wall_id(id)
-   Post.all.where("wall_id = id")
+   Post.all.where("wall_id = id").order("created_at DESC")
  end
 
  def self.find_posts_of_friends(id)
@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base
 
    friend_ids_string = "(#{friend_ids.join(', ')})"
 
-   self.where("author_id IN 'friend_ids_string'")+
-   self.where("wall_id IN 'friend_ids_string'")
+   Post.where("author_id IN 'friend_ids_string'")+
+   Post.where("wall_id IN 'friend_ids_string'")
  end
 end

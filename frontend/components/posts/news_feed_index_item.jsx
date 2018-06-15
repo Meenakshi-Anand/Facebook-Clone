@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class PostIndexItem extends React.Component{
+class NewsFeedIndexItem extends React.Component{
 
   constructor(props){
     super(props);
@@ -9,7 +9,7 @@ class PostIndexItem extends React.Component{
   }
   handleSubmit(e){
     this.props.deletePost(this.props.post.id)
-    .then(()=>this.props.fetchAllPosts());
+    .then(()=>this.props.fetchNewsFeed());
   }
   renderImage(){
     if(this.props.post.photo.match( '/assets/missing-post')){
@@ -29,8 +29,7 @@ class PostIndexItem extends React.Component{
     }
   }
   render(){
-
-  const { post, deletePost,user ,fetchAllPosts,users} = this.props;
+  const { post, deletePost,user ,fetchNewsFeed,users} = this.props;
   const newUser = users[post.author_id];
   return (
     <li className="index-post">
@@ -49,4 +48,4 @@ class PostIndexItem extends React.Component{
     </li>);
   }
 }
-export default PostIndexItem;
+export default NewsFeedIndexItem;

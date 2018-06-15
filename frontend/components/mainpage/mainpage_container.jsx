@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import SignupFormContainer from './signup_form_container';
 import DemoLoginContainer from './demo_container';
+import NewsFeedContainer from '../posts/news_feed_container';
 import PostIndexContainer from '../posts/post_index_container';
 import { connect } from 'react-redux';
 import {fetchAllUsers} from '../../actions/session_actions';
@@ -61,7 +62,9 @@ class MainPage extends React.Component{
         </ul>
         </section>
         <section className="posts-mid">
-          <PostIndexContainer user={this.props.currentUser}/>
+          debugger;
+          <NewsFeedContainer user={this.props.currentUser}
+            currentUser={this.props.currentUser}/>
         </section>
         <section className="adds-sidebar">
         </section>

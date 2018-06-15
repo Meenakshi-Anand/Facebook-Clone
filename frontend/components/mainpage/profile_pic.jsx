@@ -1,5 +1,6 @@
 import React from 'react';
 import FriendsContainer from '../friend_request/friends_container';
+import PostIndexContainer from '../posts/post_index_container';
 class ProfilePicture extends React.Component{
   constructor(props){
     super(props);
@@ -48,7 +49,20 @@ class ProfilePicture extends React.Component{
      return (<div></div>);
    }
  }
-
+renderPosts(){
+ if(this.props.currentUser.id === this.props.user.id ||
+    this.props.currentUser.friends.includes(this.props.user.id)){
+    return(
+    <div className="posts">
+      <section className="posts-mids">
+        <PostIndexContainer user={this.props.user}/>
+      </section>
+    </div>);
+    }
+  else{
+    return null;
+  }
+}
 render() {
     return(
       <div>
@@ -67,7 +81,7 @@ render() {
         <div className="friends-page">
         <FriendsContainer user={this.props.user}/>
         </div>
-        <div className="posts"> Posts </div>
+        {this.renderPosts()}
       </div>);
 }
 
