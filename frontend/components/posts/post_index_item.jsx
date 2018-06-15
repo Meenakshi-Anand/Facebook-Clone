@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import CommentsContainer from '../comments/comments_container';
 class PostIndexItem extends React.Component{
 
   constructor(props){
@@ -45,7 +45,8 @@ class PostIndexItem extends React.Component{
         {this.renderImage()}
         <h2>{post.body}</h2>
       </div>
-
+       <CommentsContainer post={this.props.post}
+         comments={this.props.post.comments}/>
     </li>);
   }
 }

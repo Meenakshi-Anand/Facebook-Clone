@@ -1,4 +1,4 @@
-export const fetchComments = postId => (
+ export const fetchComments = postId => (
   $.ajax({
     url: `/api/posts/${postId}/comments`,
   })

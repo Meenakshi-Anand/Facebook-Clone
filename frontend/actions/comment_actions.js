@@ -1,5 +1,5 @@
 import * as CommentApiUtil from "../util/comment_api_util";
-
+import {fetchPost} from '../actions/post_actions';
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
@@ -31,9 +31,9 @@ export const fetchComment = (postId, commentId) => dispatch => {
   then( comment => dispatch(receiveComment(comment)));
 };
 
-export const createComment = (postId, comment) => dispatch => {
+export const postComment = (postId, comment) => dispatch => {
   CommentApiUtil.postComment(postId, comment).
-  then( newComment => dispatch(receiveComment(newComment)));
+  then( post => dispatch(fetchPost(post.id)));
 };
 
 export const updateComment = (postId, comment) => dispatch => {
@@ -42,6 +42,7 @@ export const updateComment = (postId, comment) => dispatch => {
 };
 
 export const destroyComment = (postId, commentId) => dispatch => {
+  debugger
   CommentApiUtil.deleteComment(postId, commentId).
-  then( () => dispatch(removeComment(commentId)));
+  then( post => dispatch(fetchPost(post.id)));
 };
