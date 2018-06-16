@@ -42,7 +42,6 @@ export const updateComment = (postId, comment) => dispatch => {
 };
 
 export const destroyComment = (postId, commentId) => dispatch => {
-  debugger
   CommentApiUtil.deleteComment(postId, commentId).
   then( post => dispatch(fetchPost(post.id)));
 };
