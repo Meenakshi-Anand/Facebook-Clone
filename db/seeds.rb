@@ -82,7 +82,7 @@ p9 = Post.create!(wall_id:u4.id,author_id:u1.id,body:"Happy morning")
 p8 = Post.create!(wall_id:u4.id,author_id:u4.id,body:"All the best")
 p10 = Post.create!(wall_id:u1.id,author_id:u1.id,body:"hey der")
 
-Comments.destroy_all
+Comment.destroy_all
 
 c1 = Post.create!(post_id:u1.id,author_id:u1.id,body:"Summer is here")
 c2 = Post.create!(post_id:u2.id,author_id:u4.id,body:"Hello all")
