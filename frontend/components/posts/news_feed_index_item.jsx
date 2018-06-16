@@ -8,6 +8,10 @@ class NewsFeedIndexItem extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchNewsFeed();
+  }
+
   handleSubmit(e){
     this.props.deletePost(this.props.post.id)
     .then(()=>this.props.fetchNewsFeed());
