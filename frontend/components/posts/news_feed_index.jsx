@@ -5,12 +5,11 @@ import CreatePostFormContainer from './create_post_form_container';
 class NewsFeedIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {loading:true};
   }
 
 
   componentDidMount(){
-    this.props.fetchNewsFeed().then(()=>this.props.fetchAllUsers());
+    this.props.fetchNewsFeed();
   }
 
   render() {
@@ -24,8 +23,7 @@ class NewsFeedIndex extends React.Component {
           user={this.props.user}
           deletePost={this.props.deletePost}
           fetchNewsFeed={this.props.fetchNewsFeed}
-          currentUser={this.props.currentUser}
-          users={this.props.users}/>
+          currentUser={this.props.currentUser}/>
       );
     }else{
       return null;

@@ -1,7 +1,9 @@
 
 json.extract! post, :id, :author_id, :wall_id, :body, :created_at
 json.photo asset_path(post.photo.url)
-json.author post.author
+json.authorfname  post.author.fname
+json.profile_image_url asset_path(post.author.profile_image_url)
+
 json.wall post.wall
 if post.comments
   json.comments do

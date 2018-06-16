@@ -33,16 +33,13 @@ class NewsFeedIndexItem extends React.Component{
     }
   }
   render(){
-  const { post, deletePost,user ,fetchNewsFeed,users} = this.props;
-  const newUser = users[post.author_id];
-  console.log(post);
-  console.log(user);
+  const { post, deletePost,user,fetchNewsFeed} = this.props;
   return (
     <li className="index-post">
       <div className="post-name">
        <section><img className="profile_img"
-         src={newUser.profile_image_url} /></section>
-       <h2>{newUser.fname}</h2>
+         src={post.profile_image_url} /></section>
+       <h2>{post.authorfname}</h2>
         {this.renderDelete()}
       </div>
 

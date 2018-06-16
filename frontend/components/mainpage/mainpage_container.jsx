@@ -10,9 +10,10 @@ import {Link} from 'react-router-dom';
 class MainPage extends React.Component{
   constructor(props){
     super(props);
+    this.state={loading:true};
   }
   componentDidMount(){
-    this.props.fetchAllUsers();
+    this.props.fetchAllUsers().then(()=>this.setState({loading:false}));
   }
   render(){
   if (!this.props.currentUser){
