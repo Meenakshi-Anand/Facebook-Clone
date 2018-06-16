@@ -36,7 +36,7 @@ lname:'Sam',sex:'F',birthday:Date.new(),bio:":Love the beaches")
 u9 = User.create!(email:'ruhi@codeanand.com',password:'password',fname:'Ruhi',
 lname:'fsf',sex:'F',birthday:Date.new(),bio:":Love the beaches")
 
-u10 =User.create!(email:'anand@codeanand.com',password:'password',fname:'Anand',
+u10 =User.create!(email:'anandf@codeanand.com',password:'password',fname:'Anand',
 lname:'Narayan',sex:'F',birthday:Date.new(),bio:":Love the beaches")
 
 FriendRequest.destroy_all
