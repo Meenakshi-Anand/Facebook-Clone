@@ -5,6 +5,12 @@ import CreatePostFormContainer from './create_post_form_container';
 class NewsFeedIndex extends React.Component {
   constructor(props){
     super(props);
+    this.state = {loading:true};
+  }
+
+
+  componentDidMount(){
+    this.props.fetchNewsFeed().then(()=>this.props.fetchAllUsers());
   }
 
   render() {

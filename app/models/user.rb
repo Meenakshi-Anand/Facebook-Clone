@@ -70,7 +70,7 @@ end
 
 def accepted_friends
   self.requested_friends.where("approval_status = 'accepted'") +
-    self.received_friends.where("approval_status = 'accepted'")
+  self.received_friends.where("approval_status = 'accepted'")
 end
 
 def accepted_friends_ids

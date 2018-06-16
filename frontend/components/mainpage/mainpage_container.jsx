@@ -70,7 +70,8 @@ class MainPage extends React.Component{
         </section>
         <section className="posts-mid">
           <NewsFeedContainer user={this.props.currentUser}
-            currentUser={this.props.currentUser}/>
+            currentUser={this.props.currentUser}
+            fetchAllUsers={this.props.fetchAllUsers}/>
         </section>
         <section className="adds-sidebar">
           <div className="did-add">

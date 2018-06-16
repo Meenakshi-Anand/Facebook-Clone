@@ -40,7 +40,7 @@ class PostIndexItem extends React.Component{
     <li className="index-post">
       <div className="post-name">
        <section><img className="profile_img"
-         src={newUser.profile_image_url} /></section>
+         src={newUser.profile_image} /></section>
        <h2 >{newUser.fname}</h2>
         {this.renderDelete()}
       </div>

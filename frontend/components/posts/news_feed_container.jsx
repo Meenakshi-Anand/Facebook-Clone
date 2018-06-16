@@ -15,7 +15,6 @@ const mapStateToProps = (state,ownProps) => {
 const mapDispatchToProps = dispatch => ({
   fetchNewsFeed: ()=>dispatch(fetchNewsFeed()),
   deletePost: id => dispatch(deletePost(id)),
-  fetchAllUsers: ()=>dispatch(fetchAllUsers())
 });
 
 export default connect(

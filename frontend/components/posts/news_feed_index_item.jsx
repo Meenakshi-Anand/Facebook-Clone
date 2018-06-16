@@ -8,10 +8,6 @@ class NewsFeedIndexItem extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    this.props.fetchNewsFeed();
-  }
-
   handleSubmit(e){
     this.props.deletePost(this.props.post.id)
     .then(()=>this.props.fetchNewsFeed());
@@ -39,6 +35,8 @@ class NewsFeedIndexItem extends React.Component{
   render(){
   const { post, deletePost,user ,fetchNewsFeed,users} = this.props;
   const newUser = users[post.author_id];
+  console.log(post);
+  console.log(user);
   return (
     <li className="index-post">
       <div className="post-name">
