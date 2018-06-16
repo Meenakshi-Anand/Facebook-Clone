@@ -68,12 +68,11 @@ class PostForm extends React.Component {
   }
 
   render () {
-  console.log(this.props.user);
   return (
-  <div className="create-post">
+  <div className="create-post1">
    <h3> Make Post</h3>
     <form onSubmit={this.handleSubmit}>
-      <div className="post-name">
+      <div className="post-name1">
       <section><img className="profile_img"
         src={this.props.user.profile_image_url} /></section>
       <h2> Whats in your mind , {this.props.user.fname} ?</h2>

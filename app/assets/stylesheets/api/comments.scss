@@ -5,6 +5,7 @@ background: #f2f3f5;
 margin: 0px -15px -25px -15px;
 padding: 0 20px 15px 15px;
 border-top: solid 1px #dddfe2;
+border-right: solid 1px #dddfe2;
 margin-top: 20px;
 }
 
@@ -28,12 +29,11 @@ margin-top: 20px;
 }
 
 .comment-text{
-  margin-right: 2px;
-  margin-left:2px;
+  margin-right:6px;
+  margin-left:6px;
   font-weight: 500;
   color: #315796;
   display:flex;
-  width:100%;
 }
 .delete-hover{
   position:absolute;
@@ -66,11 +66,11 @@ margin-top: 20px;
  margin-top: -5px;
  align-items: center;
  background:white;
- border-radius: 10px;
+ border-radius: 15px;
  width:350px;
  display: flex;
  min-width:200px;
- height:40px;
+ height:35px;
 }
 
 .ll Link:hover{

@@ -37,17 +37,17 @@ class PostIndexItem extends React.Component{
   const { post, deletePost,user ,fetchAllPosts,users} = this.props;
   const newUser = users[post.author_id];
   return (
-    <li className="index-post">
-      <div className="post-name">
+    <li className="index-post1">
+      <div className="post-name1">
        <section><img className="profile_img"
          src={newUser.profile_image_url} /></section>
-       <h2 >{newUser.fname}</h2>
+       <h2 className="post-name-text">{newUser.fname}</h2>
         {this.renderDelete()}
       </div>
 
       <div>
         {this.renderImage()}
-        <h2 className="pos-text">{post.body}</h2>
+        <h2 className="pos-text1">{post.body}</h2>
       </div>
        <CommentsContainer post={post} comments={post.comments}/>
     </li>);

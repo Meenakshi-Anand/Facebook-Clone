@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_attached_file :profile_image_url,default_url: 'female-default.jpg'
   validates_attachment_content_type :profile_image_url, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_image_url,default_url: 'welcome.png'
+  has_attached_file :cover_image_url,default_url: 'cover-default.jpg'
   validates_attachment_content_type :cover_image_url, content_type: /\Aimage\/.*\Z/
 
 

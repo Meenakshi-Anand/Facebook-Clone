@@ -7,7 +7,8 @@
 
 .add-image1{
 
-  background-image: image-url('add_1.png');
+  background-image: image-url('add-1.jpg');
+  margin-top: 5px;
   height:250px;
   width:220px;
   padding:10px;
@@ -16,7 +17,7 @@
 }
 
 .add-image2{
-  background-image: image-url('add_2.jpg');
+  background-image: image-url('add-2.jpg');
   height:325px;
   width:220px;
   padding:10px;
@@ -38,6 +39,7 @@
 
 .name-tag{
   display:flex;
+  width:180px;
 }
 
 .sidebar-ul li{
@@ -150,4 +152,15 @@ margin-left: 10px;
 
 .pos-text {
   margin-top: 15px;
+}
+
+.sp{
+  margin-left:18px;
+}
+
+.friends{
+  position: relative;
+}
+.blast{
+  position: absolute;
 }

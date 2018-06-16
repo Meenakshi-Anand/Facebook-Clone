@@ -117,7 +117,7 @@ input[type="file"]{
 }
 
 .button-text{
-  color:#fff;
+  color:gray;
   font-family: "Lucida Grande", sans-serif;
   font-size: 10px;
   padding:2px;
@@ -126,7 +126,7 @@ input[type="file"]{
   width:120px;
   position: absolute;
   border-radius: 2px;
-  border: 1px solid #fff;
+  border: 1px solid gray;
 }
 .intro{
   width: 450px;
@@ -163,8 +163,12 @@ input[type="file"]{
   margin-right: 15px;
 }
 .did-add{
-  margin-top:20px;
-  margin-left:10px;
+  margin-top: 5px;
+  margin-left:15px;
+  color: #616770;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 13px;
 }
 .add-text{
 margin-right: 2px;

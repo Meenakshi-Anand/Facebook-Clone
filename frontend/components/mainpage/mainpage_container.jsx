@@ -43,28 +43,32 @@ class MainPage extends React.Component{
         <section><img className="profile_img"
           src={this.props.currentUser.profile_image_url} /></section>
         <h2> {this.props.currentUser.fname} {this.props.currentUser.lname} </h2>
+
           </div>
        </Link>
         </div>
         </li>
         <li>
         <Link to="/">
-        <div className="name-tag">
-          <i className="far fa-newspaper space"></i>
-          <h2>News Feed</h2>
-        </div>
+        <section className="name-tag news">
+          <i className="far fa-newspaper "></i>
+          <h2 className="sp">News Feed</h2>
+
+        </section>
       </Link>
         </li>
         <li>
         <div className="name-tag">
-          <i className="fab fa-facebook-messenger space"></i>
-          <h2>Messenger</h2>
+          <i className="fab fa-facebook-messenger "></i>
+          <h2 className="sp">Messenger</h2>
+
         </div>
         </li>
         <li>
         <div className="name-tag">
-          <i className="fas fa-video space"></i>
-          <h2>Videos</h2>
+          <i className="fas fa-video"></i>
+          <h2 className="sp">Videos</h2>
+
         </div>
         </li>
         </ul>
@@ -76,14 +80,14 @@ class MainPage extends React.Component{
         </section>
         <section className="adds-sidebar">
           <div className="did-add">
-
+            <h2>Sponsored</h2>
             <section className="add-2">
-              <h2 className="add-text">Marlia</h2>
+              <h2 className="add-text"></h2>
               <section className="add-image1"></section>
             </section>
 
             <section className="add-1">
-              <h2 className="add-text">Adobe.</h2>
+              <h2 className="add-text"></h2>
               <section className="add-image2"></section>
             </section>
 
