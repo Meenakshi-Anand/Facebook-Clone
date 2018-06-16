@@ -34,7 +34,7 @@ u8 = User.create!(email:'sam@codeanand.com',password:'password',fname:'Sam',
 lname:'Sam',sex:'F',birthday:Date.new(),bio:":Love the beaches")
 
 u9 = User.create!(email:'ruhi@codeanand.com',password:'password',fname:'Ruhi',
-lname:' ',sex:'F',birthday:Date.new(),bio:":Love the beaches")
+lname:'fsf',sex:'F',birthday:Date.new(),bio:":Love the beaches")
 
 u10 =User.create!(email:'anand@codeanand.com',password:'password',fname:'Anand',
 lname:'Narayan',sex:'F',birthday:Date.new(),bio:":Love the beaches")
