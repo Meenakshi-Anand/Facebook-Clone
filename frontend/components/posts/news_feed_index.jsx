@@ -23,7 +23,8 @@ class NewsFeedIndex extends React.Component {
           user={this.props.user}
           deletePost={this.props.deletePost}
           fetchNewsFeed={this.props.fetchNewsFeed}
-          currentUser={this.props.currentUser}/>
+          currentUser={this.props.currentUser}
+          users={this.props.users}/>
       );
     }else{
       return null;
