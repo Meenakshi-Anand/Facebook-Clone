@@ -20,11 +20,17 @@
 }
 
 
-.friends-page  ul  li{
+.friends-user{
   display: block;
   width:135px;
   height:135px;
   padding:10px;
+}
+
+.friends-user img{
+  width:120px;
+  height:120px;
+  object-fit: contain;
 }
 
 .request-dropdown{

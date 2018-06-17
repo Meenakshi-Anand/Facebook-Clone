@@ -54,7 +54,7 @@ class Comments extends React.Component {
 
         return (
           <div className="each-comment">
-            <div className="post-name">
+            <div className="post-name1">
               <img className="profile_img" src={comments[key].authorpic}/>
               <div className="post-me">
               <h2 className="comment-text">{comments[key].authorf}</h2>

@@ -39,7 +39,7 @@ class NewsFeedIndexItem extends React.Component{
       <div className="post-name">
        <section><img className="profile_img"
          src={post.profile_image_url} /></section>
-       <h2>{post.authorfname}</h2>
+       <h2 className="post-author">{post.authorfname}</h2>
         {this.renderDelete()}
       </div>
 

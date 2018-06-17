@@ -72,16 +72,16 @@ class PostForm extends React.Component {
   <div className="create-post1">
    <h3> Make Post</h3>
     <form onSubmit={this.handleSubmit}>
-      <div className="post-name1">
+      <div className="post-name">
       <section><img className="profile_img"
         src={this.props.user.profile_image_url} /></section>
-      <h2> Whats in your mind , {this.props.user.fname} ?</h2>
-      </div>
       <label>
       <textarea
         value={this.state.body}
-        onChange={this.update('body')} wrap="hard"/>
+        placeholder={`Whats in your mind ,${this.props.user.fname}?`}
+        onChange={this.update('body')}/>
       </label>
+      </div>
       <div className="last-buttons">
       {this.postPicture()}
 
