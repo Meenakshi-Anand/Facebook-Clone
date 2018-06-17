@@ -6,8 +6,7 @@ export const RECEIVE_WALL_POSTS = 'RECEIVE_WALL_POSTS';
 export const RECEIVE_NEWS_FEED_POSTS = 'RECEIVE_NEWS_FEED_POSTS';
 
 export const createPost = postForm => dispatch =>
-  PostApiUtil.createPost(postForm).then(post => dispatch(receivePost(post)),
-  err=>dispatch(receiveErrors(err.responseJSON)));
+  PostApiUtil.createPost(postForm).then(post => dispatch(receivePost(post)));
 
 export const updatePost = postForm => dispatch =>
   PostApiUtil.updatePost(postForm).then(post => dispatch(receivePost(post)));
