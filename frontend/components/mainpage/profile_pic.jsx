@@ -78,7 +78,7 @@ render() {
         </div>
         <div className="intro">
         <h2> <section className='notification'/> Intro </h2>
-        <h3>About : {this.props.user.bio}</h3>
+        <h4>{this.props.user.bio}</h4>
         </div>
         <div className="friends-page">
         <FriendsContainer user={this.props.user}/>
