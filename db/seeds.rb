@@ -68,3 +68,8 @@ FriendRequest.create!(requestor_id:u4.id,approver_id:u10.id,approval_status:"acc
 FriendRequest.create!(requestor_id:u4.id,approver_id:u5.id,approval_status:"accepted")
 FriendRequest.create!(requestor_id:u4.id,approver_id:u6.id,approval_status:"accepted")
 FriendRequest.create!(requestor_id:u4.id,approver_id:u7.id,approval_status:"accepted")
+
+
+Post.destroy_all
+
+Comment.destroy_all
