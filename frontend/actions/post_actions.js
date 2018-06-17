@@ -1,12 +1,13 @@
 import * as PostApiUtil from '../util/posts_api_util';
-
+import {receiveErrors} from './session_actions';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_WALL_POSTS = 'RECEIVE_WALL_POSTS';
 export const RECEIVE_NEWS_FEED_POSTS = 'RECEIVE_NEWS_FEED_POSTS';
 
 export const createPost = postForm => dispatch =>
-  PostApiUtil.createPost(postForm).then(post => dispatch(receivePost(post)));
+  PostApiUtil.createPost(postForm).then(post => dispatch(receivePost(post)),
+  err=>dispatch(receiveErrors(err.responseJSON)));
 
 export const updatePost = postForm => dispatch =>
   PostApiUtil.updatePost(postForm).then(post => dispatch(receivePost(post)));

@@ -44,6 +44,17 @@ class PostForm extends React.Component {
 
   }
 
+  renderErrors(){
+    const {errors} = this.props;
+    // const { loginErrors } = errors.login_errors;
+    return (<ul className="post-error">
+      {errors.generalErrors.map((error,i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+       </ul>);
+  }
 
   uploadNewPhoto(e) {
   var reader = new FileReader();
@@ -70,6 +81,7 @@ class PostForm extends React.Component {
   render () {
   return (
   <div className="create-post1">
+  {this.renderErrors()}
    <h3> Make Post</h3>
     <form onSubmit={this.handleSubmit}>
       <div className="post-name">
