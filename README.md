@@ -1,4 +1,4 @@
-##Connect
+## Connect
 
 [Live](https://connectfbclone.herokuapp.com/#/)
 [Design Documentation](https://github.com/Meenakshi-Anand/Facebook-Clone/wiki)
@@ -6,7 +6,7 @@
 
 Connect is a Facebook-inspired full-stack web application built upon a Rails framework, using PostgreSQL database and React for the rendering of frontend components, with Redux being used for state management.
 
-##Features And Implementation
+## Features And Implementation
 
 ## New Users And Logging In
 
