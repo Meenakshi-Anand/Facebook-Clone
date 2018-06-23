@@ -13,7 +13,6 @@ class Friend extends React.Component{
  render(){
    let count = " ";
    let friendIds = this.props.user.friends;
-   console.log(friendIds);
    if (friendIds.length === 0 || this.state.loading){
    return null;
    }else{
