@@ -55,9 +55,13 @@ class Comments extends React.Component {
         return (
           <div className="each-comment">
             <div className="post-name1">
+              <Link to={`/users/${comments[key].author_id}`}>
               <img className="profile_img" src={comments[key].authorpic}/>
+              </Link>
               <div className="post-me">
+              <Link to={`/users/${comments[key].author_id}`}>
               <h2 className="comment-text">{comments[key].authorf}</h2>
+              </Link>
               <div className="post-comment-body">{comments[key].body}</div>
               </div>
               <div>
