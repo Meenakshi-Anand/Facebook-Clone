@@ -77,7 +77,7 @@ class PostForm extends React.Component {
       <label>
       <textarea
         value={this.state.body}
-        placeholder={`Whats in your mind ,${this.props.user.fname}?`}
+        placeholder={`Whats in your mind , ${this.props.user.fname}?`}
         onChange={this.update('body')}/>
       </label>
       </div>
