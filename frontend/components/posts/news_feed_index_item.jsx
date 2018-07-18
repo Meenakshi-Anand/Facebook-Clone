@@ -37,9 +37,13 @@ class NewsFeedIndexItem extends React.Component{
   return (
     <li className="index-post">
       <div className="post-name">
+       <Link to={`/users/${post.author_id}`}>
        <section><img className="profile_img"
          src={post.profile_image_url} /></section>
+       </Link>
+       <Link to={`/users/${post.author_id}`}>
        <h2 className="post-author">{post.authorfname}</h2>
+       </Link>
         {this.renderDelete()}
       </div>
 
