@@ -38,9 +38,11 @@ class PostIndexItem extends React.Component{
   return (
     <li className="index-post1">
       <div className="post-name1">
+      <Link to={`/users/${post.author_id}`}>
        <section><img className="profile_img"
          src={post.profile_image_url} /></section>
        <h2 className="post-name-text">{post.authorfname}</h2>
+       </Link>
         {this.renderDelete()}
       </div>
 
