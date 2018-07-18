@@ -20,7 +20,7 @@ class Greeting extends React.Component {
         <section className="greeting">
       <div>
       <div>
-      <Link to={`/users/${currentUser.id}`}>
+      <Link to={`/`}>
       <h2 className="logo">C</h2>
       </Link>
       </div>
