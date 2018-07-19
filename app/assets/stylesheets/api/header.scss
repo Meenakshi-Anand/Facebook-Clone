@@ -1,15 +1,21 @@
 /* PHASE 1: Header */
 
 .header {
-  background: #3b5998;
-  height: 82px;
+  width:100%;
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
+  min-height: 42px;
+  position: fixed;
+  z-index: 1;
   color: #fff;
 }
 
 
 .header nav{
+  width: 980px;
   display: flex;
-  margin: 0 150px;
+  margin: auto;
   justify-content: space-between;
 
 }
@@ -17,8 +23,10 @@
   font-size: 40px;
   font-weight: bolder;
   font-family: "Lucida Grande", sans-serif;
-  padding: 25px 10px 0px 0px;
+  padding: 25px 20px 0px 0px;
+  margin-bottom: 10px;
   display:flex;
+
 }
 
 .header nav div {
@@ -41,10 +49,11 @@
 
 .login-label-div label{
   font-family: "Lucida Grande", sans-serif;
-  font-size: 15px;
-  font-weight:500;
+  font-size: 12px;
   display: block;
   padding: 0 10px 5px 5px;
+  color: #fff;
+  font-weight: normal;
 }
 .login-label-div label input{
   color: black;
@@ -52,7 +61,7 @@
   border-color: #1d2a5b;
   margin-top: 5px;
   height: 20px;
-  width: 155px;
+  width: 142px;
   display: block;
   border-width: thin;
   border-style: solid;
@@ -63,8 +72,8 @@
   font-family: "Lucida Grande", sans-serif;
   background-color: #4267b2;
   text-align: center;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: normal;
   box-sizing: border-box;
   border-radius: 2px;
   border-width: thin;
@@ -73,6 +82,7 @@
   padding: 1px 10px;
   margin-top: 22px;
   height: 22px;
+  cursor: pointer;
 }
 
 .header li {
