@@ -21,8 +21,24 @@ class MainPage extends React.Component{
     <main className="body">
       <section className="main-section">
       <div className="connect">
-      <h2>Connecting with Friends around the world!</h2>
+      <h2>Connect with friends and the world around you.</h2>
       <section className="main-page-img">
+        <div className="main-elements">
+          <section className="main-1"></section>
+          <p className="bold-text">See photos and updates</p>
+          <p className="normal-text">from friends in News Feed</p>
+       </div>
+       <div className="main-elements">
+         <section className="main-2"></section>
+         <p className="bold-text">Share what's new </p>
+         <p className="normal-text">in your life on your Timeline.</p>
+      </div>
+      <div className="main-elements">
+        <section className="main-3"></section>
+        <p className="bold-text">Find more</p>
+        <p className="normal-text">of what you're looking for with
+          Connect Search.</p>
+     </div>
       </section>
       <DemoLoginContainer />
       </div>

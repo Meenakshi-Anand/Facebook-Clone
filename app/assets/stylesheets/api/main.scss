@@ -1,33 +1,35 @@
 
-
-.body {
-  font-family: "Helvetica", sans-serif;
-  height: 100%;
-  background: rgb(233,235,238);
-  max-width: 1200px;
+.body{
+  width: 100%;
+  position: fixed;
+  background:white;
 }
-
 .main-section{
+  width: 980px;
   display: flex;
-  margin: 0 150px;
+  margin: auto;
   justify-content: space-between;
+  padding-top: 75px;
+
+
 }
-.main-section div{
-  width:450px;
+.main-section > div{
+  width: 450px;
 }
 .connect h2{
-  font-weight: 800;
   font-size: 25px;
   margin-top: 35px;
   color:rgb(51,51,51);
   text-align: center;
-  font-family: 'Freight Sans Bold', Helvetica, sans-serif !important;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  font-weight: bold;
   letter-spacing: normal;
   text-rendering: optimizelegibility;
+  border:1px solid red;
 }
 .connect div form button{
   background: linear-gradient(#ba68c8, #ab47bc);
-  width: 400px;
+  width: 450px;
   padding: 20px;
   color: white;
   font-weight: bold;
@@ -38,11 +40,25 @@
   text-align: center;
   margin-top: 40px;
 }
-
+.main-1{
+  margin-top: 55px;
+  background-image: image-url('main_1.png');
+  height:30px;
+}
+.main-2{
+  margin-top: 55px;
+  background-image: image-url('main_2.png');
+  height:30px;
+}
+.main-3{
+  margin-top: 55px;
+  background-image: image-url('add-1.jpg');
+  width:10px;
+  height:30px;
+}
 .main-page-img{
 
   margin-top: 55px;
-  background-image: image-url('connect-pic.jpg');
   width:100%;
   height:220px;
   background-repeat: no-repeat;
@@ -53,7 +69,8 @@
 .signup-form{
   width:450px;
   margin-top: 0px;
-  margin-left: 120px;
+  border:1px solid red;
+  // margin-left: 120px;
 }
 
 .signup-form h2{
