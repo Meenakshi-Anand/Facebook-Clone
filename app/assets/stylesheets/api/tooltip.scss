@@ -41,7 +41,6 @@
     border-style: solid;
     border-color: transparent transparent transparent #c64b4b;
 }
-.error input{
-  border: 10px solid red;
-  background-color: red;
+.error {
+  border: solid 1px #c64b4b !important;
 }

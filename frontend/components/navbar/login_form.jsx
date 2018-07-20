@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
           <label> Email
           <div className="tooltip">
           <input  type="text"
-             className={errors.loginErrors ? 'error' : ''}
+             className={errors.loginErrors.length > 0 ? 'error' : ''}
              value={this.state.email}
              onChange={this.update('email')} />
           {this.renderErrors()}
@@ -48,7 +48,9 @@ class LoginForm extends React.Component {
           <div className="login-label-div">
           <label> Password
             <div className="tooltip">
-            <input type="password" value={this.state.password}
+            <input type="password"
+               className={errors.loginErrors.length > 0 ? 'error' : ''}
+               value={this.state.password}
                onChange={this.update('password')} />
              {this.renderErrors()}
              </div>
