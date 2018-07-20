@@ -26,7 +26,7 @@ class MainPage extends React.Component{
         <div className="main-elements">
           <section className="main-1"></section>
           <p className="bold-text">See photos and updates</p>
-          <p className="normal-text">from friends in News Feed</p>
+          <p className="normal-text">from friends in News Feed.</p>
        </div>
        <div className="main-elements">
          <section className="main-2"></section>

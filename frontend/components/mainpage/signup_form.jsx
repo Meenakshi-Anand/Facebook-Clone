@@ -53,8 +53,8 @@ class SignupForm extends React.Component {
     if (formType === "SIGNUP"){
     return(
       <div className="signup-form">
-        <h2>Create New Account</h2>
-        <h3>It's free and always will be</h3>
+        <h2 className="sub-text">Create New Account</h2>
+        <h3 className="sub-text">It's free and always will be</h3>
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -76,13 +76,14 @@ class SignupForm extends React.Component {
               value={this.state.password} onChange={this.update('password')} />
           </label>
           <div className="birthday-signup">
-          <label> Birthday
+
+          <label> <h3 className="bsub-text"> Birthday </h3>
             <input type="date" value={this.state.birthday}
               onChange={this.update('birthday')} />
           </label>
           </div>
           <div className="sex-signup">
-          <label> Sex
+          <label>
             <div>
              <label>
             <input type="checkbox" value={"M"}
