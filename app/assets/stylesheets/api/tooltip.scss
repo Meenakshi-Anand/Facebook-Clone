@@ -1,0 +1,47 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.error{
+  border:1px solid red;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #c64b4b;
+    border: solid 1px #a1363b;
+    box-shadow: 1px 1px 3px #a1363b;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    min-height: 42px;
+    min-width: 120px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 150px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%; /* To the right of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #c64b4b;
+}
+.error input{
+  border: 10px solid red;
+  background-color: red;
+}

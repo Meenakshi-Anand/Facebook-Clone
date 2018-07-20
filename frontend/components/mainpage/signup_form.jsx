@@ -81,7 +81,8 @@ class SignupForm extends React.Component {
             <div>
             <input type="date" value={this.state.birthday}
               onChange={this.update('birthday')} />
-            <span className="plink margintop">Why do I need to provide my birthday?</span>
+            <span className="plink margintop">Why do I need to provide
+              my birthday?</span>
             </div>
           </label>
           </div>
@@ -89,12 +90,12 @@ class SignupForm extends React.Component {
           <label>
             <div>
              <label>
-            <input type="checkbox" value={"M"}
+            <input className="radio" type="radio" name="my-input" value={"M"}
               onChange={this.updateSex("M")} />
               Male
              </label>
              <label>
-            <input type="checkbox" value={"F"}
+            <input className="radio" type="radio" name="my-input" value={"F"}
               onChange={this.updateSex("F")} />
               Female
              </label>

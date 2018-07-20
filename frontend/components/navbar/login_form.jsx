@@ -10,6 +10,8 @@ class LoginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -25,22 +27,31 @@ class LoginForm extends React.Component {
   }
 
   renderLogin(){
+    const errors = this.props.errors;
     const {formType} = this.props;
     if(formType === "LOGIN"){
     return(
         <div>
-          {this.renderErrors()}
+
         <form onSubmit={this.handleSubmit}>
           <div className="login-label-div">
           <label> Email
-          <input type="text" value={this.state.email}
+          <div className="tooltip">
+          <input  type="text"
+             className={errors.loginErrors ? 'error' : ''}
+             value={this.state.email}
              onChange={this.update('email')} />
+          {this.renderErrors()}
+           </div>
           </label>
-          </div>
+        </div>
           <div className="login-label-div">
           <label> Password
+            <div className="tooltip">
             <input type="password" value={this.state.password}
                onChange={this.update('password')} />
+             {this.renderErrors()}
+             </div>
           </label>
           </div>
           <button type="submit" value={formType}>Log In</button>
@@ -52,13 +63,11 @@ class LoginForm extends React.Component {
 
   renderErrors(){
     const {errors} = this.props;
-    return (<ul>
-      {errors.loginErrors.map((error,i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-       </ul>);
+    if (errors.loginErrors.length > 0){
+    return (<span className="tooltiptext">
+              Incorrect email or password
+            </span>);
+    }
   }
 
   render(){
