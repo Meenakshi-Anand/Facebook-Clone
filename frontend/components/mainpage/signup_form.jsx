@@ -78,8 +78,11 @@ class SignupForm extends React.Component {
           <div className="birthday-signup">
 
           <label> <h3 className="bsub-text"> Birthday </h3>
+            <div>
             <input type="date" value={this.state.birthday}
               onChange={this.update('birthday')} />
+            <span className="plink margintop">Why do I need to provide my birthday?</span>
+            </div>
           </label>
           </div>
           <div className="sex-signup">
@@ -100,8 +103,8 @@ class SignupForm extends React.Component {
         </div>
           <p>
           By clicking Sign Up,
-          you agree to our Terms, Data Policy and Cookies
-          Policy. You may receive SMS Notifications from us
+          you agree to our <span className="plink">Terms, Data Policy</span> and
+          <span className="plink"> Cookies Policy.</span> You may receive SMS Notifications from us
           and can opt out any time.</p>
           <button type="submit" value={formType}>Sign Up</button>
          </form>
