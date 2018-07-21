@@ -7,15 +7,14 @@
 }
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
     background-color: #c64b4b;
     border: solid 1px #a1363b;
     box-shadow: 1px 1px 3px #a1363b;
     color: white;
     font-size: 12px;
     padding: 5px;
-    min-height: 42px;
-    min-width: 120px;
+    min-height: 35px;
+    min-width: 190px;
     box-sizing: border-box;
     border-radius: 5px;
     text-align: center;
@@ -24,8 +23,9 @@
     position: absolute;
     z-index: 1;
     top: -5px;
-    right: 150px;
+    right: 105%;
 }
+
 
 .tooltip:hover .tooltiptext {
     visibility: visible;

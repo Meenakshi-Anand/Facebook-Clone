@@ -55,8 +55,7 @@ class SignupForm extends React.Component {
       }else if(error === "Lname can't be blank"){
          this.err.lname_error ="Whats your name?";
       }else if(error === "Birthday can't be blank"){
-         this.err.birthday_error =
-        "Select your birthday. You can change who can see this later.";
+         this.err.birthday_error ="Select your birthday. You can change who can see this later.";
       }else if(error === "Password is too short (minimum is 6 characters)"){
          this.err.password_error =
         "Enter a combination of at least six numbers, letters and punctuation marks (like ! and &).";
