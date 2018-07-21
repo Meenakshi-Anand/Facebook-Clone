@@ -1,54 +1,63 @@
 
 .greeting_main{
-  background: #3b5998;
-  height: 41px;
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  min-height: 42px;
   color: #fff;
   width: 100%;
   position:fixed;
   z-index: 3;
   font-family: "Lucida Grande", sans-serif;
 }
+.csearch{
+  width:630px;
+}
 .greeting {
+  width:980px;
   display:flex;
   justify-content: space-between;
-  margin: 0 150px;
+  margin: auto;
 }
-.greeting > div > div{
-  margin:5px;
+.left-greeting{
+  display: flex;
+  justify-content: space-between;
+  padding:5px 0px;
 }
 
 .searchButton{
-  height: 24px;
-  width:5px;
-  position: absolute;
-  top:12px;
+  height: 28px;
+  width:30px;
   color: #333;
-  left:570px;
+  align-items: center;
+  margin-top: 5px;
+  padding-left: 16px;
+  background-color: #f6f7f9;
+  border-left:1px solid #3b5998;
+  border-top-right-radius:5px;
+  border-bottom-right-radius: 5px;
 }
 .logo{
+  margin :5px;
   background: white;
   color: #3b5998;
   height: 28px;
   width: 28px;
   border-radius: 3px;
   box-sizing: border-box;
-  display: inline-block;
-  position: relative;
   font-size: 25px;
   font-weight: bolder;
   text-align: center;
 }
 .text{
-  position: absolute;
-  display: inline;
-  height: 24px;
+  height: 28px;
   width: 400px;
   border-radius: 3px 0px 0px 3px;
   color: #333;
   box-sizing: border-box;
-  top:8px;
-  left:195px;
-  padding: 5px 5px;
+  margin-top: 5px;
+  border-top-left-radius:5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
   background-color: white;
 }
 

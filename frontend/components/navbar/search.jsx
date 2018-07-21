@@ -39,9 +39,9 @@ import SearchIndexItem from './search_item';
     });
 }
     return (
-      <div>
+      <div className="csearch">
       <input className="text" type="text" value={this.state.search}
-      onChange={this.update} placeholder="Search Users"/>
+      onChange={this.update} placeholder="Search"/>
       <div  className="searchButton">
       <i  className="fas fa-search"></i>
       </div>

@@ -17,15 +17,14 @@ class Greeting extends React.Component {
     if (currentUser){
     return  (
       <header className="greeting_main">
-        <section className="greeting">
-      <div>
-      <div>
+      <section className="greeting">
+      <div className="left-greeting">
       <Link to={`/`}>
       <h2 className="logo">C</h2>
       </Link>
-      </div>
       <SearchContainer />
       </div>
+      <div className="right-greeting">
       <ul className="logout">
       <li>
       <Link to={`/users/${currentUser.id}`}>
@@ -62,6 +61,7 @@ class Greeting extends React.Component {
         </ul>
       </li>
     </ul>
+    </div>
     </section>
       </header>
     ) ;
@@ -69,7 +69,9 @@ class Greeting extends React.Component {
       return (
          <header className="header">
             <nav>
+            <Link to={`/`}>
             <h2> connect </h2>
+            </Link>
             <LoginFormContainer />
             </nav>
           </header>);

@@ -54,10 +54,12 @@ class LoginForm extends React.Component {
                onChange={this.update('password')} />
              {this.renderErrors()}
              </div>
+             <a href="#" className="forgot-password">Forgot account?</a>
           </label>
           </div>
           <button type="submit" value={formType}>Log In</button>
          </form>
+
        </div>
     );
   }
