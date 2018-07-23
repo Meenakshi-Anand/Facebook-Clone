@@ -26,23 +26,23 @@ class ApproveFriendIndexItem extends React.Component {
     }
  else {
     return (
-      <div>
+      <div className="req-index">
         <div className="name-blk">
           <Link
             to={`/users/${user.id}`}>
             <img
               src={user.profile_image_url}/>
-            <span>{user.fname} {user.lname}</span>
+            <span className="user-name">{user.fname} {user.lname}</span>
           </Link>
         </div>
 
-        <div>
-          <button
+        <div className="actions">
+          <button className="b-button"
             onClick={()=>this.handleRequest("confirm")}
             >Confirm</button>
-          <button
+          <button className="gray-button"
             onClick={()=>this.handleRequest("delete")}
-            >Delete Request</button>
+            >Delete</button>
         </div>
       </div>
     );

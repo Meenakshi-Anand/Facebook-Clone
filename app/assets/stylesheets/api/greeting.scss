@@ -1,8 +1,8 @@
 
 .greeting_main{
   background-color: #3b5998;
-  background-image: linear-gradient(#4e69a2, #3b5998 50%);
-  min-height: 42px;
+  // background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  max-height: 42px;
   color: #fff;
   width: 100%;
   position:fixed;
@@ -10,8 +10,10 @@
   font-family: "Lucida Grande", sans-serif;
 }
 .csearch{
-  width:630px;
+  width: 100%;
+  max-width: 448px;
 }
+
 .greeting {
   width:980px;
   display:flex;
@@ -19,54 +21,84 @@
   margin: auto;
 }
 .left-greeting{
-  display: flex;
-  justify-content: space-between;
-  padding:5px 0px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  margin:5px 0px;
 }
 
 .searchButton{
-  height: 28px;
+  height: 23px;
   width:30px;
-  color: #333;
+  color: gray;
   align-items: center;
   margin-top: 5px;
   padding-left: 16px;
   background-color: #f6f7f9;
   border-left:1px solid #3b5998;
-  border-top-right-radius:5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius:3px;
+  border-bottom-right-radius: 3px;
+}
+.blueButton{
+  background:#4080ff;
+  color: white;
 }
 .logo{
   margin :5px;
   background: white;
   color: #3b5998;
-  height: 28px;
-  width: 28px;
+  height: 24px;
+  width: 24px;
   border-radius: 3px;
   box-sizing: border-box;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bolder;
   text-align: center;
 }
 .text{
-  height: 28px;
+  height: 23px;
   width: 400px;
   border-radius: 3px 0px 0px 3px;
-  color: #333;
+  color: #90949c;
+  font-size: 12px;
+  font-weight: lighter;
   box-sizing: border-box;
   margin-top: 5px;
-  border-top-left-radius:5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius:3px;
+  border-bottom-left-radius: 3px;
   padding: 10px;
   background-color: white;
 }
 
 .profile_img{
-  height: 28px;
-  width: 28px;
-  border-radius: 100%;
-  margin-right: 10px;
-  margin-top: -5px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 2px;
+  box-sizing: border-box;
+  content: '';
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.profileIcon{
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top:-1px;
+}
+.profileIcon:hover{
+  background-color: #4267b2;
+  border-bottom: 1px solid #29487d;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.profile_name{
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  line-height: 28px;
+  white-space: normal;
+  color: #fff;
 }
 .greeting div{
   display:flex;
@@ -74,11 +106,11 @@
 
 .greeting ul{
   display: flex;
-  padding-top: 15px;
+  padding-top: 12px;
 }
 .greeting ul li{
   display: flex;
-  padding:0 5px;
+  padding:0 3px;
 }
 .greeting ul a {
   display: flex;
@@ -86,23 +118,23 @@
 
 
 .messenger{
-height: 24px;
-width: 24px;
+height: 20px;
+// padding: 0 3px 3px 0;
+width: 20px;
 background-size: cover;
 background-repeat: no-repeat;
-margin-top:0px;
-margin-top:-3px;
 background-image: image-url('icon-message.png');
 }
 .messenger:hover{
 background-image: image-url('icon-message-hover-400.png');
 }
 .friends{
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  // padding: 0 3px 3px 0;
+  position: relative;
+  width: 20px;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top:-3px;
   background-image: image-url('icon-users-400.png');
 }
 .friends:active{
@@ -113,11 +145,11 @@ background-image: image-url('icon-message-hover-400.png');
 }
 
 .notification{
-height: 24px;
-width: 24px;
+height: 20px;
+// padding: 0 3px 3px 0;
+width: 20px;
 background-size: cover;
 background-repeat: no-repeat;
-margin-top:-3px;
 background-image: image-url('icon-earth-400.png');
 }
 .notification:hover{
@@ -125,20 +157,20 @@ background-image: image-url('icon-earth-hover-400.png');
 }
 
 .dropdown{
-height: 24px;
-width: 24px;
+height: 16px;
+width: 16px;
+// padding: 0 3px 3px 0;
 background-size: cover;
 background-repeat: no-repeat;
-margin-top:-3px;
 background-image: image-url('icon-dropdown-400.png');
 }
 
 .quickhelp{
-height: 24px;
-width: 24px;
+height: 20px;
+width: 20px;
+// padding: 0 3px 3px 0;
 background-size: cover;
 background-repeat: no-repeat;
-margin-top:-3px;
 background-image: image-url('icon-question-400.png');
 }
 
@@ -158,7 +190,7 @@ background-image: image-url('icon-question-400.png');
 }
 ul .logout-dropdown li {
   position: relative;
-  top:11px;
+  top:17px;
   right:180px;
   width: 200px;
   height:100px;
@@ -190,17 +222,20 @@ ul .logout-dropdown > li:hover {
   width: 10px;
   background: #fff;
   position: absolute;
-  top: 20px;
-  left: 6px;
+  top: 22px;
+  left: 4px;
   transform: rotate(45deg);
   border-left: 1px solid #b3b3b3;
   border-top: 1px solid #b3b3b3;
 }
 
 .logout a:hover{
-    color: black;
+    color: white;
 }
-
+.main-req{
+  position: relative;
+}
 .main-req ul{
   display: block;
+
 }

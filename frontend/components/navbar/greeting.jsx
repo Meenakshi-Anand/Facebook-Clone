@@ -27,11 +27,12 @@ class Greeting extends React.Component {
       <div className="right-greeting">
       <ul className="logout">
       <li>
-      <Link to={`/users/${currentUser.id}`}>
+      <Link className="profileIcon" to={`/users/${currentUser.id}`}>
       <img className="profile_img" src={currentUser.profile_image_url}></img>
-        {currentUser.fname}</Link></li>
+        <span className="profile_name">{currentUser.fname}</span></Link></li>
       <li className="grey-line">|</li>
-      <li><a href="#">Home</a></li>
+      <li className="profileIcon"><a className="profile_name" href="#">Home</a></li>
+      <li className="grey-line">|</li>
       <li>
       <a href="#">
       <section className="friends"></section></a>

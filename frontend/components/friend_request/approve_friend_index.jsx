@@ -35,17 +35,33 @@ class ApproveFriendIndex extends React.Component {
         <span className="blast">{this.state.count}</span>
         <ul className="request-dropdown">
         <section className="new-triangle"></section>
+        <li className="header-req">
+          <span className="req-title">Friend Requests</span>
+          <div>
+          <p className="req-links" href="#">Find Friends ·</p>
+          <p className="req-links" href="#">Settings</p>
+          </div>
+        </li>
         {currentUser.friend_requests.map((id) => (
         <li className="fr-req"><ApproveFriendIndexItemContainer
           user={users[id]}
           key={id} /></li>))}
+        <li  className="header-req"> </li>
         </ul>
         </div>
     ) : (
       <div className="main-req">
       <ul className="request-dropdown">
       <section className="new-triangle"></section>
-      <li>No New Requests</li>
+        <li className="header-req">
+          <span className="req-title">Friend Requests</span>
+          <div>
+          <p className="req-links" href="#">Find Friends ·</p>
+          <p className="req-links" href="#">Settings</p>
+          </div>
+        </li>
+      <li  className="fr-req no-req"> <p className="req-links">No New Requests</p></li>
+      <li  className="header-req"> </li>
       </ul>
     </div>
     );

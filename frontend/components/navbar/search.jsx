@@ -6,7 +6,8 @@ import SearchIndexItem from './search_item';
    constructor(props){
      super(props);
      this.state = {
-       query: "."
+       query: ".",
+       modal:false
      };
       this.sendQuery = this.sendQuery.bind(this);
       this.update = this.update.bind(this);
@@ -17,7 +18,7 @@ import SearchIndexItem from './search_item';
    }
 
    update(e) {
-     this.setState({ query: e.currentTarget.value }, () => {
+     this.setState({ modal:true,query: e.currentTarget.value }, () => {
      this.sendQuery();});
    }
 
@@ -39,16 +40,18 @@ import SearchIndexItem from './search_item';
     });
 }
     return (
+      <div className="searchMain">
       <div className="csearch">
       <input className="text" type="text" value={this.state.search}
       onChange={this.update} placeholder="Search"/>
-      <div  className="searchButton">
+    <div  className={this.state.modal ? 'searchButton blueButton' : 'searchButton'}>
       <i  className="fas fa-search"></i>
       </div>
       <div className="searchResults">
         <ul>
           {searchResults}
         </ul>
+      </div>
       </div>
       </div>
     );

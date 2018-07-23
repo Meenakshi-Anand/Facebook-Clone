@@ -1,29 +1,41 @@
 
 
 .searchResults ul {
-  position:absolute;
-  top:33px;
-  left:200px;
+  list-style-type: none;
+  margin: 29px 1px;
+  padding: 0;
+  position: absolute;
+  max-width: 445px;
+  box-sizing: border-box;
+  border-color: rgba(0, 0, 0, .15);
+  border-radius: 2px;
+  box-shadow: 0 4px 6px 2px rgba(0, 0, 0, .10);
   background-color: white;
   display:list-item;
+  left: -1px;
 }
 
 .searchResults ul li{
   height:50px;
-  width:380px;
-  border: solid 1px #ddd;
+  min-width: 445px;
   list-style: none;
 }
 .search-div{
   display:flex;
-  width:380px;
+  max-width: 445px;
   position: relative;
 }
 
 .name-search{
+ font-weight: 600;
  padding:0 40px 40px 40px;
- color:black;
+ color:#1d2129;
 }
+.right-greeting{
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
 
 .search-div img{
   height: 28px;
