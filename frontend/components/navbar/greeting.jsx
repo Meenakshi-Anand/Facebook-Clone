@@ -58,7 +58,11 @@ class Greeting extends React.Component {
         </section></a>
         <ul className="logout-dropdown">
           <section className="triangle"></section>
-          <li><Link to="/" onClick={logout}>Log out</Link></li>
+          <li ><Link  to="/" onClick={logout}>
+            <div className="log-req">
+            <span className="log-1">More Options</span>
+            <span className="log-2">Log out</span>
+            </div></Link></li>
         </ul>
       </li>
     </ul>

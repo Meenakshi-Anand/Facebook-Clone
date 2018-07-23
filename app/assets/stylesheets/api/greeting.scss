@@ -181,7 +181,9 @@ background-image: image-url('icon-question-400.png');
 
 .logout-dropdown{
   position: absolute;
+
 }
+
 .logout > li:last-child ul {
   visibility: hidden;
 }
@@ -193,8 +195,7 @@ ul .logout-dropdown li {
   top:17px;
   right:180px;
   width: 200px;
-  height:100px;
-  height: 100px;
+  height:62px;
   background: #fff;
   color: black;
   font-weight: normal;
@@ -202,8 +203,11 @@ ul .logout-dropdown li {
   z-index: 1;
   // padding-top: 45px;
 }
+.logout-options{
+  height:24px;
+}
 .logout-dropdown > li > button{
-  position:absolute;
+  // position:absolute;
   top:5px;
   margin-right: 20px;
   border-top:1px;
@@ -229,13 +233,32 @@ ul .logout-dropdown > li:hover {
   border-top: 1px solid #b3b3b3;
 }
 
-.logout a:hover{
-    color: white;
-}
 .main-req{
   position: relative;
 }
 .main-req ul{
   display: block;
 
+}
+.log-1{
+  font-size: 12px;
+  margin-top: 5px;
+  width:200px;
+  border-bottom: 1px solid #dddfe2;
+  // border:1px solid #355088;
+  color:black;
+}
+.log-2{
+  color: #365899;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top:10px;
+}
+.log2:hover{
+  text-decoration: underline;
+  color: #365899;
+}
+.log-req {
+  display: grid !important;
 }

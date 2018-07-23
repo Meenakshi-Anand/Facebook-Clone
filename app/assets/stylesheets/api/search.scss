@@ -12,13 +12,16 @@
   box-shadow: 0 4px 6px 2px rgba(0, 0, 0, .10);
   background-color: white;
   display:list-item;
-  left: -1px;
+  left: 240px;
 }
 
 .searchResults ul li{
   height:50px;
   min-width: 445px;
   list-style: none;
+}
+.searchResults ul li:hover{
+  background-color: #e9ebee;
 }
 .search-div{
   display:flex;
