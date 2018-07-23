@@ -1,18 +1,20 @@
 
 .body{
-  width: 100%;
-  position: fixed;
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
   font-family: 'Freight Sans Bold', Helvetica, sans-serif;
 }
 .main-section{
-  width: 980px;
   display: flex;
-  margin: auto;
   justify-content: space-between;
   padding-top: 75px;
-
-
 }
+.main-section1{
+  display: flex;
+  padding-top: 55px;
+}
+
 .main-section > div{
   width: 450px;
 }

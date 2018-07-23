@@ -49,18 +49,18 @@ class MainPage extends React.Component{
   }else{
      return(
       <div className="body">
-      <section className="main-section">
+      <section className="main-section1">
         <section className="profile-sidebar">
         <ul className="sidebar-ul">
         <li>
          <div className="ll">
         <Link to={`/users/${this.props.currentUser.id}`}>
-          <div className="name-tag">
+          <section className="name-tag">
         <section><img className="profile_img"
           src={this.props.currentUser.profile_image_url} /></section>
         <h2> {this.props.currentUser.fname} {this.props.currentUser.lname} </h2>
 
-          </div>
+        </section>
        </Link>
         </div>
         </li>
@@ -74,18 +74,17 @@ class MainPage extends React.Component{
       </Link>
         </li>
         <li>
-        <div className="name-tag">
+        <section className="name-tag">
           <i className="fab fa-facebook-messenger "></i>
           <h2 className="sp">Messenger</h2>
 
-        </div>
+        </section>
         </li>
         <li>
-        <div className="name-tag">
+        <section className="name-tag">
           <i className="fas fa-video"></i>
           <h2 className="sp">Videos</h2>
-
-        </div>
+        </section>
         </li>
         </ul>
         </section>
