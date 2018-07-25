@@ -29,6 +29,8 @@
 
 .adds-sidebar{
   width:250px;
+  height:500px;
+  margin-left: -8px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 3px;
@@ -58,7 +60,7 @@
 
 .posts-mid{
   margin-left: 30px;
-  width:600px;
+  width:500px;
   margin-right: 25px;
 }
 
@@ -202,4 +204,8 @@
 
 .sidebar-left{
   display: flex;
+}
+
+.mlef{
+  margin-left: 10px;
 }

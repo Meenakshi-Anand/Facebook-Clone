@@ -1,7 +1,7 @@
 
 
 .comments{
-background: #f2f3f5;
+background: #fff;
 margin: 0px -15px -25px -15px;
 padding: 0 20px 15px 15px;
 border-top: solid 1px #dddfe2;
@@ -11,6 +11,8 @@ margin-top: 20px;
 }
 
 .comments input[type=text]{
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
   min-height: 32px;
   width: 430px;
   border-radius: 18px;
@@ -20,7 +22,8 @@ margin-top: 20px;
   resize: none;
   box-sizing: border-box;
   border: solid 1px #dddfe2;
-  background:white;
+  word-wrap: break-word;
+  background-color:#eff1f3;
 }
 
 .com-div{
@@ -30,7 +33,9 @@ margin-top: 20px;
 }
 
 .comment-text{
-  overflow-wrap: break-word;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  word-wrap: break-word;
   margin-right:6px;
   margin-left:6px;
   font-size: 12px;
@@ -39,8 +44,7 @@ margin-top: 20px;
   align-items: center;
 }
 .delete-hover{
-  position:absolute;
-  right:100px;
+
 }
 .space-del{
   margin-left:10px;
@@ -59,7 +63,7 @@ margin-top: 20px;
 }
 .post-comment-body{
   margin-right: 20px;
-  width:100%;
+  min-width: 0;
 }
 .post-name1{
   overflow-wrap: break-word;
@@ -68,17 +72,30 @@ margin-top: 20px;
 
 .post-me {
  margin-top: -7px;
- border-radius: 15px;
- background: #fff;
- min-height: 25px;
+ font-size: 13px;
  border-radius: 18px;
- max-width: 440px;
+ padding: 8px 10px;
+ background: #fff;
+ line-height: 16px;
  font-size: 13px;
  display: flex;
- align-items: center;
+ min-width:0;
+ background-color:#eff1f3;
+ box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
 }
-
+.cimg{
+  height: 32px !important;
+  width: 32px !important;
+}
 .ll Link:hover{
  background:white;
  border-radius: 8px;
+}
+.write-comment{
+  display: flex;
+  justify-content: space-between;
+}
+
+.ppd{
+  margin-top: 10px;
 }

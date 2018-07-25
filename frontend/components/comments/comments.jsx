@@ -44,7 +44,7 @@ class Comments extends React.Component {
           return(
          <div key={comments[key].id}
            onClick={() => this.execDeleteComment(comments[key].post_id,key)}>
-            <span className="delete-hover"> ...
+            <span className="delete-hover mlef"> ...
             <i className="fas fa-trash-alt space-del"></i>
             </span>
         </div>
@@ -56,7 +56,7 @@ class Comments extends React.Component {
           <div className="each-comment">
             <div className="post-name1">
               <Link to={`/users/${comments[key].author_id}`}>
-              <img className="profile_img" src={comments[key].authorpic}/>
+              <img className="profile_img cimg" src={comments[key].authorpic}/>
               </Link>
               <div className="post-me">
               <Link to={`/users/${comments[key].author_id}`}>
@@ -88,10 +88,13 @@ class Comments extends React.Component {
 
   commentForm() {
     return(
-      <div>
+      <div >
         <form onSubmit={this.handleSubmit}>
+          <div className="write-comment">
+          <img className="profile_img cimg ppd" src={this.props.currentUser.profile_image_url}/>
           <input type="text" placeholder="Write a comment..."
             value={this.state.body} onChange={this.update('body')}></input>
+          </div>
         </form>
       </div>
     );
