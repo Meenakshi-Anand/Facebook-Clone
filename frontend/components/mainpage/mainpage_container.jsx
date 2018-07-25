@@ -56,34 +56,81 @@ class MainPage extends React.Component{
          <div className="ll">
         <Link to={`/users/${this.props.currentUser.id}`}>
           <section className="name-tag">
+        <div className="sidebar-left">
         <section><img className="profile_img"
           src={this.props.currentUser.profile_image_url} /></section>
-        <h2> {this.props.currentUser.fname} {this.props.currentUser.lname} </h2>
-
+        <h2 className="name-sp"> {this.props.currentUser.fname}
+          {this.props.currentUser.lname} </h2>
+        </div>
+        <span className="sidebar-ellipse">...</span>
         </section>
        </Link>
         </div>
         </li>
         <li>
         <Link to="/">
-        <section className="name-tag news">
-          <i className="far fa-newspaper "></i>
-          <h2 className="sp">News Feed</h2>
 
+        <section className="name-tag news">
+          <div className="sidebar-left">
+          <i className="far fa-newspaper log "></i>
+          <h2 className="sp">News Feed</h2>
+          </div>
+          <span className="sidebar-ellipse">...</span>
         </section>
       </Link>
         </li>
         <li>
         <section className="name-tag">
-          <i className="fab fa-facebook-messenger "></i>
+          <div className="sidebar-left">
+          <i className="fab fa-facebook-messenger log"></i>
           <h2 className="sp">Messenger</h2>
-
+          </div>
+          <span className="sidebar-ellipse">...</span>
         </section>
         </li>
         <li>
         <section className="name-tag">
-          <i className="fas fa-video"></i>
+          <div className="sidebar-left">
+          <i className="fas fa-video log"></i>
           <h2 className="sp">Videos</h2>
+          </div>
+          <span className="sidebar-ellipse">...</span>
+        </section>
+        </li>
+        <li>
+        <section className="name-tag">
+          <div className="sidebar-left">
+          <i class="far fa-calendar log"></i>
+          <h2 className="sp">Events</h2>
+          </div>
+          <span className="sidebar-ellipse">...</span>
+        </section>
+        </li>
+        <li>
+        <section className="name-tag">
+          <div className="sidebar-left">
+          <i class="far fa-file-alt log"></i>
+          <h2 className="sp">Pages</h2>
+          </div>
+          <span className="sidebar-ellipse">...</span>
+        </section>
+        </li>
+        <li>
+        <section className="name-tag">
+          <div className="sidebar-left">
+          <i class="fab fa-linkedin log"></i>
+          <h2 className="sp">Linked In</h2>
+          </div>
+          <span className="sidebar-ellipse">...</span>
+        </section>
+        </li>
+        <li>
+        <section className="name-tag">
+          <div className="sidebar-left">
+          <i class="fab fa-github-square log"></i>
+          <h2 className="sp">Git Hub</h2>
+          </div>
+          <span className="sidebar-ellipse">...</span>
         </section>
         </li>
         </ul>

@@ -13,7 +13,6 @@
 }
 
 .create-post1 {
-  width:500px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 3px;
@@ -21,12 +20,19 @@
 }
 
 .create-post1 h3{
-  border-bottom:1px solid  #ddd;
   color: #4f545a;
-  padding:5px;
-  font-size: 12px;
+  padding: 0 0 5px 5px;
+  font-size: 13px;
+  padding-right: 10px;
 }
 
+.bor{
+  height:10px;
+  border-right: 1px solid #ced0d4;
+}
+.bcol{
+  color: #365899 !important;
+}
 .post-name1{
   margin-top:10px;
   margin-left:10px;

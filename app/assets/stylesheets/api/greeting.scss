@@ -5,25 +5,31 @@
   max-height: 42px;
   color: #fff;
   width: 100%;
-  position:fixed;
+  position:relative;
   z-index: 3;
   font-family: "Lucida Grande", sans-serif;
 }
-.csearch{
-  width: 100%;
-  max-width: 448px;
-}
 
+// @media screen and (max-width:800px){
+//   .csearch{
+//     width:300px;
+//   }
+// }
 .greeting {
-  width:980px;
+  max-width:980px;
+  min-width:610px;
+  width:100%;
   display:flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   margin: auto;
 }
 .left-greeting{
   flex: 1 1 auto;
   justify-content: flex-start;
   margin:5px 0px;
+  min-width:148px;
+  width: 100%;
+  max-width: 663px;
 }
 
 .searchButton{

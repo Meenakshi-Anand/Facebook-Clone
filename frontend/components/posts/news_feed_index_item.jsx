@@ -38,7 +38,7 @@ class NewsFeedIndexItem extends React.Component{
     <li className="index-post">
       <div className="post-name">
        <Link to={`/users/${post.author_id}`}>
-       <section><img className="profile_img"
+       <section><img className="profile_img nimg nnsp"
          src={post.profile_image_url} /></section>
        </Link>
        <Link to={`/users/${post.author_id}`}>
@@ -48,8 +48,8 @@ class NewsFeedIndexItem extends React.Component{
       </div>
 
       <div>
-        {this.renderImage()}
         <h2 className="pos-text">{post.body}</h2>
+        {this.renderImage()}
       </div>
 
       <CommentsContainer post={post} comments={post.comments}/>

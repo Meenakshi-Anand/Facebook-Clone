@@ -69,10 +69,18 @@ class PostForm extends React.Component {
   render () {
   return (
   <div className="create-post1">
-   <h3> Make Post</h3>
+   <div className="post-title">
+   <i class="fas fa-pencil-alt fav-icon"></i>
+   <h3 className="bor"> Make Post </h3>
+   <i class="far fa-images fav-icon"></i>
+   <h3 className="bor bcol"> Photo/Video Album </h3>
+   <i class="fas fa-video fav-icon"></i>
+   <h3 className=" bcol"> Live Video</h3>
+   </div>
+   <section className="p-triangle"></section>
     <form onSubmit={this.handleSubmit}>
-      <div className="post-name">
-      <section><img className="profile_img"
+      <div className="post-name new-pad">
+      <section><img className="profile_img nsp nimg"
         src={this.props.user.profile_image_url} /></section>
       <label>
       <textarea
