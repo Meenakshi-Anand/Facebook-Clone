@@ -103,7 +103,9 @@ class Comments extends React.Component {
   render() {
     return(
       <div className="comments">
+        <div className="c-border">
         {this.allComments()}
+        </div>
         {this.commentForm()}
       </div>
     );

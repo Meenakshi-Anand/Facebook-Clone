@@ -61,16 +61,19 @@ renderPosts(){
 
 render() {
     return(
-      <div>
+      <div className="sub-div">
+        <div className="p-div">
+        <div className="fff">
+        <img className="profile_image" src={this.props.user.profile_image_url}/>
+        {this.updateProfilePicture()}
+        </div>
         <div className="profile-name">
         <h1>{this.props.user.fname}</h1>
         <h1>{this.props.user.lname}</h1>
         </div>
-        <div className="fff">
-        <img className="profile_image" src={this.props.user.profile_image_url}/>
-        <a></a>
-        {this.updateProfilePicture()}
         </div>
+        <div className="pst-div">
+        <div>
         <div className="intro">
         <h2> <section className='notification'/> Intro </h2>
         <h4>{this.props.user.bio}</h4>
@@ -78,7 +81,9 @@ render() {
         <div className="friends-page">
         <FriendsContainer user={this.props.user}/>
         </div>
+        </div>
         {this.renderPosts()}
+        </div>
       </div>);
 }
 

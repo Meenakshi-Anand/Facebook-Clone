@@ -1,15 +1,12 @@
 .posts{
   font-size: 12px;
-  margin-right: 15px;
-  float:right;
-  top:400px;
-  left:718px;
+  margin-top: 15px;
+  overflow: hidden;
 }
 
 
 .posts-mids{
-  width:565px;
-  margin-left: 70px;
+
 }
 
 .create-post1 {
@@ -35,7 +32,6 @@
 }
 .post-name1{
   margin-top:10px;
-  margin-left:10px;
   display:flex;
   font-size: 12px;
 }
@@ -66,12 +62,14 @@ margin-left: 450px;
 .index-post1{
   box-sizing: border-box;
   background: #fff;
+  height: auto;
   border-radius: 3px;
   border: solid 1px #ddd;
   margin-top: 30px;
   margin-bottom: 15px;
   font-size: 12px;
   padding-left:15px;
+  overflow: -webkit-paged-x;
 }
 
 .index-post1 > button{

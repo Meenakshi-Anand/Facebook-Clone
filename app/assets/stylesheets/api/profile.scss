@@ -3,7 +3,9 @@
   height: 100%;
   background: rgb(233,235,238);
 }
-
+.cover-image{
+  position:absolute;
+}
 .profile-sec{
   margin: 0 auto;
   max-width: 980px;
@@ -16,10 +18,10 @@
 }
 .gaurd{
   position: absolute;
-  top: 55px;
+  margin-top: -325px;
   margin-left: 20px;
   color: white;
-  
+
 }
 .coverupload{
   visibility: hidden;
@@ -55,18 +57,16 @@ input[type="file"]{
 }
 .timeline-ul{
   display: flex;
-  justify-content: flex-end;
-  top: 400px;
-  margin-top: 400px;
-  margin:0px;
+  justify-content: flex-start;
+  margin-left: 166px;
   border-radius: 5px;
 }
 
 .timeline-ul > li{
   border-right: solid 1px #ccc;
-  padding: 18px;
-  padding-right: 55px;
-  padding-left: 55px;
+  padding: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
   font-weight: 900;
   font-size: 12px;
   color: #3b5998;
@@ -91,9 +91,9 @@ input[type="file"]{
 }
 .profile-name{
   display: flex;
-  position: absolute;
-  top:300px;
-  left:400px;
+  margin-top: -120px;
+  margin-left: 40px;
+
 }
 
 .profile-name  h1{
@@ -207,4 +207,18 @@ font-weight: 500;
 color: #315796;
 display: flex;
 width: 100%;
+}
+
+.p-div{
+  display: flex;
+}
+
+.sub-div{
+  position: absolute;
+  margin-top: 400px;
+}
+
+.pst-div{
+  display: flex;
+  max-width: 980px !important;
 }

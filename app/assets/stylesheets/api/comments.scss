@@ -3,7 +3,7 @@
 .comments{
 background: #fff;
 margin: 0px -15px -25px -15px;
-padding: 0 20px 15px 15px;
+padding: 0 20px 20px 20px;
 border-top: solid 1px #dddfe2;
 border-right: solid 1px #dddfe2;
 margin-top: 20px;
@@ -61,6 +61,13 @@ margin-top: 20px;
   margin-left: -10px;
 
 }
+.each-comment:last-child{
+  border-bottom: solid 1px #ddd;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 12px;
+  padding-bottom: 22px;
+}
 .post-comment-body{
   margin-right: 20px;
   min-width: 0;
@@ -93,9 +100,10 @@ margin-top: 20px;
 }
 .write-comment{
   display: flex;
-  justify-content: space-between;
 }
 
 .ppd{
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: -5px;
 }

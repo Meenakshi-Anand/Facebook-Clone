@@ -66,6 +66,7 @@ render() {
         {this.updateCoverPhoto()}
         <div className="div-ul">
         <ul className="timeline-ul">
+          <li> </li>
           <li>Timeline</li>
           <li>About</li>
           <li>Friends</li>
