@@ -31,7 +31,7 @@ class ProfilePicture extends React.Component{
  updateProfilePicture(){
    if (this.props.currentUser.id === this.props.user.id){
      return(
-     <div className="profile-upload">
+     <button id="profile-upload">
      <div className="profile-text">
        <div className="button-text">
        <label htmlFor="profile-file">
@@ -43,7 +43,7 @@ class ProfilePicture extends React.Component{
        </button>
        </div>
    </div>
-   </div>
+ </button>
    );
    }else{
      return (<div></div>);
@@ -72,8 +72,9 @@ render() {
         <h1>{this.props.user.fname}</h1>
         <h1>{this.props.user.lname}</h1>
         </div>
-        <div>
+        <div className="fff">
         <img className="profile_image" src={this.props.user.profile_image_url}/>
+        <a></a>
         {this.updateProfilePicture()}
         </div>
         <div className="intro">

@@ -5,19 +5,30 @@
 }
 
 .profile-sec{
-  margin: 0 150px;
+  margin: 0 auto;
+  max-width: 980px;
 }
 
 .coverphoto{
   height:350px;
   object-fit: cover;
-  position: relative;
+  z-index: -3;
 }
 
 .coverupload{
+  visibility: hidden;
   position:absolute;
   top: 55px;
   margin-left:20px;
+}
+
+.coverupload:hover{
+  visibility: visible;
+  box-shadow: 0 0 0 1px #fff inset;
+  border-radius: 3px;
+  border-collapse: collapse;
+  opacity: .92;
+  cursor: pointer;
 }
 
 input[type="file"]{
@@ -92,11 +103,11 @@ input[type="file"]{
 }
 
 .profile_image{
+  position: relative;
   height: 167px;
   width: 167px;
-  position: absolute;
-  top: 200px;
-  left: 200px;
+  margin-top: -200px;
+  margin-left: 50px;
   border: solid 3px #fff;
   border-radius: 0px 0px 3px 3px;
   background-position: -20px -40px;
@@ -106,10 +117,22 @@ input[type="file"]{
   object-fit: cover;
 }
 
-.profile-upload{
-  position:absolute;
-  top: 390px;
-  margin-left:95px;
+#profile-upload{
+  display: none;
+  position:relative;
+  margin-top: -60px;
+  margin-left: 52px;
+  height: 58px;
+  width: 168px;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 15;
+  font-weight: 600px !important;
+  color: white;
+}
+
+.fff:hover #profile-upload{
+  display: block;
 }
 
 input[type="file"]{
@@ -117,16 +140,20 @@ input[type="file"]{
 }
 
 .button-text{
-  color:gray;
+  color:white;
   font-family: "Lucida Grande", sans-serif;
   font-size: 10px;
+  color: white;
+  margin-left: 25px;
+  margin-top: 10px;
   padding:2px;
   bottom:22px;
-  right:-120px;
-  width:120px;
+  // width:120px;
+  z-index: 12px;
+  font-weight: 600px;
   position: absolute;
   border-radius: 2px;
-  border: 1px solid gray;
+  border: 1px solid white;
 }
 .intro{
   width: 450px;
