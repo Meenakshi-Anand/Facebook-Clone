@@ -4,43 +4,42 @@ class CoverPicture extends React.Component{
   constructor(props){
     super(props);
     this.state = {imageFile:null,imageUrl:null};
-    this.handleSubmit=this.handleSubmit.bind(this);
+
     this.updateFile =this.updateFile.bind(this);
   }
 
  updateFile(e) {
    const file = e.currentTarget.files[0];
    const fileReader = new FileReader();
+   const formData = new FormData();
    fileReader.onloadend = function () {
      this.setState({ imageFile: file, imageUrl: fileReader.result });
    }.bind(this);
 
    if (file) {
      fileReader.readAsDataURL(file);
+     formData.append("user[cover_image_url]", file);
+     formData.append("user[id]", this.props.currentUser.id);
+     this.props.updateUser(formData);
    }
-
  }
 
- handleSubmit(e) {
-   const formData = new FormData();
-   if (this.state.imageFile)
-   formData.append("user[cover_image_url]", this.state.imageFile);
-   this.props.updateUser(formData);
- }
+
  updateCoverPhoto(){
    if (this.props.currentUser.id === this.props.user.id){
-     return(<div className="coverupload">
+     return(
+     <div className="gaurd">
+     <i className="fas fa-camera disp"></i>
+     <div className="coverupload">
      <div className="camera-text">
        <div className="cover-text">
        <label htmlFor="cover-file">
-       <i className="fas fa-camera"></i>
+        Update Cover Picture
        <input type="file" onChange={this.updateFile} id="cover-file"/>
        </label>
-       <button onClick={this.handleSubmit}>
-         Update Cover Picture
-      </button>
-    </div>
      </div>
+     </div>
+   </div>
    </div>);
    }else{
      return(<div></div>);

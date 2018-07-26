@@ -5,7 +5,6 @@ class ProfilePicture extends React.Component{
   constructor(props){
     super(props);
     this.state = {imageFile:null,imageUrl:null};
-    this.handleSubmit=this.handleSubmit.bind(this);
     this.updateFile =this.updateFile.bind(this);
 
   }
@@ -13,21 +12,18 @@ class ProfilePicture extends React.Component{
  updateFile(e) {
    const file = e.currentTarget.files[0];
    const fileReader = new FileReader();
+   const formData = new FormData();
    fileReader.onloadend = function () {
      this.setState({ imageFile: file, imageUrl: fileReader.result });
    }.bind(this);
 
    if (file) {
      fileReader.readAsDataURL(file);
+     formData.append("user[profile_image_url]", file);
+     this.props.updateUser(formData);
    }
  }
 
- handleSubmit(e) {
-   const formData = new FormData();
-   if (this.state.imageFile)
-   formData.append("user[profile_image_url]", this.state.imageFile);
-   this.props.updateUser(formData);
- }
  updateProfilePicture(){
    if (this.props.currentUser.id === this.props.user.id){
      return(
@@ -36,11 +32,9 @@ class ProfilePicture extends React.Component{
        <div className="button-text">
        <label htmlFor="profile-file">
        <i className="fas fa-camera"></i>
+       Update Profile Picture
        <input type="file" onChange={this.updateFile} id="profile-file"/>
        </label>
-       <button onClick={this.handleSubmit}>
-          Update Profile Picture
-       </button>
        </div>
    </div>
  </button>

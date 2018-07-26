@@ -14,21 +14,25 @@
   object-fit: cover;
   z-index: -3;
 }
-
+.gaurd{
+  position: absolute;
+  top: 55px;
+  margin-left: 20px;
+  color: white;
+  
+}
 .coverupload{
   visibility: hidden;
-  position:absolute;
-  top: 55px;
-  margin-left:20px;
 }
-
-.coverupload:hover{
+.gaurd:hover .coverupload{
   visibility: visible;
   box-shadow: 0 0 0 1px #fff inset;
   border-radius: 3px;
-  border-collapse: collapse;
-  opacity: .92;
+  opacity: .7;
+  margin-top: -20px;
+  margin-left: 20px;
   cursor: pointer;
+  background: black;
 }
 
 input[type="file"]{
@@ -41,7 +45,6 @@ input[type="file"]{
   font-size: 15;
   padding:2px;
   border-radius: 2px;
-  border: 1px solid #fff;
 }
 .div-ul {
   background-color: #fff;
