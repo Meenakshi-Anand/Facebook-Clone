@@ -56,7 +56,7 @@ import SearchIndexItem from './search_item';
       <div className="searchMain">
       <div className="csearch">
       <input className="text" type="text" value={this.state.search}
-      onChange={this.update} onBlur={this.resetSearch} placeholder="Search"/>
+      onChange={this.update} placeholder="Search"/>
     <div  className={this.state.modal ? 'searchButton blueButton' : 'searchButton'}>
       <i  className="fas fa-search"></i>
       </div>
