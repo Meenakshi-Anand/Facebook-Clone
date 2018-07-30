@@ -80,7 +80,7 @@ class MainPage extends React.Component{
       </Link>
         </li>
         <li>
-        <section className="name-tag">
+        <section className="name-tag deadlinks">
           <div className="sidebar-left">
           <i className="fab fa-facebook-messenger log"></i>
           <h2 className="sp">Messenger</h2>
@@ -89,7 +89,7 @@ class MainPage extends React.Component{
         </section>
         </li>
         <li>
-        <section className="name-tag">
+        <section className="name-tag deadlinks">
           <div className="sidebar-left">
           <i className="fas fa-video log"></i>
           <h2 className="sp">Videos</h2>
@@ -98,7 +98,7 @@ class MainPage extends React.Component{
         </section>
         </li>
         <li>
-        <section className="name-tag">
+        <section className="name-tag deadlinks">
           <div className="sidebar-left">
           <i class="far fa-calendar log"></i>
           <h2 className="sp">Events</h2>
@@ -107,7 +107,7 @@ class MainPage extends React.Component{
         </section>
         </li>
         <li>
-        <section className="name-tag">
+        <section className="name-tag deadlinks">
           <div className="sidebar-left">
           <i class="far fa-file-alt log"></i>
           <h2 className="sp">Pages</h2>
@@ -116,6 +116,7 @@ class MainPage extends React.Component{
         </section>
         </li>
         <li>
+        <a href="https://www.linkedin.com/in/meenakshi-anand-narayan-9b06b715a/">
         <section className="name-tag">
           <div className="sidebar-left">
           <i class="fab fa-linkedin log"></i>
@@ -123,8 +124,10 @@ class MainPage extends React.Component{
           </div>
           <span className="sidebar-ellipse">...</span>
         </section>
+      </a>
         </li>
         <li>
+        <a href="https://github.com/Meenakshi-Anand/Facebook-Clone">
         <section className="name-tag">
           <div className="sidebar-left">
           <i class="fab fa-github-square log"></i>
@@ -132,6 +135,7 @@ class MainPage extends React.Component{
           </div>
           <span className="sidebar-ellipse">...</span>
         </section>
+      </a>
         </li>
         </ul>
         </section>

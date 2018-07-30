@@ -42,15 +42,15 @@ class Greeting extends React.Component {
       </li>
       <li>
 
-      <section className="messenger"></section>
+      <section className="messenger deadlinks"></section>
 
       </li>
       <li>
-      <section className="notification"></section>
+      <section className="notification deadlinks"></section>
       </li>
       <li className="grey-line">|</li>
       <li>
-      <section className="quickhelp"></section>
+      <section className="quickhelp deadlinks"></section>
       </li>
       <li>
         <a href="#">

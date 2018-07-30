@@ -64,14 +64,14 @@ render() {
       <div className="cover-image">
         <img className="coverphoto" src={this.props.user.cover_image_url}/>
         {this.updateCoverPhoto()}
-        <div className="div-ul">
-        <div className="timeline-ul">
-          <div> </div>
-          <div>Timeline</div>
-          <div>About</div>
-          <div>Friends</div>
-          <div>Photos</div>
-          <div>More</div>
+        <div className="div-ul deadlinks">
+        <div className="timeline-ul deadlinks ">
+          <div className="deadlinks"> </div>
+          <div className="deadlinks">Timeline</div>
+          <div className="deadlinks">About</div>
+          <div className="deadlinks">Friends</div>
+          <div className="deadlinks">Photos</div>
+          <div className="deadlinks">More</div>
         </div>
         </div>
          {this.addFriend()}
