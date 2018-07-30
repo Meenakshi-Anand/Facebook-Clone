@@ -1,7 +1,6 @@
 .searchResults{
   position: relative;
 }
-
 .searchResults ul {
   list-style-type: none;
   margin: 29px 1px;
@@ -49,4 +48,9 @@
   margin-top: 15px;
   border-radius: 100%;
 
+}
+
+.nobut{
+  width:0px;
+  height:0px;
 }
