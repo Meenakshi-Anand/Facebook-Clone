@@ -6,15 +6,19 @@ import SearchIndexItem from './search_item';
    constructor(props){
      super(props);
      this.state = {
-       query: ".",
+       query: '',
        modal:false
      };
       this.sendQuery = this.sendQuery.bind(this);
       this.update = this.update.bind(this);
+      this.resetSearch = this.resetSearch.bind(this);
+      this.searchResults = this.searchResults.bind(this);
    }
 
    componentDidMount(){
+     if(this.state.query !== ''){
      this.props.search(this.state.query);
+    }
    }
 
    update(e) {
@@ -25,20 +29,29 @@ import SearchIndexItem from './search_item';
    sendQuery(){
      this.props.search(this.state.query);
    }
+   searchResults(){
+     let searchResults = [];
+     if(this.state.modal){
+       if (this.props.searchResults === undefined) {
+         searchResults = [];
+       }else {
+         searchResults = this.props.searchResults.map((user, idx) => {
+           return  <SearchIndexItem
+             clearSearchResults={this.props.clearSearchResults}
+             user={user} status={this.state.modal} close = {this.resetSearch}
+             key={idx} />;
+       });
+       }
+     }
+     return searchResults;
+   }
 
-
+   resetSearch(){
+     this.setState({modal:false});
+   }
   render(){
-    let searchResults = [];
-    if (this.props.searchResults === undefined) {
-      searchResults = [];
-    }else {
-      searchResults = this.props.searchResults.map((user, idx) => {
-        return  <SearchIndexItem
-          clearSearchResults={this.props.clearSearchResults}
-          user={user}
-          key={idx} />;
-    });
-}
+
+
     return (
       <div className="searchMain">
       <div className="csearch">
@@ -49,9 +62,10 @@ import SearchIndexItem from './search_item';
       </div>
       <div className="searchResults">
         <ul>
-          {searchResults}
+          {this.searchResults()}
         </ul>
       </div>
+
       </div>
       </div>
     );
