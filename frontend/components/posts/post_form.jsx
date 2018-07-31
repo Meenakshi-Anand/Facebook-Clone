@@ -71,11 +71,11 @@ class PostForm extends React.Component {
   <div className="create-post1">
    <div className="post-title">
    <i class="fas fa-pencil-alt fav-icon"></i>
-   <h3 className="bor"> Make Post </h3>
+   <h3 className="bor deadlinks"> Make Post </h3>
    <i class="far fa-images fav-icon"></i>
-   <h3 className="bor bcol"> Photo/Video Album </h3>
+   <h3 className="bor bcol deadlinks"> Photo/Video Album </h3>
    <i class="fas fa-video fav-icon"></i>
-   <h3 className=" bcol"> Live Video</h3>
+   <h3 className=" bcol deadlinks"> Live Video</h3>
    </div>
    <section className="p-triangle"></section>
     <form onSubmit={this.handleSubmit}>

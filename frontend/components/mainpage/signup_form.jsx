@@ -108,7 +108,7 @@ class SignupForm extends React.Component {
           </label>
           <label>
             <section className="tooltip">
-            <input type="text" placeholder={'New Password'}
+            <input type="password" placeholder={'New Password'}
               className={ this.err.password_error === "" ? '' : 'error'}
               value={this.state.password} onChange={this.update('password')} />
             {this.renderSmallErrors(this.err.password_error)}
@@ -124,7 +124,7 @@ class SignupForm extends React.Component {
               onChange={this.update('birthday')} />
             {this.renderSmallErrors(this.err.birthday_error)}
                   </section>
-            <span className="plink margintop">Why do I need to provide
+            <span className="plink margintop deadlinks">Why do I need to provide
               my birthday?</span>
             </div>
           </label>
@@ -147,8 +147,8 @@ class SignupForm extends React.Component {
         </div>
           <p>
           By clicking Sign Up,
-          you agree to our <span className="plink">Terms, Data Policy</span> and
-          <span className="plink"> Cookies Policy.</span> You may receive SMS Notifications from us
+          you agree to our <span className="plink deadlinks">Terms, Data Policy</span> and
+          <span className="plink deadlinks"> Cookies Policy.</span> You may receive SMS Notifications from us
           and can opt out any time.</p>
           <button type="submit" value={formType}>Sign Up</button>
          </form>
