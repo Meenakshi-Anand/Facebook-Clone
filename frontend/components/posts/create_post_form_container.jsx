@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   const post = {  body: '' };
   const formType = 'Create Post';
   const currentUserId = state.session.id;
-  return { post, formType};
+  return { post,currentUser:state.entities.users[currentUserId],
+     formType};
 };
 
 const mapDispatchToProps = (dispatch) => {

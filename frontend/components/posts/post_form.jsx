@@ -81,11 +81,11 @@ class PostForm extends React.Component {
     <form onSubmit={this.handleSubmit}>
       <div className="post-name new-pad">
       <section><img className="profile_img nsp nimg"
-        src={this.props.user.profile_image_url} /></section>
+        src={this.props.currentUser.profile_image_url} /></section>
       <label>
       <textarea
         value={this.state.body}
-        placeholder={`Whats in your mind , ${this.props.user.fname} ?`}
+        placeholder={`Whats in your mind , ${this.props.currentUser.fname} ?`}
         onChange={this.update('body')}/>
       </label>
       </div>
