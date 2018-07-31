@@ -1,5 +1,6 @@
 
 .profile-sidebar{
+  position:fixed;
   width:180px;
 }
 .post-author{
@@ -29,9 +30,10 @@
 }
 
 .adds-sidebar{
+  position: fixed;
+  margin-left: 720px;
   width:250px;
   height:500px;
-  margin-left: -8px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 3px;
@@ -61,8 +63,11 @@
 
 .posts-mid{
   margin-left: 30px;
-  width:500px;
+  width: 500px;
   margin-right: 25px;
+  position: relative;
+  left:175px;
+  overflow-y: scroll;
 }
 
 .create-post-main{
