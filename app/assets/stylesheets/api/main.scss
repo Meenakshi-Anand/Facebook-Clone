@@ -164,6 +164,23 @@
 
 }
 
+.signup-form form input[type="password"]{
+  font-family: "Helvetica", sans-serif;
+  color: inherit;
+  padding: 0 0 0 5px;
+  background-color: #fff;
+  border-color: #afbdd4;
+  margin-top: 5px;
+  height: 45px;
+  width: 400px;
+  display: block;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #bdc7d8;
+
+}
+
 .signup-form form input[type="date"]{
   font-family: "Helvetica", sans-serif;
   color:rgb(51,51,51);
