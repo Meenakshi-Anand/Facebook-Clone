@@ -51,8 +51,9 @@ class PostIndexItem extends React.Component{
       </div>
 
       <div>
-        {this.renderImage()}
+
         <h2 className="pos-text1">{post.body}</h2>
+        {this.renderImage()}
       </div>
        <CommentsContainer post={post} comments={post.comments}/>
     </li>);
